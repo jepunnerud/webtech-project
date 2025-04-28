@@ -1,0 +1,374 @@
+[
+    {
+      "name": "Frank Lampard",
+      "born": "1978-06-20",
+      "died": null,
+      "short_description": "Chelsea's all-time top scorer, legendary English midfielder.",
+      "extended_description": "Frank Lampard was a goal-scoring midfielder crucial to Chelsea's dominance in the 2000s. He won multiple Premier League titles and a Champions League trophy.",
+      "qr_code_url": "https://en.wikipedia.org/wiki/Frank_Lampard",
+      "position": "Midfielder",
+      "teams": [
+        {"club": "West Ham United", "appearances": 148, "goals": 24},
+        {"club": "Chelsea", "appearances": 429, "goals": 147},
+        {"club": "Manchester City", "appearances": 32, "goals": 6}
+      ]
+    },
+    {
+      "name": "Steven Gerrard",
+      "born": "1980-05-30",
+      "died": null,
+      "short_description": "Iconic Liverpool captain and midfielder.",
+      "extended_description": "Steven Gerrard is remembered for his loyalty to Liverpool, commanding midfield performances, and dramatic goals in crucial matches.",
+      "qr_code_url": "https://en.wikipedia.org/wiki/Steven_Gerrard",
+      "position": "Midfielder",
+      "teams": [
+        {"club": "Liverpool", "appearances": 504, "goals": 120}
+      ]
+    },
+    {
+      "name": "Ryan Giggs",
+      "born": "1973-11-29",
+      "died": null,
+      "short_description": "Manchester United winger and Premier League legend.",
+      "extended_description": "Ryan Giggs played his entire career at Manchester United, winning 13 Premier League titles and dazzling fans with his pace and dribbling.",
+      "qr_code_url": "https://en.wikipedia.org/wiki/Ryan_Giggs",
+      "position": "Winger",
+      "teams": [
+        {"club": "Manchester United", "appearances": 632, "goals": 109}
+      ]
+    },
+    {
+      "name": "Thierry Henry",
+      "born": "1977-08-17",
+      "died": null,
+      "short_description": "Arsenal's all-time top scorer, French striker.",
+      "extended_description": "Henry led Arsenal to multiple titles and the undefeated 'Invincibles' season with his speed, skill, and finishing ability.",
+      "qr_code_url": "https://en.wikipedia.org/wiki/Thierry_Henry",
+      "position": "Striker",
+      "teams": [
+        {"club": "Arsenal", "appearances": 258, "goals": 175}
+      ]
+    },
+    {
+      "name": "Didier Drogba",
+      "born": "1978-03-11",
+      "died": null,
+      "short_description": "Chelsea hero and clutch goalscorer from Ivory Coast.",
+      "extended_description": "Drogba was famous for scoring important goals, especially leading Chelsea to Champions League glory in 2012.",
+      "qr_code_url": "https://en.wikipedia.org/wiki/Didier_Drogba",
+      "position": "Striker",
+      "teams": [
+        {"club": "Chelsea", "appearances": 254, "goals": 104}
+      ]
+    },
+    {
+      "name": "John Terry",
+      "born": "1980-12-07",
+      "died": null,
+      "short_description": "Chelsea's iconic captain and defender.",
+      "extended_description": "Terry led Chelsea to numerous trophies with his leadership and defensive solidity over two decades.",
+      "qr_code_url": "https://en.wikipedia.org/wiki/John_Terry",
+      "position": "Defender",
+      "teams": [
+        {"club": "Chelsea", "appearances": 492, "goals": 41}
+      ]
+    },
+    {
+      "name": "Paul Scholes",
+      "born": "1974-11-16",
+      "died": null,
+      "short_description": "Manchester United's midfield maestro.",
+      "extended_description": "Scholes was famous for his passing, long-range shooting, and intelligence, winning multiple Premier League and Champions League titles.",
+      "qr_code_url": "https://en.wikipedia.org/wiki/Paul_Scholes",
+      "position": "Midfielder",
+      "teams": [
+        {"club": "Manchester United", "appearances": 499, "goals": 107}
+      ]
+    },
+    {
+      "name": "Dennis Bergkamp",
+      "born": "1969-05-10",
+      "died": null,
+      "short_description": "Elegant Dutch forward for Arsenal.",
+      "extended_description": "Bergkamp was renowned for his technique, vision, and breathtaking goals, playing a key role in Arsenal’s most successful period.",
+      "qr_code_url": "https://en.wikipedia.org/wiki/Dennis_Bergkamp",
+      "position": "Forward",
+      "teams": [
+        {"club": "Arsenal", "appearances": 315, "goals": 87}
+      ]
+    },
+    {
+      "name": "Alan Shearer",
+      "born": "1970-08-13",
+      "died": null,
+      "short_description": "Premier League's all-time top goalscorer.",
+      "extended_description": "Shearer scored 260 Premier League goals, winning a title with Blackburn before becoming a Newcastle United legend.",
+      "qr_code_url": "https://en.wikipedia.org/wiki/Alan_Shearer",
+      "position": "Striker",
+      "teams": [
+        {"club": "Blackburn Rovers", "appearances": 138, "goals": 112},
+        {"club": "Newcastle United", "appearances": 303, "goals": 148}
+      ]
+    },
+    {
+      "name": "Patrick Vieira",
+      "born": "1976-06-23",
+      "died": null,
+      "short_description": "Dominant French midfielder and Arsenal captain.",
+      "extended_description": "Vieira was the driving force behind Arsenal’s midfield, known for his strength, tackling, and leadership during their invincible season.",
+      "qr_code_url": "https://en.wikipedia.org/wiki/Patrick_Vieira",
+      "position": "Midfielder",
+      "teams": [
+        {"club": "Arsenal", "appearances": 279, "goals": 29}
+      ]
+    },
+    {
+      "name": "Wayne Rooney",
+      "born": "1985-10-24",
+      "died": null,
+      "short_description": "Manchester United's all-time top scorer.",
+      "extended_description": "Rooney combined skill, strength, and fierce competitiveness, helping United win multiple trophies including five Premier League titles.",
+      "qr_code_url": "https://en.wikipedia.org/wiki/Wayne_Rooney",
+      "position": "Forward",
+      "teams": [
+        {"club": "Manchester United", "appearances": 393, "goals": 183},
+        {"club": "Everton", "appearances": 77, "goals": 25}
+      ]
+    },
+    {
+      "name": "Petr Čech",
+      "born": "1982-05-20",
+      "died": null,
+      "short_description": "One of Premier League’s greatest goalkeepers.",
+      "extended_description": "Čech was a vital part of Chelsea’s success in the 2000s, holding multiple clean sheet records in the league.",
+      "qr_code_url": "https://en.wikipedia.org/wiki/Petr_Čech",
+      "position": "Goalkeeper",
+      "teams": [
+        {"club": "Chelsea", "appearances": 333, "goals": 0},
+        {"club": "Arsenal", "appearances": 110, "goals": 0}
+      ]
+    },
+    {
+      "name": "Ian Wright",
+      "born": "1963-11-03",
+      "died": null,
+      "short_description": "Prolific Arsenal striker in the 90s.",
+      "extended_description": "Wright’s goalscoring prowess helped Arsenal to domestic cup successes and laid foundations for later dominance.",
+      "qr_code_url": "https://en.wikipedia.org/wiki/Ian_Wright",
+      "position": "Striker",
+      "teams": [
+        {"club": "Arsenal", "appearances": 221, "goals": 128}
+      ]
+    },
+    {
+      "name": "Roy Keane",
+      "born": "1971-08-10",
+      "died": null,
+      "short_description": "Hard-tackling Manchester United captain.",
+      "extended_description": "Keane embodied Manchester United’s fighting spirit, captaining them through one of their most dominant eras under Sir Alex Ferguson.",
+      "qr_code_url": "https://en.wikipedia.org/wiki/Roy_Keane",
+      "position": "Midfielder",
+      "teams": [
+        {"club": "Manchester United", "appearances": 326, "goals": 33}
+      ]
+    },
+    {
+      "name": "Fernando Torres",
+      "born": "1984-03-20",
+      "died": null,
+      "short_description": "Spanish striker who starred at Liverpool.",
+      "extended_description": "Torres dazzled fans with his finishing and movement at Liverpool, before winning major trophies with Chelsea later.",
+      "qr_code_url": "https://en.wikipedia.org/wiki/Fernando_Torres",
+      "position": "Striker",
+      "teams": [
+        {"club": "Liverpool", "appearances": 102, "goals": 65},
+        {"club": "Chelsea", "appearances": 110, "goals": 20}
+      ]
+    },
+    {
+      "name": "Michael Owen",
+      "born": "1979-12-14",
+      "died": null,
+      "short_description": "Liverpool wonderkid and Ballon d'Or winner.",
+      "extended_description": "Owen burst onto the scene with blistering pace and clinical finishing, winning the Ballon d'Or in 2001.",
+      "qr_code_url": "https://en.wikipedia.org/wiki/Michael_Owen",
+      "position": "Striker",
+      "teams": [
+        {"club": "Liverpool", "appearances": 216, "goals": 118},
+        {"club": "Manchester United", "appearances": 31, "goals": 5}
+      ]
+    },
+    {
+      "name": "Nemanja Vidić",
+      "born": "1981-10-21",
+      "died": null,
+      "short_description": "Serbian rock at the heart of Manchester United's defense.",
+      "extended_description": "Vidić was a no-nonsense defender known for his aerial ability and leadership, captaining Manchester United to multiple Premier League titles.",
+      "qr_code_url": "https://en.wikipedia.org/wiki/Nemanja_Vidi%C4%87",
+      "position": "Defender",
+      "teams": [
+        {"club": "Manchester United", "appearances": 211, "goals": 15}
+      ]
+    },
+    {
+      "name": "Cesc Fàbregas",
+      "born": "1987-05-04",
+      "died": null,
+      "short_description": "Spanish playmaker for Arsenal and Chelsea.",
+      "extended_description": "Fàbregas was known for his passing range, vision, and creativity, captaining Arsenal and later winning titles with Chelsea.",
+      "qr_code_url": "https://en.wikipedia.org/wiki/Cesc_F%C3%A0bregas",
+      "position": "Midfielder",
+      "teams": [
+        {"club": "Arsenal", "appearances": 212, "goals": 35},
+        {"club": "Chelsea", "appearances": 138, "goals": 15}
+      ]
+    },
+    {
+      "name": "Ashley Cole",
+      "born": "1980-12-20",
+      "died": null,
+      "short_description": "One of the best left-backs in Premier League history.",
+      "extended_description": "Cole starred for both Arsenal and Chelsea, winning multiple league titles and being known for his defensive prowess and overlapping runs.",
+      "qr_code_url": "https://en.wikipedia.org/wiki/Ashley_Cole",
+      "position": "Defender",
+      "teams": [
+        {"club": "Arsenal", "appearances": 156, "goals": 8},
+        {"club": "Chelsea", "appearances": 229, "goals": 7}
+      ]
+    },
+    {
+      "name": "Jamie Carragher",
+      "born": "1978-01-28",
+      "died": null,
+      "short_description": "Liverpool's defensive stalwart for over a decade.",
+      "extended_description": "Carragher was a one-club man at Liverpool, known for his consistency, leadership, and commitment on the field.",
+      "qr_code_url": "https://en.wikipedia.org/wiki/Jamie_Carragher",
+      "position": "Defender",
+      "teams": [
+        {"club": "Liverpool", "appearances": 508, "goals": 3}
+      ]
+    },
+    {
+      "name": "Robin van Persie",
+      "born": "1983-08-06",
+      "died": null,
+      "short_description": "Dutch striker who shined for Arsenal and Manchester United.",
+      "extended_description": "Van Persie was a prolific goalscorer who won the Premier League Golden Boot and later led Manchester United to a title under Sir Alex Ferguson.",
+      "qr_code_url": "https://en.wikipedia.org/wiki/Robin_van_Persie",
+      "position": "Striker",
+      "teams": [
+        {"club": "Arsenal", "appearances": 194, "goals": 96},
+        {"club": "Manchester United", "appearances": 86, "goals": 48}
+      ]
+    },
+    {
+      "name": "David Beckham",
+      "born": "1975-05-02",
+      "died": null,
+      "short_description": "Global superstar and Manchester United winger.",
+      "extended_description": "Beckham became world-famous for his pinpoint crossing, free kicks, and huge contributions to Manchester United's treble-winning season in 1999.",
+      "qr_code_url": "https://en.wikipedia.org/wiki/David_Beckham",
+      "position": "Winger",
+      "teams": [
+        {"club": "Manchester United", "appearances": 265, "goals": 62}
+      ]
+    },
+    {
+      "name": "Robert Pirès",
+      "born": "1973-10-29",
+      "died": null,
+      "short_description": "French winger and part of Arsenal's Invincibles.",
+      "extended_description": "Pirès was known for his creativity and goal-scoring ability, playing a vital role in Arsenal's unbeaten 2003–04 season.",
+      "qr_code_url": "https://en.wikipedia.org/wiki/Robert_Pir%C3%A8s",
+      "position": "Winger",
+      "teams": [
+        {"club": "Arsenal", "appearances": 189, "goals": 62}
+      ]
+    },
+    {
+      "name": "Gary Neville",
+      "born": "1975-02-18",
+      "died": null,
+      "short_description": "Right-back and Manchester United captain.",
+      "extended_description": "Neville was a consistent and reliable full-back who helped United to numerous trophies across his long career.",
+      "qr_code_url": "https://en.wikipedia.org/wiki/Gary_Neville",
+      "position": "Defender",
+      "teams": [
+        {"club": "Manchester United", "appearances": 400, "goals": 5}
+      ]
+    },
+    {
+      "name": "Claude Makélélé",
+      "born": "1973-02-18",
+      "died": null,
+      "short_description": "French midfielder who defined the 'defensive midfielder' role.",
+      "extended_description": "Makélélé was essential to Chelsea's rise in the mid-2000s, shielding the defense with incredible positioning and tackling.",
+      "qr_code_url": "https://en.wikipedia.org/wiki/Claude_Mak%C3%A9l%C3%A9l%C3%A9",
+      "position": "Midfielder",
+      "teams": [
+        {"club": "Chelsea", "appearances": 144, "goals": 2}
+      ]
+    },
+    {
+      "name": "Michael Essien",
+      "born": "1982-12-03",
+      "died": null,
+      "short_description": "Powerful Ghanaian midfielder for Chelsea.",
+      "extended_description": "Essien was renowned for his energy, defensive ability, and powerful shots, helping Chelsea win multiple trophies.",
+      "qr_code_url": "https://en.wikipedia.org/wiki/Michael_Essien",
+      "position": "Midfielder",
+      "teams": [
+        {"club": "Chelsea", "appearances": 168, "goals": 17}
+      ]
+    },
+    {
+      "name": "Teddy Sheringham",
+      "born": "1966-04-02",
+      "died": null,
+      "short_description": "Veteran forward who starred for Tottenham and Manchester United.",
+      "extended_description": "Sheringham was key to United's 1999 treble win, providing experience, goals, and intelligent link-up play.",
+      "qr_code_url": "https://en.wikipedia.org/wiki/Teddy_Sheringham",
+      "position": "Striker",
+      "teams": [
+        {"club": "Tottenham Hotspur", "appearances": 236, "goals": 98},
+        {"club": "Manchester United", "appearances": 104, "goals": 31}
+      ]
+    },
+    {
+      "name": "Branislav Ivanović",
+      "born": "1984-02-22",
+      "died": null,
+      "short_description": "Serbian defender and Chelsea fan favorite.",
+      "extended_description": "Ivanović was known for his strength, aerial ability, and knack for scoring important goals, winning multiple trophies with Chelsea.",
+      "qr_code_url": "https://en.wikipedia.org/wiki/Branislav_Ivanovi%C4%87",
+      "position": "Defender",
+      "teams": [
+        {"club": "Chelsea", "appearances": 261, "goals": 22}
+      ]
+    },
+    {
+      "name": "Freddie Ljungberg",
+      "born": "1977-04-16",
+      "died": null,
+      "short_description": "Swedish winger and Arsenal Invincible.",
+      "extended_description": "Ljungberg was known for his energetic runs, important goals, and crucial role in Arsenal's success under Arsène Wenger.",
+      "qr_code_url": "https://en.wikipedia.org/wiki/Freddie_Ljungberg",
+      "position": "Winger",
+      "teams": [
+        {"club": "Arsenal", "appearances": 216, "goals": 46}
+      ]
+    },
+    {
+      "name": "Edwin van der Sar",
+      "born": "1970-10-29",
+      "died": null,
+      "short_description": "Dutch goalkeeper and Manchester United wall.",
+      "extended_description": "Van der Sar was key to United's success in the late 2000s, winning multiple league titles and a Champions League title in 2008.",
+      "qr_code_url": "https://en.wikipedia.org/wiki/Edwin_van_der_Sar",
+      "position": "Goalkeeper",
+      "teams": [
+        {"club": "Manchester United", "appearances": 186, "goals": 0}
+      ]
+    }
+  ]
+    
