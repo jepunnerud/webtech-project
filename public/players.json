@@ -1,0 +1,411 @@
+[
+    {
+      "name": "Didier Drogba",
+      "id": 1,
+      "born": "1978-03-11",
+      "died": null,
+      "short_easy_description": "Didier Drogba was a strong striker for Chelsea, famous for scoring in big games.",
+      "short_medium_description": "Chelsea's Didier Drogba was known for his physical power, clutch goals, and heroics in finals.",
+      "short_advanced_description": "Didier Drogba combined imposing physicality with clinical finishing, cementing his legacy through decisive performances in Chelsea’s most critical matches.",
+      "extended_easy_description": "Didier Drogba was a striker for Chelsea who often scored important goals, especially in finals. He was strong, fast, and very good at heading the ball. Fans loved him for helping Chelsea win their first Champions League title.",
+      "extended_medium_description": "One of Chelsea’s most iconic figures, Didier Drogba was renowned for his strength, finishing ability, and knack for scoring in decisive matches. His performances in cup finals, particularly the 2012 Champions League final, elevated his reputation to legendary status among Chelsea supporters.",
+      "extended_advanced_description": "An emblem of determination and athletic excellence, Didier Drogba’s Chelsea tenure was marked by a remarkable ability to influence high-stakes encounters. His aerial dominance, positional awareness, and psychological resilience made him one of the most feared strikers of his era.",
+      "long_description_url": "https://en.wikipedia.org/wiki/Didier_Drogba",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Didier_Drogba_2016.jpg",
+      "position": "Striker",
+      "teams": [
+        {"club": "Le Mans", "appearances": 64, "goals": 12},
+        {"club": "Guingamp", "appearances": 45, "goals": 20},
+        {"club": "Marseille", "appearances": 35, "goals": 19},
+        {"club": "Chelsea", "appearances": 254, "goals": 104},
+        {"club": "Galatasaray", "appearances": 37, "goals": 15}
+      ]
+    },
+    {
+      "name": "John Terry",
+      "id": 2,
+      "born": "1980-12-07",
+      "died": null,
+      "short_easy_description": "John Terry was a tough defender and leader for Chelsea for many years.",
+      "short_medium_description": "Chelsea captain John Terry was famous for his tough defending, leadership, and loyalty to the club.",
+      "short_advanced_description": "John Terry, Chelsea's stalwart center-back, showcased impeccable defensive timing, aerial prowess, and commanding leadership over a storied career.",
+      "extended_easy_description": "John Terry played as a defender for Chelsea. He was very strong in tackles and headers and helped his team by being a leader. He stayed at Chelsea for most of his career and won many trophies with them.",
+      "extended_medium_description": "As one of Chelsea’s greatest captains, John Terry embodied resilience and consistency. A dominant figure in defense, Terry’s tackling, aerial strength, and organizational abilities contributed significantly to Chelsea’s golden era, winning multiple Premier League and European honors.",
+      "extended_advanced_description": "Throughout his illustrious career, John Terry demonstrated a rare combination of positional intelligence, physical robustness, and an unrelenting competitive spirit. His enduring leadership anchored Chelsea's backline through periods of immense success both domestically and internationally.",
+      "long_description_url": "https://en.wikipedia.org/wiki/John_Terry",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/John_Terry_Chelsea.jpg",
+      "position": "Defender",
+      "teams": [
+        {"club": "Chelsea", "appearances": 492, "goals": 41},
+        {"club": "Aston Villa", "appearances": 32, "goals": 1}
+      ]
+    },
+    {
+      "name": "Petr Čech",
+      "id": 3,
+      "born": "1982-05-20",
+      "died": null,
+      "short_easy_description": "Petr Čech was a goalkeeper for Chelsea, known for his amazing saves.",
+      "short_medium_description": "Petr Čech, Chelsea's legendary goalkeeper, set records with his clean sheets and heroic saves.",
+      "short_advanced_description": "Petr Čech, a model of consistency and excellence, redefined goalkeeping standards at Chelsea through unparalleled reflexes and commanding presence.",
+      "extended_easy_description": "Petr Čech was the goalkeeper for Chelsea for many years. He was known for making great saves and keeping lots of clean sheets. He helped Chelsea win many trophies, including the Champions League.",
+      "extended_medium_description": "Regarded as one of the Premier League’s greatest goalkeepers, Petr Čech’s time at Chelsea was marked by exceptional shot-stopping, leadership from the back, and incredible consistency. His record for most clean sheets in a season still stands.",
+      "extended_advanced_description": "A paragon of goalkeeping excellence, Petr Čech's composure, athleticism, and tactical anticipation fortified Chelsea’s defense during a transformative era. His influence extended beyond remarkable clean sheet records, shaping defensive stability with assured authority.",
+      "long_description_url": "https://en.wikipedia.org/wiki/Petr_%C4%8Cech",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Petr_%C4%8Cech_Chelsea.jpg",
+      "position": "Goalkeeper",
+      "teams": [
+        {"club": "Sparta Prague", "appearances": 27, "goals": 0},
+        {"club": "Rennes", "appearances": 70, "goals": 0},
+        {"club": "Chelsea", "appearances": 333, "goals": 0},
+        {"club": "Arsenal", "appearances": 110, "goals": 0}
+      ]
+    },
+    {
+      "name": "Jamie Carragher",
+      "id": 4,
+      "born": "1978-01-28",
+      "died": null,
+      "short_easy_description": "Jamie Carragher was a loyal defender who spent his whole career at Liverpool.",
+      "short_medium_description": "Jamie Carragher, Liverpool's defensive rock, was admired for his loyalty, bravery, and tactical sense.",
+      "short_advanced_description": "Jamie Carragher epitomized defensive resilience and loyalty, anchoring Liverpool's backline with acute positional awareness and relentless tenacity.",
+      "extended_easy_description": "Jamie Carragher spent his entire football career at Liverpool. He played as a defender and was known for his strong tackles and passion. He was a true leader and helped Liverpool win important trophies.",
+      "extended_medium_description": "Jamie Carragher's Liverpool career was defined by unwavering commitment and defensive solidity. His versatility, tactical intelligence, and readiness to sacrifice for the team made him a crucial part of Liverpool’s successes, including the unforgettable 2005 Champions League victory.",
+      "extended_advanced_description": "An embodiment of unwavering fidelity and tactical intelligence, Jamie Carragher’s defensive acumen and positional discipline rendered him indispensable for Liverpool across an illustrious career hallmarked by European and domestic triumphs.",
+      "long_description_url": "https://en.wikipedia.org/wiki/Jamie_Carragher",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Jamie_Carragher_2011.jpg",
+      "position": "Defender",
+      "teams": [
+        {"club": "Liverpool", "appearances": 508, "goals": 3}
+      ]
+    },
+    {
+      "name": "Robbie Fowler",
+      "id": 5,
+      "born": "1975-04-09",
+      "died": null,
+      "short_easy_description": "Robbie Fowler was a striker for Liverpool, famous for scoring lots of goals.",
+      "short_medium_description": "Robbie Fowler, known as 'God' by Liverpool fans, was famed for his sharp finishing and scoring instincts.",
+      "short_advanced_description": "Robbie Fowler distinguished himself as a clinical marksman, exhibiting preternatural goal-scoring instincts during his illustrious tenure at Liverpool.",
+      "extended_easy_description": "Robbie Fowler played as a striker for Liverpool and scored many goals quickly. He was loved by fans for his finishing skills and was one of the best young players of his time.",
+      "extended_medium_description": "Nicknamed 'God' by Liverpool supporters, Robbie Fowler’s reputation was built on his lethal finishing and natural scoring prowess. Fowler remains one of the fastest players to reach 100 Premier League goals, earning iconic status at Anfield.",
+      "extended_advanced_description": "A predatory forward of exceptional instinct and technical execution, Robbie Fowler’s Liverpool career was punctuated by a remarkable rate of goal accumulation, cementing his place among the pantheon of Anfield legends.",
+      "long_description_url": "https://en.wikipedia.org/wiki/Robbie_Fowler",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Robbie_Fowler_2012.jpg",
+      "position": "Striker",
+      "teams": [
+        {"club": "Liverpool", "appearances": 236, "goals": 120},
+        {"club": "Leeds United", "appearances": 30, "goals": 14},
+        {"club": "Manchester City", "appearances": 80, "goals": 20}
+      ]
+    },
+    {
+      "name": "Kenny Dalglish",
+      "id": 6,
+      "born": "1951-03-04",
+      "died": null,
+      "short_easy_description": "Kenny Dalglish was a great striker and manager for Liverpool.",
+      "short_medium_description": "Kenny Dalglish, Liverpool legend, shined as a clinical forward and successful manager.",
+      "short_advanced_description": "Kenny Dalglish blended visionary attacking instincts with managerial brilliance, embodying Liverpool’s golden eras both on and off the pitch.",
+      "extended_easy_description": "Kenny Dalglish was a top striker for Liverpool who scored many important goals. Later, he also became the team’s manager and won even more trophies. He is one of the most loved figures at the club.",
+      "extended_medium_description": "Kenny Dalglish enjoyed an extraordinary dual career at Liverpool, first as a prolific forward and later as a trophy-winning manager. His calmness under pressure and footballing intelligence helped Liverpool to dominate English football in the 1970s and 1980s.",
+      "extended_advanced_description": "Kenny Dalglish’s illustrious tenure at Liverpool spanned unparalleled achievements as both a clinical forward and visionary manager. His deft technical ability, tactical sophistication, and leadership catalyzed Liverpool’s enduring dominance during their most successful epochs.",
+      "long_description_url": "https://en.wikipedia.org/wiki/Kenny_Dalglish",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Kenny_Dalglish_Liverpool.jpg",
+      "position": "Forward",
+      "teams": [
+        {"club": "Celtic", "appearances": 204, "goals": 112},
+        {"club": "Liverpool", "appearances": 355, "goals": 118}
+      ]
+    },
+    {
+      "name": "Thierry Henry",
+      "id": 7,
+      "born": "1977-08-17",
+      "died": null,
+      "short_easy_description": "Thierry Henry was a fast striker for Arsenal who scored many goals.",
+      "short_medium_description": "Thierry Henry, Arsenal’s star forward, dazzled fans with his speed, flair, and goal-scoring genius.",
+      "short_advanced_description": "Thierry Henry redefined the role of the modern forward, combining electrifying pace, technical artistry, and an innate scoring prowess for Arsenal.",
+      "extended_easy_description": "Thierry Henry played for Arsenal and was known for his incredible speed and amazing goals. Fans loved how easily he could beat defenders and score. He is considered one of Arsenal’s best players ever.",
+      "extended_medium_description": "Thierry Henry became an icon at Arsenal with his breathtaking pace, technical skill, and prolific scoring record. Under Arsène Wenger, Henry helped Arsenal win league titles, including the unforgettable 'Invincibles' season of 2003–04.",
+      "extended_advanced_description": "An emblematic figure in Arsenal’s modern history, Thierry Henry’s fusion of athletic dynamism, technical mastery, and goal-scoring efficiency established him as one of the most sophisticated forwards in football’s annals.",
+      "long_description_url": "https://en.wikipedia.org/wiki/Thierry_Henry",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Thierry_Henry_2015.jpg",
+      "position": "Forward",
+      "teams": [
+        {"club": "Monaco", "appearances": 105, "goals": 20},
+        {"club": "Juventus", "appearances": 16, "goals": 3},
+        {"club": "Arsenal", "appearances": 254, "goals": 174},
+        {"club": "Barcelona", "appearances": 80, "goals": 35},
+        {"club": "New York Red Bulls", "appearances": 122, "goals": 51}
+      ]
+    },
+    {
+      "name": "Dennis Bergkamp",
+      "id": 8,
+      "born": "1969-05-10",
+      "died": null,
+      "short_easy_description": "Dennis Bergkamp was a creative forward for Arsenal, known for his amazing skill.",
+      "short_medium_description": "Dennis Bergkamp, Arsenal's magician, mesmerized fans with his vision, touch, and composure.",
+      "short_advanced_description": "Dennis Bergkamp elevated the art of forward play at Arsenal, coupling sublime technical precision with unrivaled creativity and tactical vision.",
+      "extended_easy_description": "Dennis Bergkamp played for Arsenal as a forward. He was famous for his clever moves, beautiful goals, and great passing. He helped Arsenal win many trophies and amazed fans with his skill.",
+      "extended_medium_description": "A master technician, Dennis Bergkamp’s calmness, elegant control, and eye for a killer pass defined his Arsenal career. As a creative fulcrum, he was crucial to the club’s Premier League and FA Cup triumphs during the late 1990s and early 2000s.",
+      "extended_advanced_description": "Dennis Bergkamp’s Arsenal tenure encapsulated footballing artistry, distinguished by his balletic touch, spatial intelligence, and poetic orchestration of play, leaving an indelible imprint on English football's aesthetic evolution.",
+      "long_description_url": "https://en.wikipedia.org/wiki/Dennis_Bergkamp",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Dennis_Bergkamp_Arsenal.jpg",
+      "position": "Forward",
+      "teams": [
+        {"club": "Ajax", "appearances": 185, "goals": 103},
+        {"club": "Inter Milan", "appearances": 52, "goals": 11},
+        {"club": "Arsenal", "appearances": 315, "goals": 87}
+      ]
+    },
+    {
+      "name": "Patrick Vieira",
+      "id": 9,
+      "born": "1976-06-23",
+      "died": null,
+      "short_easy_description": "Patrick Vieira was a strong and skillful midfielder for Arsenal.",
+      "short_medium_description": "Patrick Vieira, Arsenal’s midfield general, mixed strength, skill, and leadership on the field.",
+      "short_advanced_description": "Patrick Vieira’s dynamic blend of physical dominance, technical quality, and authoritative leadership defined Arsenal’s midfield supremacy during his era.",
+      "extended_easy_description": "Patrick Vieira played as a midfielder for Arsenal. He was strong, good at tackling, and could pass and score goals too. He captained Arsenal and helped them win many titles.",
+      "extended_medium_description": "Patrick Vieira’s Arsenal legacy rests on his commanding midfield displays that combined physical power, sharp passing, and steely leadership. He captained the legendary 'Invincibles' team to Premier League glory without a single defeat.",
+      "extended_advanced_description": "Patrick Vieira’s ascendancy at Arsenal was characterized by his synthesis of athleticism, technical finesse, and indomitable will, forging a midfield archetype emblematic of the club’s golden era under Arsène Wenger.",
+      "long_description_url": "https://en.wikipedia.org/wiki/Patrick_Vieira",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Patrick_Vieira_Arsenal.jpg",
+      "position": "Midfielder",
+      "teams": [
+        {"club": "AC Milan", "appearances": 2, "goals": 0},
+        {"club": "Arsenal", "appearances": 279, "goals": 29},
+        {"club": "Juventus", "appearances": 31, "goals": 5},
+        {"club": "Inter Milan", "appearances": 67, "goals": 6},
+        {"club": "Manchester City", "appearances": 28, "goals": 3}
+      ]
+    },
+    {
+      "name": "Tony Adams",
+      "id": 10,
+      "born": "1966-10-10",
+      "died": null,
+      "short_easy_description": "Tony Adams was a tough and loyal defender for Arsenal.",
+      "short_medium_description": "Tony Adams, Arsenal’s rock at the back, symbolized leadership, resilience, and loyalty.",
+      "short_advanced_description": "Tony Adams epitomized defensive mastery and unwavering allegiance, commanding Arsenal’s rearguard through a period of sustained domestic dominance.",
+      "extended_easy_description": "Tony Adams played his whole career for Arsenal as a defender. He was very brave, good at tackling, and led the team to many victories. Fans respected him for his loyalty and leadership.",
+      "extended_medium_description": "Tony Adams’ legendary Arsenal career was marked by unwavering loyalty, immense defensive prowess, and inspirational leadership. As captain, he guided Arsenal through successful eras under George Graham and Arsène Wenger.",
+      "extended_advanced_description": "A paragon of leadership and defensive organization, Tony Adams’ Arsenal legacy was etched through his resilience, aerial command, and an unshakeable sense of duty, steering the club through transformative epochs in English football.",
+      "long_description_url": "https://en.wikipedia.org/wiki/Tony_Adams",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/88/Tony_Adams_Arsenal.jpg",
+      "position": "Defender",
+      "teams": [
+        {"club": "Arsenal", "appearances": 504, "goals": 32}
+      ]
+    },
+    {
+      "name": "Robert Pirès",
+      "id": 11,
+      "born": "1973-10-29",
+      "died": null,
+      "short_easy_description": "Robert Pirès was a smart and skillful winger for Arsenal.",
+      "short_medium_description": "Robert Pirès, Arsenal’s elegant winger, enchanted fans with his flair and creativity.",
+      "short_advanced_description": "Robert Pirès infused Arsenal’s wing play with technical artistry, tactical intelligence, and a penchant for decisive contributions.",
+      "extended_easy_description": "Robert Pirès played on the wing for Arsenal. He was quick, clever, and loved making assists and scoring goals. He helped Arsenal win many matches and titles with his smart plays.",
+      "extended_medium_description": "Robert Pirès became a fan favorite at Arsenal for his graceful style, impeccable ball control, and goal-scoring knack. His partnership with Henry, Bergkamp, and Vieira was key to Arsenal’s successes in the early 2000s.",
+      "extended_advanced_description": "A luminary of Arsène Wenger’s attacking philosophy, Robert Pirès combined balletic movement with incisive creativity, crafting an indelible legacy during Arsenal’s most resplendent period.",
+      "long_description_url": "https://en.wikipedia.org/wiki/Robert_Pir%C3%A8s",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Robert_Pires.jpg",
+      "position": "Winger",
+      "teams": [
+        {"club": "Metz", "appearances": 162, "goals": 43},
+        {"club": "Marseille", "appearances": 66, "goals": 8},
+        {"club": "Arsenal", "appearances": 189, "goals": 62},
+        {"club": "Villarreal", "appearances": 103, "goals": 13},
+        {"club": "Aston Villa", "appearances": 9, "goals": 0}
+      ]
+    },
+    {
+      "name": "Ryan Giggs",
+      "id": 12,
+      "born": "1973-11-29",
+      "died": null,
+      "short_easy_description": "Ryan Giggs was a fast and skillful winger for Manchester United.",
+      "short_medium_description": "Ryan Giggs, Manchester United’s record appearance holder, dazzled with his dribbling and longevity.",
+      "short_advanced_description": "Ryan Giggs fused dazzling wing play with remarkable consistency, becoming a cornerstone of Manchester United’s modern dynasty.",
+      "extended_easy_description": "Ryan Giggs played his whole career at Manchester United. He was quick, good at dribbling, and scored many important goals. He helped the team win many trophies.",
+      "extended_medium_description": "One of the Premier League’s enduring icons, Ryan Giggs mesmerized audiences with his pace, balance, and creativity. His contributions were vital to Manchester United’s domestic and European success under Sir Alex Ferguson.",
+      "extended_advanced_description": "An embodiment of adaptability and sustained excellence, Ryan Giggs’ career illuminated Manchester United’s ascent, characterized by his mesmerizing dribbling, vision, and tactical evolution across two decades.",
+      "long_description_url": "https://en.wikipedia.org/wiki/Ryan_Giggs",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Ryan_Giggs_2012.jpg",
+      "position": "Winger",
+      "teams": [
+        {"club": "Manchester United", "appearances": 672, "goals": 114}
+      ]
+    },
+    {
+      "name": "Paul Scholes",
+      "id": 13,
+      "born": "1974-11-16",
+      "died": null,
+      "short_easy_description": "Paul Scholes was a smart midfielder for Manchester United, known for passing and shooting.",
+      "short_medium_description": "Paul Scholes, Manchester United’s midfield maestro, was famed for his passing range and goal-scoring.",
+      "short_advanced_description": "Paul Scholes orchestrated play with surgical precision, embodying Manchester United’s midfield heartbeat through sublime technique and vision.",
+      "extended_easy_description": "Paul Scholes played in midfield for Manchester United. He was very good at passing, shooting from distance, and controlling the game. Fans and players admired him for his skill.",
+      "extended_medium_description": "Renowned for his brilliant vision, exceptional technique, and thunderous shooting, Paul Scholes became one of Manchester United’s greatest midfielders. He was instrumental in numerous league and European triumphs.",
+      "extended_advanced_description": "Paul Scholes’ mastery of midfield dynamics, encompassing intricate passing patterns and incisive long-range shooting, established him as a paragon of technical excellence within Manchester United’s golden generation.",
+      "long_description_url": "https://en.wikipedia.org/wiki/Paul_Scholes",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Paul_Scholes_Manchester_United.jpg",
+      "position": "Midfielder",
+      "teams": [
+        {"club": "Manchester United", "appearances": 499, "goals": 107}
+      ]
+    },
+    {
+      "name": "Eric Cantona",
+      "id": 14,
+      "born": "1966-05-24",
+      "died": null,
+      "short_easy_description": "Eric Cantona was a talented and confident striker for Manchester United.",
+      "short_medium_description": "Eric Cantona, Manchester United’s enigmatic talisman, was revered for his flair and influence.",
+      "short_advanced_description": "Eric Cantona’s blend of audacity, creativity, and leadership invigorated Manchester United’s revival under Sir Alex Ferguson.",
+      "extended_easy_description": "Eric Cantona played as a striker for Manchester United. He was known for his style, skills, and scoring important goals. He helped United win many trophies.",
+      "extended_medium_description": "Cantona’s arrival at Manchester United heralded a new era of dominance. With his charisma, inventiveness, and decisive goals, Cantona became a symbol of United’s resurgence in the early Premier League years.",
+      "extended_advanced_description": "Eric Cantona’s tenure at Manchester United epitomized audacious brilliance; his magnetic presence, creative ingenuity, and penchant for pivotal goals galvanized a resurgent Red Devils dynasty.",
+      "long_description_url": "https://en.wikipedia.org/wiki/Eric_Cantona",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Eric_Cantona_2011.jpg",
+      "position": "Forward",
+      "teams": [
+        {"club": "Auxerre", "appearances": 82, "goals": 23},
+        {"club": "Marseille", "appearances": 40, "goals": 13},
+        {"club": "Leeds United", "appearances": 28, "goals": 9},
+        {"club": "Manchester United", "appearances": 143, "goals": 64}
+      ]
+    },
+    {
+      "name": "Roy Keane",
+      "id": 15,
+      "born": "1971-08-10",
+      "died": null,
+      "short_easy_description": "Roy Keane was a tough midfielder and captain for Manchester United.",
+      "short_medium_description": "Roy Keane, Manchester United’s fierce leader, commanded midfield battles with passion and grit.",
+      "short_advanced_description": "Roy Keane’s indomitable spirit, tactical sharpness, and relentless drive forged Manchester United’s competitive edge during their prime.",
+      "extended_easy_description": "Roy Keane played midfield for Manchester United. He was known for his tough tackling, leadership, and winning mentality. He captained the team to many trophies.",
+      "extended_medium_description": "Roy Keane’s formidable presence in Manchester United’s midfield anchored their most successful years. His relentless competitiveness and leadership were vital in securing domestic and European silverware.",
+      "extended_advanced_description": "An embodiment of relentless intensity and uncompromising leadership, Roy Keane’s stewardship of Manchester United’s midfield lines typified the ferocity underpinning their dynastic dominance.",
+      "long_description_url": "https://en.wikipedia.org/wiki/Roy_Keane",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Roy_Keane_2013.jpg",
+      "position": "Midfielder",
+      "teams": [
+        {"club": "Nottingham Forest", "appearances": 114, "goals": 22},
+        {"club": "Manchester United", "appearances": 326, "goals": 33},
+        {"club": "Celtic", "appearances": 10, "goals": 1}
+      ]
+    },
+    {
+      "name": "Wayne Rooney",
+      "id": 16,
+      "born": "1985-10-24",
+      "died": null,
+      "short_easy_description": "Wayne Rooney was a strong and skillful striker for Manchester United.",
+      "short_medium_description": "Wayne Rooney, Manchester United’s record scorer, combined strength, skill, and passion.",
+      "short_advanced_description": "Wayne Rooney’s explosive athleticism, technical acumen, and relentless drive epitomized Manchester United’s modern offensive ethos.",
+      "extended_easy_description": "Wayne Rooney played as a striker for Manchester United. He was fast, strong, and good at scoring goals. He helped the team win many important trophies and set scoring records.",
+      "extended_medium_description": "Wayne Rooney’s Manchester United career was marked by extraordinary versatility, powerful finishing, and fierce competitiveness. As United’s all-time leading scorer, he played pivotal roles in their domestic and European triumphs.",
+      "extended_advanced_description": "Wayne Rooney’s dynamic adaptability, relentless intensity, and instinctive brilliance rendered him a linchpin in Manchester United’s sustained success across multiple eras, cementing his status as a club icon.",
+      "long_description_url": "https://en.wikipedia.org/wiki/Wayne_Rooney",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Wayne_Rooney_2016.jpg",
+      "position": "Forward",
+      "teams": [
+        {"club": "Everton", "appearances": 77, "goals": 15},
+        {"club": "Manchester United", "appearances": 393, "goals": 183},
+        {"club": "Everton (second spell)", "appearances": 31, "goals": 10},
+        {"club": "D.C. United", "appearances": 48, "goals": 23}
+      ]
+    },
+    {
+      "name": "Sergio Agüero",
+      "id": 17,
+      "born": "1988-06-02",
+      "died": null,
+      "short_easy_description": "Sergio Agüero was a top striker for Manchester City, famous for scoring big goals.",
+      "short_medium_description": "Sergio Agüero, Manchester City’s talisman, was renowned for his clinical finishing and historic goals.",
+      "short_advanced_description": "Sergio Agüero epitomized lethal efficiency and composure, elevating Manchester City’s attacking prowess to historic heights.",
+      "extended_easy_description": "Sergio Agüero was a striker for Manchester City. He scored lots of goals and helped the team win the Premier League. His most famous goal gave City their first title in many years.",
+      "extended_medium_description": "Sergio Agüero’s relentless consistency and knack for pivotal goals defined Manchester City’s rise to Premier League dominance. His last-minute 2012 title-winning goal remains one of football’s most iconic moments.",
+      "extended_advanced_description": "Sergio Agüero’s amalgamation of spatial intelligence, technical precision, and poise under pressure rendered him a catalytic force in Manchester City’s ascendancy, punctuated by epoch-defining moments.",
+      "long_description_url": "https://en.wikipedia.org/wiki/Sergio_Ag%C3%BCero",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Sergio_Ag%C3%BCero_2019.jpg",
+      "position": "Striker",
+      "teams": [
+        {"club": "Independiente", "appearances": 54, "goals": 23},
+        {"club": "Atlético Madrid", "appearances": 175, "goals": 74},
+        {"club": "Manchester City", "appearances": 275, "goals": 184},
+        {"club": "Barcelona", "appearances": 4, "goals": 1}
+      ]
+    },
+    {
+      "name": "Vincent Kompany",
+      "id": 18,
+      "born": "1986-04-10",
+      "died": null,
+      "short_easy_description": "Vincent Kompany was a strong defender and captain for Manchester City.",
+      "short_medium_description": "Vincent Kompany, Manchester City’s leader, anchored the defense with strength and wisdom.",
+      "short_advanced_description": "Vincent Kompany’s imperious presence, tactical foresight, and inspirational leadership fortified Manchester City’s golden era.",
+      "extended_easy_description": "Vincent Kompany played as a defender and captain for Manchester City. He was very strong and smart on the field. He helped City win many trophies, leading the defense.",
+      "extended_medium_description": "Vincent Kompany’s commanding performances and leadership from the back were pivotal to Manchester City’s transformation into serial winners. His crucial goals and defensive solidity cemented his legendary status.",
+      "extended_advanced_description": "Vincent Kompany’s profound influence on Manchester City stemmed from his commanding defensive acumen, inspirational leadership, and indelible contributions at critical junctures, shaping an enduring legacy.",
+      "long_description_url": "https://en.wikipedia.org/wiki/Vincent_Kompany",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Vincent_Kompany_2019.jpg",
+      "position": "Defender",
+      "teams": [
+        {"club": "Anderlecht", "appearances": 73, "goals": 5},
+        {"club": "Hamburg", "appearances": 29, "goals": 1},
+        {"club": "Manchester City", "appearances": 265, "goals": 18},
+        {"club": "Anderlecht (second spell)", "appearances": 15, "goals": 0}
+      ]
+    },
+        {
+          "name": "Peter Schmeichel",
+          "born": "1963-11-18",
+          "died": null,
+          "short_easy_description": "Peter Schmeichel was Manchester United’s goalkeeper, famous for amazing saves.",
+          "short_medium_description": "Peter Schmeichel, Manchester United’s towering goalkeeper, was key to their 1999 treble triumph.",
+          "short_advanced_description": "Peter Schmeichel’s imposing presence, shot-stopping heroics, and commanding leadership underpinned Manchester United’s dominance in the 1990s.",
+          "extended_easy_description": "Peter Schmeichel was Manchester United’s goalkeeper during their best years. He made incredible saves and helped his team win many trophies, including the famous treble.",
+          "extended_medium_description": "One of the finest goalkeepers in football history, Peter Schmeichel’s colossal frame, quick reflexes, and leadership helped Manchester United win countless honors, including the 1999 treble.",
+          "extended_advanced_description": "Peter Schmeichel’s gravitational influence in goal combined towering physicality, reflexive brilliance, and leadership, culminating in Manchester United’s most decorated campaigns, particularly the historic 1998–99 treble season.",
+          "long_description_url": "https://en.wikipedia.org/wiki/Peter_Schmeichel",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Peter_Schmeichel_Manchester_United.jpg",
+          "position": "Goalkeeper",
+          "teams": [
+            {"club": "Brøndby", "appearances": 119, "goals": 0},
+            {"club": "Manchester United", "appearances": 292, "goals": 1},
+            {"club": "Sporting CP", "appearances": 55, "goals": 0},
+            {"club": "Aston Villa", "appearances": 29, "goals": 1},
+            {"club": "Manchester City", "appearances": 31, "goals": 0}
+          ]
+        },
+        {
+          "name": "Ruud van Nistelrooy",
+          "born": "1976-07-01",
+          "died": null,
+          "short_easy_description": "Ruud van Nistelrooy was a great goal scorer for Manchester United.",
+          "short_medium_description": "Ruud van Nistelrooy, Manchester United’s lethal striker, was known for his sharp finishing.",
+          "short_advanced_description": "Ruud van Nistelrooy’s clinical instincts, positional excellence, and prolific scoring redefined striker efficiency at Manchester United.",
+          "extended_easy_description": "Ruud van Nistelrooy played as a striker for Manchester United. He was very good at scoring goals from close range. Fans loved his sharp skills in front of the goal.",
+          "extended_medium_description": "Ruud van Nistelrooy’s time at Manchester United was marked by extraordinary consistency and an uncanny knack for scoring goals. His poise and efficiency inside the box made him one of the Premier League’s deadliest finishers.",
+          "extended_advanced_description": "Ruud van Nistelrooy’s exceptional positional awareness, technical precision, and ruthless finishing capacity cemented his status among Manchester United’s elite goal scorers in the early 2000s.",
+          "long_description_url": "https://en.wikipedia.org/wiki/Ruud_van_Nistelrooy",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/92/Ruud_van_Nistelrooy.jpg",
+          "position": "Striker",
+          "teams": [
+            {"club": "PSV Eindhoven", "appearances": 67, "goals": 62},
+            {"club": "Manchester United", "appearances": 150, "goals": 95},
+            {"club": "Real Madrid", "appearances": 68, "goals": 46},
+            {"club": "Hamburg", "appearances": 36, "goals": 12},
+            {"club": "Málaga", "appearances": 28, "goals": 4}
+          ]
+        }
+      ]
+
+
+
+
