@@ -1,39 +1,48 @@
+// src/app/museum/page.tsx
 import styles from "./page.module.css";
 import Image from "next/image";
+import Link from "next/link";
+
+const teams = [
+  { id: "arsenal", name: "Arsenal", logo: "/logos/arsenal.svg", roomNumber: 1 },
+  { id: "chelsea", name: "Chelsea", logo: "/logos/chelsea.png", roomNumber: 2 },
+  { id: "liverpool", name: "Liverpool", logo: "/logos/liverpool.png", roomNumber: 4 },
+  { id: "manchesterunited", name: "Manchester United", logo: "/logos/manchesterunited.png", roomNumber: 3 },
+];
 
 const MuseumPage = () => {
-  const logos = ["/logos/arsenal.svg", "/logos/chelsea.png", "/logos/liverpool.png", "/logos/manchesterunited.png"];
-  const roomNumbers = [1, 2, 4, 3];
   return (
-    <div>
+    <div className={styles.container}>
       <div className={styles.header}>
-        <h1>Interactive museum map</h1>
+        <h1>Football Legends Museum</h1>
+        <p>Click on a team room to explore their legendary players</p>
       </div>
+      
       <div className={styles.grid}>
-        {logos.map((logo, index) => (
-          <div
-            key={index}
-            className={`${styles.box} ${
-              index === 0 ? styles.room1 : index === 1 ? styles.room2 : index === 2 ? styles.room4 : styles.room3
-            }`}
+        {teams.map((team, index) => (
+          <Link 
+            key={team.id}
+            href={`/museum/${team.id}`}
+            className={`${styles.room} ${styles[`room${index + 1}`]}`}
           >
-            <Image
-              src={logo}
-              alt={`Logo ${index + 1}`}
-              style={{
-                width: "auto",
-                height: "70%",
-              }}
-              width={50}
-              height={50}
-            />
-            <div className={styles.text}>
-              <h3>Room {roomNumbers[index]}</h3>
+            <div className={styles.logoContainer}>
+              <Image
+                src={team.logo}
+                alt={`${team.name} logo`}
+                width={120}
+                height={120}
+                className={styles.logo}
+              />
             </div>
-          </div>
+            <div className={styles.roomInfo}>
+              <h3>{team.name}</h3>
+              <span>Room {team.roomNumber}</span>
+            </div>
+          </Link>
         ))}
-        <div className={styles.centerText}>
-          <h3>Entrance/Exit</h3>
+        
+        <div className={styles.entrance}>
+          <h3>Entrance</h3>
         </div>
       </div>
     </div>

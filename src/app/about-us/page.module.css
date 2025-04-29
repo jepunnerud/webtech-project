@@ -1,0 +1,188 @@
+/* 
+Design System Documentation:
+
+Color Palette:
+- Primary: #2563eb (blue-600) - Used for interactive elements and highlights
+- Secondary: #1e293b (slate-800) - Used for text and important elements
+- Background: #f8fafc (slate-50) - Light background for better readability
+- Card: #ffffff - Pure white for cards to create contrast
+- Accent: #e2e8f0 (slate-200) - For subtle borders and separators
+
+Typography:
+- Font Family: System UI stack for maximum compatibility
+- Heading 1: 2.5rem, semi-bold - For main title
+- Heading 2: 1.5rem, semi-bold - For names
+- Body: 1rem, normal - For regular text
+- Detail labels: 0.875rem, medium - For metadata labels
+
+Spacing System:
+- Base unit: 1rem (16px)
+- Small: 0.5rem
+- Medium: 1rem
+- Large: 1.5rem
+- X-Large: 2rem
+
+Effects:
+- Shadows: Subtle shadows for depth (cards)
+- Transitions: Smooth transitions for interactive elements
+- Border radius: Consistent rounded corners (8px)
+
+Layout Principles:
+- Responsive grid with flexible columns
+- Consistent padding and margins
+- Visual hierarchy through typography and spacing
+- Accessibility-focused color contrast
+*/
+
+.container {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background-color: #f8fafc;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+  
+  .subtitle {
+    font-size: 1.125rem;
+    color: #64748b;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+  }
+  
+  .card {
+    background: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    width: 100%;
+    max-width: 320px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  
+  .imageWrapper {
+    width: 160px;
+    height: 160px;
+    margin: 1.5rem auto 1rem;
+    border-radius: 50%;
+    border: 4px solid #e2e8f0;
+    overflow: hidden;
+    transition: border-color 0.2s ease;
+  }
+  
+  .card:hover .imageWrapper {
+    border-color: #2563eb;
+  }
+  
+  .image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .cardContent {
+    padding: 0 1.5rem 1.5rem;
+  }
+  
+  .name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .details {
+    margin: 1.5rem 0;
+  }
+  
+  .detailItem {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 0.9375rem;
+  }
+  
+  .detailItem:last-child {
+    border-bottom: none;
+  }
+  
+  .detailLabel {
+    font-weight: 500;
+    color: #64748b;
+  }
+  
+  .links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f1f5f9;
+    transition: all 0.2s ease;
+  }
+  
+  .link:hover {
+    background-color: #2563eb;
+    transform: scale(1.1);
+  }
+  
+  .link:hover .icon {
+    filter: brightness(0) invert(1);
+  }
+  
+  .icon {
+    transition: filter 0.2s ease;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .container {
+      padding: 1.5rem 1rem;
+    }
+    
+    .title {
+      font-size: 2rem;
+    }
+    
+    .grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .card {
+      max-width: 100%;
+    }
+  }
