@@ -1,308 +1,197 @@
-/* src/app/museum/[team]/[playerId]/page.module.css */
+/* ---------- Design Tokens ---------- */
+:root {
+  --accent: #64b5f6;
+  --radius: 10px;
+  --shadow: 0 6px 18px rgba(0 0 0 / 0.25);
+  --border: 1px solid rgba(255 255 255 / .08);
+}
+
+/* ---------- Layout ---------- */
 .container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 2rem;
-    min-height: 100vh;
-  }
-  
-  .notFound {
-    text-align: center;
-    padding: 2rem;
-    font-size: 1.5rem;
-  }
-  
-  .backButton {
-    display: inline-block;
-    margin-bottom: 2rem;
-    padding: 0.5rem 1rem;
-    background-color: #333;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-  }
-  
-  .backButton:hover {
-    background-color: #555;
-  }
-  
-  .playerHeader {
-    display: flex;
-    gap: 2rem;
-    margin-bottom: 2rem;
-    align-items: flex-start;
-  }
-  
-  .playerImage {
-    position: relative;
-    flex: 0 0 300px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .playerImage img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  
-  .qrCode {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    background: white;
-    padding: 5px;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .qrCode span {
-    font-size: 0.8rem;
-    margin-top: 5px;
-  }
-  
-  .playerBasicInfo {
-    flex: 1;
-  }
-  
-  .playerBasicInfo h1 {
-    font-size: 2.5rem;
-    margin: 0 0 0.5rem 0;
-    color: #333;
-  }
-  
-  .position {
-    font-size: 1.2rem;
-    color: #666;
-    margin: 0 0 0.5rem 0;
-  }
-  
-  .nation {
-    font-size: 1.1rem;
-    font-style: italic;
-    color: #444;
-    margin: 0 0 0.5rem 0;
-  }
-  
-  .born {
-    color: #666;
-    margin: 0;
-  }
-  
-  .descriptionControls {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 1.5rem;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  
-  .buttonGroup {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  
-  .buttonGroup span {
-    font-weight: 500;
-  }
-  
-  .buttonGroup button {
-    padding: 0.5rem 1rem;
-    border: 1px solid #ddd;
-    background: white;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-  
-  .buttonGroup button:hover {
-    background: #f0f0f0;
-  }
-  
-  .buttonGroup button.active {
-    background: #333;
-    color: white;
-    border-color: #333;
-  }
-  
-  .descriptionSection {
-    margin-bottom: 2rem;
-  }
-  
-  .descriptionText {
-    line-height: 1.6;
-    color: #444;
-    font-size: 1.1rem;
-    white-space: pre-line;
-  }
-  
-  .statsSection {
-    margin-bottom: 2rem;
-  }
-  
-  .statsSection h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #333;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #eee;
-  }
-  
-  .statsTable {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .statsTable th,
-  .statsTable td {
-    padding: 0.8rem;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .statsTable th {
-    background-color: #f5f5f5;
-    font-weight: bold;
-  }
-  
-  .statsTable tr:hover {
-    background-color: #f9f9f9;
-  }
-  
-  .externalLink {
-    margin-top: 2rem;
-    text-align: center;
-  }
-  
-  .externalLink a {
-    color: #0066cc;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s;
-  }
-  
-  .externalLink a:hover {
-    color: #004499;
-    text-decoration: underline;
-  }
-  
-  @media (max-width: 768px) {
-    .playerHeader {
-      flex-direction: column;
-    }
-    
-    .playerImage {
-      flex: 0 0 auto;
-      width: 100%;
-      max-width: 300px;
-      margin: 0 auto;
-    }
-    
-    .descriptionControls {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  }
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: calc(64px + 2rem) 2rem 4rem; /* top pad accounts for fixed navbar */
+  min-height: 100vh;
+  color: #e6e8ec;
+}
 
-  /* Add these new styles to your player page CSS */
-.qrSection {
-    margin: 2rem 0;
-    padding: 1.5rem;
-    background: #f5f5f5;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-  
-  .qrSection h3 {
-    margin: 0;
-    color: #333;
-  }
+/* ---------- Not-found ---------- */
+.notFound {
+  text-align: center;
+  padding: 3rem 0;
+  font-size: 1.4rem;
+  opacity: .85;
+}
 
-  .container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 2rem;
-    min-height: 100vh;
-  }
+/* ---------- Back button ---------- */
+.backButton {
+  display: inline-block;
+  margin-bottom: 2rem;
+  padding: .45rem 1.1rem;
+  border-radius: var(--radius);
+  background: #222;
+  color: #e6e8ec;
+  text-decoration: none;
+  transition: background .25s, transform .2s;
+}
 
+.backButton:hover,
+.backButton:focus-visible {
+  background: #333;
+  transform: translateY(-2px);
+}
+
+/* ---------- Header ---------- */
+.playerHeader {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.playerImage {
+  position: relative;
+  flex: 0 0 280px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.playerImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* basic info ------------------ */
 .playerBasicInfo {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .infoRow {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-  
-  .infoColumn {
-    flex: 1;
-  }
-  
-  .qrColumn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-left: 1rem;
-  }
-  
-  .qrColumn img {
-    width: 80px;
-    height: 80px;
-  }
-  
-  .qrLabel {
-    font-size: 0.8rem;
-    margin-top: 0.5rem;
-    text-align: center;
-  }
-  
-  .playerHeader {
-    display: flex;
-    gap: 2rem;
-    margin-bottom: 2rem;
-    align-items: flex-start;
-  }
-  
-  .playerImage {
-    position: relative;
-    flex: 0 0 300px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .playerBasicInfo h1 {
-    font-size: 2.5rem;
-    margin: 0 0 0.5rem 0;
-    color: #333;
-  }
-  
-  .position {
-    font-size: 1.2rem;
-    color: #666;
-    margin: 0.3rem 0;
-  }
-  
-  .nation {
-    font-size: 1.1rem;
-    font-style: italic;
-    color: #444;
-    margin: 0.3rem 0;
-  }
-  
-  .born {
-    color: #666;
-    margin: 0.3rem 0;
-  }
+  flex: 1 1 280px;
+  display: flex;
+  flex-direction: column;
+}
+
+.playerBasicInfo h1 {
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  margin: 0 0 .6rem 0;
+  color: black;
+}
+
+.position,
+.nation,
+.born { margin: .25rem 0; }
+
+.position  { font-size: 1.05rem; color:#2d2f35;}
+.nation    { font-style: italic;  color:#2d2f35;}
+.born      { color:#2d2f35; }
+
+/* left/right arrangement for QR -------- */
+.infoRow   { display:flex; gap:1.25rem; margin-top:1rem; flex-wrap:wrap; }
+.infoColumn{ flex:1; }
+.qrColumn  { display:flex; flex-direction:column; align-items:center; gap:.4rem; }
+.qrColumn img{ width:80px;height:80px; }
+.qrLabel   { font-size:.8rem; }
+
+/* ---------- Description controls ---------- */
+.descriptionControls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.buttonGroup { display:flex; align-items:center; gap:.5rem; flex-wrap:wrap; }
+
+.buttonGroup span { font-weight:600; color:#2d2f35; }
+
+.buttonGroup button {
+  padding: .45rem 1rem;
+  border-radius: 100vmax;               /* pill */
+  background: #1a1f28;
+  border: var(--border);
+  color: #c8ccd6;
+  cursor: pointer;
+  transition: background .2s, color .2s, transform .15s;
+}
+
+.buttonGroup button:hover {
+  background:#242b38;
+  transform: translateY(-1px);
+}
+
+.buttonGroup button.active {
+  background: var(--accent);
+  color: #000;
+  border-color: var(--accent);
+}
+
+/* ---------- Description text ---------- */
+.descriptionSection { margin-bottom: 2.5rem; }
+
+.descriptionText {
+  line-height: 1.7;
+  font-size: 1.05rem;
+  white-space: pre-line;
+  color: black;
+}
+
+/* ---------- Stats ---------- */
+.statsSection { margin-bottom: 3rem; }
+
+.statsSection h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color:#2d2f35;
+  border-bottom: 2px solid rgba(255 255 255 / .08);
+  padding-bottom: .4rem;
+  width: max-content;
+}
+
+.statsTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .96rem;
+}
+
+.statsTable th,
+.statsTable td {
+  padding: .8rem .6rem;
+  border-bottom: 1px solid rgba(255 255 255 / .06);
+  color: #2d2f35;
+}
+
+.statsTable th {
+  background: #1b222d;
+  text-align: left;
+  font-weight: 600;
+}
+
+.statsTable tr:hover {
+  background: rgba(255 255 255 / .03);
+}
+
+/* ---------- External link ---------- */
+.externalLink {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.externalLink a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color .25s;
+}
+
+.externalLink a:hover {
+  color: #4e9be0;
+  text-decoration: underline;
+}
+
+/* ---------- Responsive tweaks ---------- */
+@media (max-width: 720px) {
+  .playerHeader { flex-direction: column; align-items:center; text-align:center; }
+  .playerImage  { width: 80%; max-width: 320px; }
+  .playerBasicInfo { align-items:center; }
+  .infoRow { justify-content:center; }
+}

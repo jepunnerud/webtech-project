@@ -1,17 +1,24 @@
 'use client';
-
+import { use } from 'react';
 import { useState } from 'react';
 import playersData from '@/../public/players.json';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './page.module.css';
-import { Player } from '@/types';
 
-export default function PlayerPage({ params }: { params: { team: string; playerId: string } }) {
-  const playerId = parseInt(params.playerId);
-  const player = playersData.find(p => p.id === playerId);
-  
-  const [textLevel, setTextLevel] = useState<'easy' | 'medium' | 'advanced'>('medium');
+/** The Page itself must be client-side because of useState */
+export default function PlayerPage({
+  params,
+}: {
+  params: Promise<{ team: string; playerId: string }>;
+}) {
+  const { team, playerId } = use(params);
+
+  const player = playersData.find(p => p.id === Number(playerId));
+
+  const [textLevel, setTextLevel] = useState<'easy' | 'medium' | 'advanced'>(
+    'medium'
+  );
   const [textLength, setTextLength] = useState<'short' | 'extended'>('short');
 
   if (!player) {
@@ -19,17 +26,17 @@ export default function PlayerPage({ params }: { params: { team: string; playerI
   }
 
   const getDescription = () => {
-    const key = `${textLength}_${textLevel}_description`;
-    return player[key as keyof typeof player] as string;
+    const key = `${textLength}_${textLevel}_description` as const;
+    return player[key];
   };
 
-  const mainTeam = player.teams.reduce((prev, current) => 
-    (prev.appearances > current.appearances) ? prev : current
+  const mainTeam = player.teams.reduce((prev, current) =>
+    prev.appearances > current.appearances ? prev : current
   );
 
   return (
     <div className={styles.container}>
-      <Link href={`/museum/${params.team}`} className={styles.backButton}>
+      <Link href={`/museum/${team}`} className={styles.backButton}>
         &larr; Back to {mainTeam.club}
       </Link>
 

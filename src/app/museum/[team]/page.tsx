@@ -1,39 +1,47 @@
-import { use } from 'react';
+// app/museum/[team]/page.tsx
 import styles from './page.module.css';
-import playersData from '../../../../public/players.json';
+import playersData from '@/../public/players.json';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Player, TeamStats } from '@/types';
-import { getTeamName } from '@/utils/teamUtils.ts';
+import { getTeamName } from '@/utils/teamUtils';
 
-async function getTeamPlayers(teamSlug: string) {
+/** Collect every player whose main club matches the slugged team */
+function getTeamPlayers(
+  teamSlug: string
+): (Player & { mainTeam: TeamStats; currentTeamStats?: TeamStats })[] {
   const teamName = getTeamName(teamSlug);
-  
+
   return playersData
     .map(player => {
-      const mainTeam = player.teams.reduce((prev, current) => 
-        (prev.appearances > current.appearances) ? prev : current
-      );
-      
-      const currentTeamStats = player.teams.find(t => 
-        t.club.toLowerCase() === teamName.toLowerCase()
+      const mainTeam = player.teams.reduce((prev, cur) =>
+        prev.appearances > cur.appearances ? prev : cur
       );
 
-      return {
-        ...player,
-        mainTeam,
-        currentTeamStats
-      };
+      const currentTeamStats = player.teams.find(
+        t => t.club.toLowerCase() === teamName.toLowerCase()
+      );
+
+      return { ...player, mainTeam, currentTeamStats };
     })
-    .filter(player => 
-      player.mainTeam.club.toLowerCase() === teamName.toLowerCase() && 
-      player.currentTeamStats
+    .filter(
+      p =>
+        p.mainTeam.club.toLowerCase() === teamName.toLowerCase() &&
+        p.currentTeamStats
     );
 }
 
-export default function TeamPage({ params }: { params: { team: string } }) {
-  const teamPlayers = use(getTeamPlayers(params.team));
-  const teamName = getTeamName(params.team);
+export default async function TeamPage({
+  params,
+}: {
+  /** Next now passes a Promise here */
+  params: Promise<{ team: string }>;
+}) {
+  // 👇 unwrap the promise
+  const { team } = await params;
+
+  const teamPlayers = getTeamPlayers(team);
+  const teamName = getTeamName(team);
 
   return (
     <div className={styles.container}>
@@ -52,9 +60,9 @@ export default function TeamPage({ params }: { params: { team: string } }) {
       ) : (
         <div className={styles.playersGrid}>
           {teamPlayers.map(player => (
-            <Link 
-              key={player.id} 
-              href={`/museum/${params.team}/${player.id}`}
+            <Link
+              key={player.id}
+              href={`/museum/${team}/${player.id}`}
               className={styles.playerCard}
             >
               <div className={styles.playerImage}>
