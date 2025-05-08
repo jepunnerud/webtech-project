@@ -3,7 +3,7 @@
   --accent: #64b5f6;
   --radius: 10px;
   --shadow: 0 6px 18px rgba(0 0 0 / 0.25);
-  --border: 1px solid rgba(255 255 255 / .08);
+  --border: 1px solid rgba(255 255 255 / 0.08);
 }
 
 /* ---------- Layout ---------- */
@@ -20,19 +20,21 @@
   text-align: center;
   padding: 3rem 0;
   font-size: 1.4rem;
-  opacity: .85;
+  opacity: 0.85;
 }
 
 /* ---------- Back button ---------- */
 .backButton {
   display: inline-block;
   margin-bottom: 2rem;
-  padding: .45rem 1.1rem;
+  padding: 0.45rem 1.1rem;
   border-radius: var(--radius);
   background: #222;
   color: #e6e8ec;
   text-decoration: none;
-  transition: background .25s, transform .2s;
+  transition:
+    background 0.25s,
+    transform 0.2s;
 }
 
 .backButton:hover,
@@ -73,24 +75,51 @@
 
 .playerBasicInfo h1 {
   font-size: clamp(2rem, 4vw, 2.6rem);
-  margin: 0 0 .6rem 0;
+  margin: 0 0 0.6rem 0;
   color: black;
 }
 
 .position,
 .nation,
-.born { margin: .25rem 0; }
+.born {
+  margin: 0.25rem 0;
+}
 
-.position  { font-size: 1.05rem; color:#2d2f35;}
-.nation    { font-style: italic;  color:#2d2f35;}
-.born      { color:#2d2f35; }
+.position {
+  font-size: 1.05rem;
+  color: #2d2f35;
+}
+.nation {
+  font-style: italic;
+  color: #2d2f35;
+}
+.born {
+  color: #2d2f35;
+}
 
 /* left/right arrangement for QR -------- */
-.infoRow   { display:flex; gap:1.25rem; margin-top:1rem; flex-wrap:wrap; }
-.infoColumn{ flex:1; }
-.qrColumn  { display:flex; flex-direction:column; align-items:center; gap:.4rem; }
-.qrColumn img{ width:80px;height:80px; }
-.qrLabel   { font-size:.8rem; }
+.infoRow {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+.infoColumn {
+  flex: 1;
+}
+.qrColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+.qrColumn img {
+  width: 80px;
+  height: 80px;
+}
+.qrLabel {
+  font-size: 0.8rem;
+}
 
 /* ---------- Description controls ---------- */
 .descriptionControls {
@@ -100,22 +129,33 @@
   margin-bottom: 2rem;
 }
 
-.buttonGroup { display:flex; align-items:center; gap:.5rem; flex-wrap:wrap; }
+.buttonGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
 
-.buttonGroup span { font-weight:600; color:#2d2f35; }
+.buttonGroup span {
+  font-weight: 600;
+  color: #2d2f35;
+}
 
 .buttonGroup button {
-  padding: .45rem 1rem;
-  border-radius: 100vmax;               /* pill */
+  padding: 0.45rem 1rem;
+  border-radius: 100vmax; /* pill */
   background: #1a1f28;
   border: var(--border);
   color: #c8ccd6;
   cursor: pointer;
-  transition: background .2s, color .2s, transform .15s;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    transform 0.15s;
 }
 
 .buttonGroup button:hover {
-  background:#242b38;
+  background: #242b38;
   transform: translateY(-1px);
 }
 
@@ -126,7 +166,9 @@
 }
 
 /* ---------- Description text ---------- */
-.descriptionSection { margin-bottom: 2.5rem; }
+.descriptionSection {
+  margin-bottom: 2.5rem;
+}
 
 .descriptionText {
   line-height: 1.7;
@@ -136,27 +178,29 @@
 }
 
 /* ---------- Stats ---------- */
-.statsSection { margin-bottom: 3rem; }
+.statsSection {
+  margin-bottom: 3rem;
+}
 
 .statsSection h2 {
   font-size: 1.4rem;
   margin-bottom: 1rem;
-  color:#2d2f35;
-  border-bottom: 2px solid rgba(255 255 255 / .08);
-  padding-bottom: .4rem;
+  color: #2d2f35;
+  border-bottom: 2px solid rgba(255 255 255 / 0.08);
+  padding-bottom: 0.4rem;
   width: max-content;
 }
 
 .statsTable {
   width: 100%;
   border-collapse: collapse;
-  font-size: .96rem;
+  font-size: 0.96rem;
 }
 
 .statsTable th,
 .statsTable td {
-  padding: .8rem .6rem;
-  border-bottom: 1px solid rgba(255 255 255 / .06);
+  padding: 0.8rem 0.6rem;
+  border-bottom: 1px solid rgba(255 255 255 / 0.06);
   color: #2d2f35;
 }
 
@@ -167,7 +211,7 @@
 }
 
 .statsTable tr:hover {
-  background: rgba(255 255 255 / .03);
+  background: rgba(255 255 255 / 0.03);
 }
 
 /* ---------- External link ---------- */
@@ -180,7 +224,7 @@
   color: var(--accent);
   font-weight: 600;
   text-decoration: none;
-  transition: color .25s;
+  transition: color 0.25s;
 }
 
 .externalLink a:hover {
@@ -190,8 +234,19 @@
 
 /* ---------- Responsive tweaks ---------- */
 @media (max-width: 720px) {
-  .playerHeader { flex-direction: column; align-items:center; text-align:center; }
-  .playerImage  { width: 80%; max-width: 320px; }
-  .playerBasicInfo { align-items:center; }
-  .infoRow { justify-content:center; }
+  .playerHeader {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .playerImage {
+    width: 80%;
+    max-width: 320px;
+  }
+  .playerBasicInfo {
+    align-items: center;
+  }
+  .infoRow {
+    justify-content: center;
+  }
 }

@@ -5,8 +5,8 @@
   height: 100vh; /* ← fixed height, no vertical growth */
   background: radial-gradient(circle at 20% 30%, #202b3d 0%, #0d121a 100%);
   color: #eef2ff;
-  overflow: hidden; /* hides ball overflow on phones */
   text-decoration: none;
+  width: 100vw;
 }
 
 .inner {
