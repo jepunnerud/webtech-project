@@ -7,7 +7,7 @@ import React, {
   useEffect,
 } from "react";
 
-interface ThemeContextType {
+export interface ThemeContextType {
   theme: string;
   changeTheme: (newTheme: string) => void;
 }
@@ -22,7 +22,8 @@ export const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
   const rawSetTheme = (newTheme: string) => {
     const root = window.document.documentElement;
 
-    root.classList.remove(theme);
+    // Remove the old theme, if it exists, else remove the default theme
+    root.classList.remove(localStorage.getItem("color-theme") || "dark");
     root.classList.add(newTheme);
 
     localStorage.setItem("color-theme", newTheme);
@@ -43,4 +44,10 @@ export const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export const useTheme = () => useContext(ThemeContext);
+export const useTheme = () => {
+  const context = useContext(ThemeContext);
+  if (!context) {
+    throw new Error("useTheme must be used within a ThemeContextProvider");
+  }
+  return context;
+};
