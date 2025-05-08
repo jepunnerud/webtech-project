@@ -8,8 +8,9 @@
   --foreground: #ededed;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
-  height: 100%;        /* not required for the hero, but nice baseline */
+  height: 100%; /* not required for the hero, but nice baseline */
 }

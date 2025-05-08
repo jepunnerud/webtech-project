@@ -67,7 +67,7 @@ body {
 .doorTop,
 .doorBottom {
   position: absolute;
-  background-color: white; /* adjust if your background is a different color */
+  background-color: white;
   z-index: 2;
 }
 
@@ -101,4 +101,11 @@ body {
 
 .doorBottom {
   bottom: -3px;
+}
+
+.box:hover .doorRight,
+.box:hover .doorLeft,
+.box:hover .doorTop,
+.box:hover .doorBottom {
+  background-color: #f0f0f0;
 }
