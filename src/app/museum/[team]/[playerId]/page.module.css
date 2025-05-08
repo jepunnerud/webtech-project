@@ -1,0 +1,197 @@
+/* ---------- Design Tokens ---------- */
+:root {
+  --accent: #64b5f6;
+  --radius: 10px;
+  --shadow: 0 6px 18px rgba(0 0 0 / 0.25);
+  --border: 1px solid rgba(255 255 255 / .08);
+}
+
+/* ---------- Layout ---------- */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: calc(64px + 2rem) 2rem 4rem; /* top pad accounts for fixed navbar */
+  min-height: 100vh;
+  color: #e6e8ec;
+}
+
+/* ---------- Not-found ---------- */
+.notFound {
+  text-align: center;
+  padding: 3rem 0;
+  font-size: 1.4rem;
+  opacity: .85;
+}
+
+/* ---------- Back button ---------- */
+.backButton {
+  display: inline-block;
+  margin-bottom: 2rem;
+  padding: .45rem 1.1rem;
+  border-radius: var(--radius);
+  background: #222;
+  color: #e6e8ec;
+  text-decoration: none;
+  transition: background .25s, transform .2s;
+}
+
+.backButton:hover,
+.backButton:focus-visible {
+  background: #333;
+  transform: translateY(-2px);
+}
+
+/* ---------- Header ---------- */
+.playerHeader {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.playerImage {
+  position: relative;
+  flex: 0 0 280px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.playerImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* basic info ------------------ */
+.playerBasicInfo {
+  flex: 1 1 280px;
+  display: flex;
+  flex-direction: column;
+}
+
+.playerBasicInfo h1 {
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  margin: 0 0 .6rem 0;
+  color: black;
+}
+
+.position,
+.nation,
+.born { margin: .25rem 0; }
+
+.position  { font-size: 1.05rem; color:#2d2f35;}
+.nation    { font-style: italic;  color:#2d2f35;}
+.born      { color:#2d2f35; }
+
+/* left/right arrangement for QR -------- */
+.infoRow   { display:flex; gap:1.25rem; margin-top:1rem; flex-wrap:wrap; }
+.infoColumn{ flex:1; }
+.qrColumn  { display:flex; flex-direction:column; align-items:center; gap:.4rem; }
+.qrColumn img{ width:80px;height:80px; }
+.qrLabel   { font-size:.8rem; }
+
+/* ---------- Description controls ---------- */
+.descriptionControls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.buttonGroup { display:flex; align-items:center; gap:.5rem; flex-wrap:wrap; }
+
+.buttonGroup span { font-weight:600; color:#2d2f35; }
+
+.buttonGroup button {
+  padding: .45rem 1rem;
+  border-radius: 100vmax;               /* pill */
+  background: #1a1f28;
+  border: var(--border);
+  color: #c8ccd6;
+  cursor: pointer;
+  transition: background .2s, color .2s, transform .15s;
+}
+
+.buttonGroup button:hover {
+  background:#242b38;
+  transform: translateY(-1px);
+}
+
+.buttonGroup button.active {
+  background: var(--accent);
+  color: #000;
+  border-color: var(--accent);
+}
+
+/* ---------- Description text ---------- */
+.descriptionSection { margin-bottom: 2.5rem; }
+
+.descriptionText {
+  line-height: 1.7;
+  font-size: 1.05rem;
+  white-space: pre-line;
+  color: black;
+}
+
+/* ---------- Stats ---------- */
+.statsSection { margin-bottom: 3rem; }
+
+.statsSection h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color:#2d2f35;
+  border-bottom: 2px solid rgba(255 255 255 / .08);
+  padding-bottom: .4rem;
+  width: max-content;
+}
+
+.statsTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .96rem;
+}
+
+.statsTable th,
+.statsTable td {
+  padding: .8rem .6rem;
+  border-bottom: 1px solid rgba(255 255 255 / .06);
+  color: #2d2f35;
+}
+
+.statsTable th {
+  background: #1b222d;
+  text-align: left;
+  font-weight: 600;
+}
+
+.statsTable tr:hover {
+  background: rgba(255 255 255 / .03);
+}
+
+/* ---------- External link ---------- */
+.externalLink {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.externalLink a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color .25s;
+}
+
+.externalLink a:hover {
+  color: #4e9be0;
+  text-decoration: underline;
+}
+
+/* ---------- Responsive tweaks ---------- */
+@media (max-width: 720px) {
+  .playerHeader { flex-direction: column; align-items:center; text-align:center; }
+  .playerImage  { width: 80%; max-width: 320px; }
+  .playerBasicInfo { align-items:center; }
+  .infoRow { justify-content:center; }
+}
