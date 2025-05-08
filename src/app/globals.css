@@ -1,11 +1,13 @@
 :root.light {
   --background: #ffffff;
   --foreground: #171717;
+  --accent: pink;
 }
 
 :root.dark {
   --background: #0a0a0a;
   --foreground: #ededed;
+  --accent: #64b5f6;
 }
 
 html,

@@ -5,7 +5,6 @@
   height: 100vh; /* ← fixed height, no vertical growth */
   background: radial-gradient(circle at 20% 30%, #202b3d 0%, #0d121a 100%);
   color: #eef2ff;
-  /* overflow: hidden; */
   text-decoration: none;
   width: 100vw;
 }
@@ -25,7 +24,7 @@
 }
 
 .left h1 span {
-  color: #64b5f6;
+  color: var(--accent);
 }
 
 .left p {
@@ -51,7 +50,7 @@
 }
 
 .primary {
-  background: #64b5f6;
+  background: var(--accent);
   color: #000;
 }
 
@@ -64,7 +63,7 @@
 
 .secondary {
   border: 2px solid #64b5f6;
-  color: #64b5f6;
+  color: var(--accent);
 }
 
 .ball {
