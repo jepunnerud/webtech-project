@@ -25,7 +25,7 @@
 }
 
 .left h1 span {
-  color: var(--accent);
+  color: var(--secondary);
 }
 
 .left p {
@@ -51,7 +51,7 @@
 }
 
 .primary {
-  background: var(--accent);
+  background: var(--secondary);
   color: #000;
 }
 
@@ -64,7 +64,7 @@
 
 .secondary {
   border: 2px solid #64b5f6;
-  color: var(--accent);
+  color: var(--secondary);
 }
 
 .ball {
