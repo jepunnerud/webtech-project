@@ -3,11 +3,11 @@
   align-items: center;
   justify-content: center;
   height: 100vh; /* ← fixed height, no vertical growth */
-  background: radial-gradient(circle at 20% 30%, #202b3d 0%, #0d121a 100%);
-  color: #eef2ff;
+  background: radial-gradient(circle at 20% 30%, var(--background) 0%, var(--tertiary) 100%);
+  color: var(--primary);
   text-decoration: none;
   width: 100vw;
-  margin-top: -1rem; /* ← negative margin to remove the gap */
+  margin-top: -5rem;
 }
 
 .inner {
@@ -63,7 +63,7 @@
 }
 
 .secondary {
-  border: 2px solid #64b5f6;
+  border: 2px solid var(--secondary);
   color: var(--secondary);
 }
 
