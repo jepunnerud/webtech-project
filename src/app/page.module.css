@@ -7,6 +7,7 @@
   color: #eef2ff;
   text-decoration: none;
   width: 100vw;
+  margin-top: -1rem; /* ← negative margin to remove the gap */
 }
 
 .inner {
