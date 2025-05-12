@@ -1,25 +1,23 @@
-'use client';
-import { use } from 'react';
-import { useState } from 'react';
-import playersData from '@/../public/players.json';
-import Image from 'next/image';
-import Link from 'next/link';
-import styles from './page.module.css';
+"use client";
+import { use, useEffect } from "react";
+import { useState } from "react";
+import playersData from "@/../public/players.json";
+import Image from "next/image";
+import Link from "next/link";
+import styles from "./page.module.css";
 
 /** The Page itself must be client-side because of useState */
-export default function PlayerPage({
-  params,
-}: {
-  params: Promise<{ team: string; playerId: string }>;
-}) {
+export default function PlayerPage({ params }: { params: Promise<{ team: string; playerId: string }> }) {
   const { team, playerId } = use(params);
 
-  const player = playersData.find(p => p.id === Number(playerId));
+  const player = playersData.find((p) => p.id === Number(playerId));
 
-  const [textLevel, setTextLevel] = useState<'easy' | 'medium' | 'advanced'>(
-    'medium'
-  );
-  const [textLength, setTextLength] = useState<'short' | 'extended'>('short');
+  const [textLevel, setTextLevel] = useState<"easy" | "medium" | "advanced">("medium");
+  const [textLength, setTextLength] = useState<"short" | "extended">("short");
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (!player) {
     return <div className={styles.notFound}>Player not found</div>;
@@ -30,9 +28,7 @@ export default function PlayerPage({
     return player[key];
   };
 
-  const mainTeam = player.teams.reduce((prev, current) =>
-    prev.appearances > current.appearances ? prev : current
-  );
+  const mainTeam = player.teams.reduce((prev, current) => (prev.appearances > current.appearances ? prev : current));
 
   return (
     <div className={styles.container}>
@@ -42,13 +38,7 @@ export default function PlayerPage({
 
       <div className={styles.playerHeader}>
         <div className={styles.playerImage}>
-          <Image
-            src={player.image_url}
-            alt={player.name}
-            width={300}
-            height={300}
-            priority
-          />
+          <Image src={player.image_url} alt={player.name} width={300} height={300} priority />
         </div>
         <div className={styles.playerBasicInfo}>
           <h1>{player.name}</h1>
@@ -60,12 +50,7 @@ export default function PlayerPage({
             </div>
             {player.long_description_qr && (
               <div className={styles.qrColumn}>
-                <Image
-                  src={player.long_description_qr}
-                  alt="QR Code"
-                  width={100}
-                  height={100}
-                />
+                <Image src={player.long_description_qr} alt="QR Code" width={100} height={100} />
                 <span className={styles.qrLabel}>Scan for more info</span>
               </div>
             )}
@@ -76,38 +61,23 @@ export default function PlayerPage({
       <div className={styles.descriptionControls}>
         <div className={styles.buttonGroup}>
           <span>Text Complexity:</span>
-          <button 
-            onClick={() => setTextLevel('easy')} 
-            className={textLevel === 'easy' ? styles.active : ''}
-          >
+          <button onClick={() => setTextLevel("easy")} className={textLevel === "easy" ? styles.active : ""}>
             Easy
           </button>
-          <button 
-            onClick={() => setTextLevel('medium')} 
-            className={textLevel === 'medium' ? styles.active : ''}
-          >
+          <button onClick={() => setTextLevel("medium")} className={textLevel === "medium" ? styles.active : ""}>
             Medium
           </button>
-          <button 
-            onClick={() => setTextLevel('advanced')} 
-            className={textLevel === 'advanced' ? styles.active : ''}
-          >
+          <button onClick={() => setTextLevel("advanced")} className={textLevel === "advanced" ? styles.active : ""}>
             Advanced
           </button>
         </div>
-        
+
         <div className={styles.buttonGroup}>
           <span>Text Length:</span>
-          <button 
-            onClick={() => setTextLength('short')} 
-            className={textLength === 'short' ? styles.active : ''}
-          >
+          <button onClick={() => setTextLength("short")} className={textLength === "short" ? styles.active : ""}>
             Short
           </button>
-          <button 
-            onClick={() => setTextLength('extended')} 
-            className={textLength === 'extended' ? styles.active : ''}
-          >
+          <button onClick={() => setTextLength("extended")} className={textLength === "extended" ? styles.active : ""}>
             Extended
           </button>
         </div>
@@ -141,11 +111,7 @@ export default function PlayerPage({
 
       {player.long_description_wiki && (
         <div className={styles.externalLink}>
-          <a 
-            href={player.long_description_wiki} 
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
+          <a href={player.long_description_wiki} target="_blank" rel="noopener noreferrer">
             Read more on Wikipedia →
           </a>
         </div>

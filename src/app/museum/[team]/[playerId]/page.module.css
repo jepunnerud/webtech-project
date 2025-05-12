@@ -1,18 +1,10 @@
-/* ---------- Design Tokens ---------- */
-:root {
-  --accent: #64b5f6;
-  --radius: 10px;
-  --shadow: 0 6px 18px rgba(0 0 0 / 0.25);
-  --border: 1px solid rgba(255 255 255 / 0.08);
-}
-
 /* ---------- Layout ---------- */
 .container {
   max-width: 1000px;
   margin: 0 auto;
-  padding: calc(64px + 2rem) 2rem 4rem; /* top pad accounts for fixed navbar */
   min-height: 100vh;
-  color: #e6e8ec;
+  max-width: 1000px;
+  min-width: 1000px;
 }
 
 /* ---------- Not-found ---------- */
@@ -29,8 +21,7 @@
   margin-bottom: 2rem;
   padding: 0.45rem 1.1rem;
   border-radius: var(--radius);
-  background: #222;
-  color: #e6e8ec;
+  background-color: var(--secondary);
   text-decoration: none;
   transition:
     background 0.25s,
@@ -39,7 +30,7 @@
 
 .backButton:hover,
 .backButton:focus-visible {
-  background: #333;
+  background-color: var(--tertiary);
   transform: translateY(-2px);
 }
 
@@ -76,7 +67,6 @@
 .playerBasicInfo h1 {
   font-size: clamp(2rem, 4vw, 2.6rem);
   margin: 0 0 0.6rem 0;
-  color: black;
 }
 
 .position,
@@ -87,14 +77,6 @@
 
 .position {
   font-size: 1.05rem;
-  color: #2d2f35;
-}
-.nation {
-  font-style: italic;
-  color: #2d2f35;
-}
-.born {
-  color: #2d2f35;
 }
 
 /* left/right arrangement for QR -------- */
@@ -138,15 +120,15 @@
 
 .buttonGroup span {
   font-weight: 600;
-  color: #2d2f35;
 }
 
 .buttonGroup button {
   padding: 0.45rem 1rem;
   border-radius: 100vmax; /* pill */
-  background: #1a1f28;
-  border: var(--border);
-  color: #c8ccd6;
+  background: var(--background);
+  border-color: var(--secondary);
+  border: 2px solid var(--tertiary);
+  color: var(--secondary);
   cursor: pointer;
   transition:
     background 0.2s,
@@ -155,14 +137,15 @@
 }
 
 .buttonGroup button:hover {
-  background: #242b38;
+  background: var(--secondary);
+  color: var(--background);
   transform: translateY(-1px);
 }
 
 .buttonGroup button.active {
-  background: var(--accent);
-  color: #000;
-  border-color: var(--accent);
+  background: var(--secondary);
+  color: var(--background);
+  border-color: var(--secondary);
 }
 
 /* ---------- Description text ---------- */
@@ -174,7 +157,6 @@
   line-height: 1.7;
   font-size: 1.05rem;
   white-space: pre-line;
-  color: black;
 }
 
 /* ---------- Stats ---------- */
@@ -185,10 +167,10 @@
 .statsSection h2 {
   font-size: 1.4rem;
   margin-bottom: 1rem;
-  color: #2d2f35;
   border-bottom: 2px solid rgba(255 255 255 / 0.08);
   padding-bottom: 0.4rem;
   width: max-content;
+  color: var(--secondary);
 }
 
 .statsTable {
@@ -201,17 +183,13 @@
 .statsTable td {
   padding: 0.8rem 0.6rem;
   border-bottom: 1px solid rgba(255 255 255 / 0.06);
-  color: #2d2f35;
 }
 
 .statsTable th {
-  background: #1b222d;
+  background: var(--secondary);
+  color: var(--background);
   text-align: left;
   font-weight: 600;
-}
-
-.statsTable tr:hover {
-  background: rgba(255 255 255 / 0.03);
 }
 
 /* ---------- External link ---------- */
@@ -221,14 +199,14 @@
 }
 
 .externalLink a {
-  color: var(--accent);
+  color: var(--secondary);
   font-weight: 600;
   text-decoration: none;
   transition: color 0.25s;
 }
 
 .externalLink a:hover {
-  color: #4e9be0;
+  color: var(--tertiary);
   text-decoration: underline;
 }
 

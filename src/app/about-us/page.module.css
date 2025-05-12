@@ -6,7 +6,7 @@ Color Palette:
 - Secondary: #1e293b (slate-800) - Used for text and important elements
 - Background: #f8fafc (slate-50) - Light background for better readability
 - Card: #ffffff - Pure white for cards to create contrast
-- Accent: #e2e8f0 (slate-200) - For subtle borders and separators
+- secondary: #e2e8f0 (slate-200) - For subtle borders and separators
 
 Typography:
 - Font Family: System UI stack for maximum compatibility
@@ -34,17 +34,20 @@ Layout Principles:
 - Accessibility-focused color contrast
 */
 
-body {
+/* body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
   background-color: #f8fafc;
   width: 100vw;
-}
+} */
 
 .container {
-  padding: 2rem 1rem;
-  margin: 0 auto;
-  min-height: 100vh;
-  margin-top: 5vh;
-  max-width: 85vw;
+  padding-top: 50px;
+  min-width: 90vw;
+  height: 100vh;
 }
 
 .header {
@@ -55,33 +58,34 @@ body {
 .title {
   font-size: 2.5rem;
   font-weight: 600;
-  color: #1e293b;
   margin-bottom: 0.5rem;
   line-height: 1.2;
+  margin-top: -2rem;
 }
 
 .subtitle {
   font-size: 1.125rem;
-  color: #64748b;
+  color: var(--secondary);
   max-width: 600px;
   margin: 0 auto;
 }
 
 .aboutCardContainer {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   justify-content: space-evenly;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .card {
-  background: #ffffff;
+  background: var(--secondary);
   border-radius: 0.5rem;
   box-shadow:
     0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
   width: 100%;
-  max-width: 320px;
+  max-width: 380px;
   overflow: hidden;
   transition:
     transform 0.2s ease,
@@ -100,13 +104,13 @@ body {
   height: 160px;
   margin: 1.5rem auto 1rem;
   border-radius: 50%;
-  border: 4px solid #e2e8f0;
+  border: 4px solid var(--primary);
   overflow: hidden;
   transition: border-color 0.2s ease;
 }
 
 .card:hover .imageWrapper {
-  border-color: #2563eb;
+  border-color: var(--tertiary);
 }
 
 .image {
@@ -122,7 +126,7 @@ body {
 .name {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #1e293b;
+  color: var(--primary);
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -135,7 +139,7 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 0.5rem 0;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid var(--background);
   font-size: 0.9375rem;
 }
 
@@ -145,7 +149,7 @@ body {
 
 .detailLabel {
   font-weight: 500;
-  color: #64748b;
+  color: var(--primary);
 }
 
 .links {
@@ -162,12 +166,12 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #f1f5f9;
+  background-color: var(--secondary);
   transition: all 0.2s ease;
 }
 
 .link:hover {
-  background-color: #2563eb;
+  background-color: var(--tertiary);
   transform: scale(1.1);
 }
 

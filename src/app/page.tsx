@@ -1,17 +1,17 @@
-'use client';
-import { useEffect } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import styles from './page.module.css';
+"use client";
+import { useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import styles from "./page.module.css";
 
 export default function Home() {
   /* ───── disable scrolling only on this page ───── */
   useEffect(() => {
     const { body } = document;
     const prev = body.style.overflow;
-    body.style.overflow = 'hidden';
+    body.style.overflow = "hidden";
     return () => {
-      body.style.overflow = prev;        // restore when leaving Home
+      body.style.overflow = prev; // restore when leaving Home
     };
   }, []);
 
@@ -22,10 +22,7 @@ export default function Home() {
           <h1>
             Welcome to the <span>Museum&nbsp;of&nbsp;Football</span>
           </h1>
-          <p>
-            Explore legendary clubs, deep-dive into historic careers and learn
-            how this project was built.
-          </p>
+          <p>Explore legendary clubs, deep-dive into historic careers and learn how this project was built.</p>
 
           <div className={styles.ctas}>
             <Link href="/museum" className={styles.primary}>
