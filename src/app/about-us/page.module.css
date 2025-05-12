@@ -34,7 +34,7 @@ Layout Principles:
 - Accessibility-focused color contrast
 */
 
-body {
+/* body {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,11 +42,12 @@ body {
   margin: 0;
   background-color: #f8fafc;
   width: 100vw;
-}
+} */
 
 .container {
-  padding: 0 1rem;
+  padding-top: 50px;
   min-width: 90vw;
+  height: 100vh;
 }
 
 .header {

@@ -28,8 +28,10 @@ export default function RootLayout({
     <html lang="en">
       <ThemeContextProvider>
         <body className={`${geistSans.variable} ${geistMono.variable}`}>
-          <NavBar />
-          {children}
+          <div className="global-container">
+            <NavBar />
+            <div className="main-content">{children}</div>
+          </div>
         </body>
       </ThemeContextProvider>
     </html>

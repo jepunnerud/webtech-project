@@ -1,34 +1,24 @@
 // app/museum/[team]/page.tsx
-import styles from './page.module.css';
-import playersData from '@/../public/players.json';
-import Image from 'next/image';
-import Link from 'next/link';
-import { Player, TeamStats } from '@/types';
-import { getTeamName } from '@/utils/teamUtils';
+import styles from "./page.module.css";
+import playersData from "@/../public/players.json";
+import Image from "next/image";
+import Link from "next/link";
+import { Player, TeamStats } from "@/types";
+import { getTeamName } from "@/utils/teamUtils";
 
 /** Collect every player whose main club matches the slugged team */
-function getTeamPlayers(
-  teamSlug: string
-): (Player & { mainTeam: TeamStats; currentTeamStats?: TeamStats })[] {
+function getTeamPlayers(teamSlug: string): (Player & { mainTeam: TeamStats; currentTeamStats?: TeamStats })[] {
   const teamName = getTeamName(teamSlug);
 
   return playersData
-    .map(player => {
-      const mainTeam = player.teams.reduce((prev, cur) =>
-        prev.appearances > cur.appearances ? prev : cur
-      );
+    .map((player) => {
+      const mainTeam = player.teams.reduce((prev, cur) => (prev.appearances > cur.appearances ? prev : cur));
 
-      const currentTeamStats = player.teams.find(
-        t => t.club.toLowerCase() === teamName.toLowerCase()
-      );
+      const currentTeamStats = player.teams.find((t) => t.club.toLowerCase() === teamName.toLowerCase());
 
       return { ...player, mainTeam, currentTeamStats };
     })
-    .filter(
-      p =>
-        p.mainTeam.club.toLowerCase() === teamName.toLowerCase() &&
-        p.currentTeamStats
-    );
+    .filter((p) => p.mainTeam.club.toLowerCase() === teamName.toLowerCase() && p.currentTeamStats);
 }
 
 export default async function TeamPage({
@@ -59,19 +49,10 @@ export default async function TeamPage({
         </div>
       ) : (
         <div className={styles.playersGrid}>
-          {teamPlayers.map(player => (
-            <Link
-              key={player.id}
-              href={`/museum/${team}/${player.id}`}
-              className={styles.playerCard}
-            >
+          {teamPlayers.map((player) => (
+            <Link key={player.id} href={`/museum/${team}/${player.id}`} className={styles.playerCard}>
               <div className={styles.playerImage}>
-                <Image
-                  src={player.image_url}
-                  alt={player.name}
-                  width={200}
-                  height={200}
-                />
+                <Image src={player.image_url} alt={player.name} width={200} height={200} />
               </div>
               <div className={styles.playerInfo}>
                 <h3>{player.name}</h3>
@@ -79,9 +60,7 @@ export default async function TeamPage({
                 <p className={styles.nation}>{player.nation}</p>
                 <div className={styles.teamStats}>
                   <span>Appearances: {player.currentTeamStats?.appearances}</span>
-                  {player.currentTeamStats?.goals !== undefined && (
-                    <span>Goals: {player.currentTeamStats.goals}</span>
-                  )}
+                  {player.currentTeamStats?.goals !== undefined && <span>Goals: {player.currentTeamStats.goals}</span>}
                 </div>
               </div>
             </Link>
