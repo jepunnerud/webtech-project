@@ -10,6 +10,8 @@ export default function NavBar() {
     changeTheme(event.target.value);
   };
 
+  const themes = ["dark", "light", "forest", "cyberpunk", "sunset", "pastel"];
+
   return (
     <header className={styles.navbar}>
       <div className={styles.inner}>
@@ -26,8 +28,11 @@ export default function NavBar() {
         <div className={styles.themeSelector}>
           <label htmlFor="theme-select">Theme:</label>
           <select id="theme-select" value={theme} onChange={handleThemeChange}>
-            <option value="light">Light</option>
-            <option value="dark">Dark</option>
+            {themes.map((theme) => (
+              <option key={theme} value={theme}>
+                {theme.charAt(0).toUpperCase() + theme.slice(1)}
+              </option>
+            ))}
           </select>
         </div>
       </div>
