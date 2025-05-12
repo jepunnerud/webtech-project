@@ -5,16 +5,14 @@ export const metadata = { title: 'Styling Documentation' };
 
 export default function Documentation() {
   return (
-    <article className={styles.page}>
-      {/* ---------- Intro ---------- */}
+    <div className={styles.container}>
       <header className={styles.header}>
         <h1>Styling&nbsp;Documentation</h1>
-        <p className={styles.lead}>
+        <p className={styles.subtitle}>
           How colour, spacing, and the golden ratio guide every component.
         </p>
       </header>
 
-      {/* ---------- Nav Bar ---------- */}
       <section>
         <h2 className={styles.sectionTitle}>Navigation Bar</h2>
         <p>
@@ -32,7 +30,7 @@ export default function Documentation() {
       <section>
         <h2 className={styles.sectionTitle}>Home Hero</h2>
         <p>
-          The hero fills the viewport with
+          The hero fills the viewport with 
           <code>height: calc(100dvh − 64px)</code> so browser UI doesn’t create
           white bands. Typography follows a φ-based modular scale:
         </p>
@@ -90,6 +88,5 @@ border  : 1px solid rgba(255,255,255,.08);`}</pre>
           ← Return Home
         </Link>
       </footer>
-    </article>
-  );
+    </div>);
 }
