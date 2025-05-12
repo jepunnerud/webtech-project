@@ -21,7 +21,8 @@
       { "club": "Marseille", "appearances": 35, "goals": 19 },
       { "club": "Chelsea", "appearances": 254, "goals": 104 },
       { "club": "Galatasaray", "appearances": 37, "goals": 15 }
-    ]
+    ],
+    "debut_date": "2004-08-15"
   },
 
   {
@@ -43,7 +44,8 @@
     "teams": [
       { "club": "Chelsea", "appearances": 492, "goals": 41 },
       { "club": "Aston Villa", "appearances": 32, "goals": 1 }
-    ]
+    ],
+    "debut_date": "1998-10-28"
   },
   {
     "name": "Petr Čech",
@@ -66,7 +68,8 @@
       { "club": "Rennes", "appearances": 70, "goals": 0 },
       { "club": "Chelsea", "appearances": 333, "goals": 0 },
       { "club": "Arsenal", "appearances": 110, "goals": 0 }
-    ]
+    ],
+    "debut_date": "2004-08-15"
   },
   {
     "name": "Jamie Carragher",
@@ -84,7 +87,8 @@
     "long_description_wiki": "https://en.wikipedia.org/wiki/Jamie_Carragher",
     "image_url": "/player-images/carragher.png",
     "position": "Defender",
-    "teams": [{ "club": "Liverpool", "appearances": 508, "goals": 3 }]
+    "teams": [{ "club": "Liverpool", "appearances": 508, "goals": 3 }],
+    "debut_date": "1997-01-08"
   },
   {
     "name": "Robbie Fowler",
@@ -106,7 +110,8 @@
       { "club": "Liverpool", "appearances": 236, "goals": 120 },
       { "club": "Leeds United", "appearances": 30, "goals": 14 },
       { "club": "Manchester City", "appearances": 80, "goals": 20 }
-    ]
+    ],
+    "debut_date": "1993-09-25"
   },
   {
     "name": "Kenny Dalglish",
@@ -127,7 +132,8 @@
     "teams": [
       { "club": "Celtic", "appearances": 204, "goals": 112 },
       { "club": "Liverpool", "appearances": 355, "goals": 118 }
-    ]
+    ],
+    "debut_date": "1977-08-13"
   },
   {
     "name": "Thierry Henry",
@@ -151,7 +157,8 @@
       { "club": "Arsenal", "appearances": 254, "goals": 174 },
       { "club": "Barcelona", "appearances": 80, "goals": 35 },
       { "club": "New York Red Bulls", "appearances": 122, "goals": 51 }
-    ]
+    ],
+    "debut_date": "1999-08-07"
   },
   {
     "name": "Dennis Bergkamp",
@@ -173,7 +180,8 @@
       { "club": "Ajax", "appearances": 185, "goals": 103 },
       { "club": "Inter Milan", "appearances": 52, "goals": 11 },
       { "club": "Arsenal", "appearances": 315, "goals": 87 }
-    ]
+    ],
+    "debut_date": "1995-08-20"
   },
   {
     "name": "Patrick Vieira",
@@ -197,7 +205,8 @@
       { "club": "Juventus", "appearances": 31, "goals": 5 },
       { "club": "Inter Milan", "appearances": 67, "goals": 6 },
       { "club": "Manchester City", "appearances": 28, "goals": 3 }
-    ]
+    ],
+    "debut_date": "1996-08-17"
   },
   {
     "name": "Tony Adams",
@@ -215,7 +224,8 @@
     "long_description_wiki": "https://en.wikipedia.org/wiki/Tony_Adams",
     "image_url": "/player-images/adams.png",
     "position": "Defender",
-    "teams": [{ "club": "Arsenal", "appearances": 504, "goals": 32 }]
+    "teams": [{ "club": "Arsenal", "appearances": 504, "goals": 32 }],
+    "debut_date": "1983-11-05"
   },
   {
     "name": "Robert Pirès",
@@ -239,7 +249,8 @@
       { "club": "Arsenal", "appearances": 189, "goals": 62 },
       { "club": "Villarreal", "appearances": 103, "goals": 13 },
       { "club": "Aston Villa", "appearances": 9, "goals": 0 }
-    ]
+    ],
+    "debut_date": "2000-08-19"
   },
   {
     "name": "Ryan Giggs",
@@ -257,7 +268,8 @@
     "long_description_wiki": "https://en.wikipedia.org/wiki/Ryan_Giggs",
     "image_url": "/player-images/giggs.png",
     "position": "Winger",
-    "teams": [{ "club": "Manchester United", "appearances": 672, "goals": 114 }]
+    "teams": [{ "club": "Manchester United", "appearances": 672, "goals": 114 }],
+    "debut_date": "1991-03-02"
   },
   {
     "name": "Paul Scholes",
@@ -275,7 +287,8 @@
     "long_description_wiki": "https://en.wikipedia.org/wiki/Paul_Scholes",
     "image_url": "/player-images/scholes.png",
     "position": "Midfielder",
-    "teams": [{ "club": "Manchester United", "appearances": 499, "goals": 107 }]
+    "teams": [{ "club": "Manchester United", "appearances": 499, "goals": 107 }],
+    "debut_date": "1994-09-21"
   },
   {
     "name": "Eric Cantona",
@@ -298,7 +311,8 @@
       { "club": "Marseille", "appearances": 40, "goals": 13 },
       { "club": "Leeds United", "appearances": 28, "goals": 9 },
       { "club": "Manchester United", "appearances": 143, "goals": 64 }
-    ]
+    ],
+    "debut_date": "1992-11-28"
   },
   {
     "name": "Roy Keane",
@@ -320,7 +334,8 @@
       { "club": "Nottingham Forest", "appearances": 114, "goals": 22 },
       { "club": "Manchester United", "appearances": 326, "goals": 33 },
       { "club": "Celtic", "appearances": 10, "goals": 1 }
-    ]
+    ],
+    "debut_date": "1993-08-07"
   },
   {
     "name": "Wayne Rooney",
@@ -343,7 +358,8 @@
       { "club": "Manchester United", "appearances": 393, "goals": 183 },
       { "club": "Everton (second spell)", "appearances": 31, "goals": 10 },
       { "club": "D.C. United", "appearances": 48, "goals": 23 }
-    ]
+    ],
+    "debut_date": "2004-08-28"
   },
   {
     "name": "Ashley Cole",
@@ -364,7 +380,8 @@
     "teams": [
       { "club": "Arsenal", "appearances": 156, "goals": 8 },
       { "club": "Chelsea", "appearances": 229, "goals": 7 }
-    ]
+    ],
+    "debut_date": "2006-08-12"
   },
   {
     "name": "Steven Gerrard",
@@ -382,7 +399,8 @@
     "long_description_wiki": "https://en.wikipedia.org/wiki/Steven_Gerrard",
     "image_url": "/player-images/gerrard.png",
     "position": "Midfielder",
-    "teams": [{ "club": "Liverpool", "appearances": 504, "goals": 120 }]
+    "teams": [{ "club": "Liverpool", "appearances": 504, "goals": 120 }],
+    "debut_date": "1998-11-29"
   },
   {
     "name": "Frank Lampard",
@@ -404,7 +422,8 @@
       { "club": "West Ham United", "appearances": 148, "goals": 24 },
       { "club": "Chelsea", "appearances": 429, "goals": 147 },
       { "club": "Manchester City", "appearances": 32, "goals": 6 }
-    ]
+    ],
+    "debut_date": "2001-08-19"
   },
   {
     "name": "Ian Rush",
@@ -422,6 +441,7 @@
     "long_description_wiki": "https://en.wikipedia.org/wiki/Ian_Rush",
     "image_url": "/player-images/rush.png",
     "position": "Striker",
-    "teams": [{ "club": "Liverpool", "appearances": 516, "goals": 229 }]
+    "teams": [{ "club": "Liverpool", "appearances": 516, "goals": 229 }],
+    "debut_date": "1980-12-13"
   }
 ]
