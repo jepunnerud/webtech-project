@@ -109,6 +109,10 @@ Layout Principles:
   transition: border-color 0.2s ease;
 }
 
+.card:hover .imageWrapper {
+  border-color: var(--tertiary);
+}
+
 .image {
   object-fit: cover;
   width: 100%;
