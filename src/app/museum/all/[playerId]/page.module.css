@@ -1,0 +1,280 @@
+/* ---------- Layout ---------- */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  min-height: 100vh;
+  max-width: 1000px;
+  min-width: 1000px;
+}
+
+/* ---------- Not-found ---------- */
+.notFound {
+  text-align: center;
+  padding: 3rem 0;
+  font-size: 1.4rem;
+  opacity: 0.85;
+}
+
+/* ---------- Back button ---------- */
+.backButton {
+  display: inline-block;
+  margin-bottom: 2rem;
+  padding: 0.45rem 1.1rem;
+  border-radius: var(--radius);
+  background-color: var(--secondary);
+  text-decoration: none;
+  transition:
+    background 0.25s,
+    transform 0.2s;
+}
+
+.backButton:hover,
+.backButton:focus-visible {
+  background-color: var(--tertiary);
+  transform: translateY(-2px);
+}
+
+/* ---------- Header ---------- */
+.playerHeader {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.playerImage {
+  position: relative;
+  flex: 0 0 280px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.playerImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* basic info ------------------ */
+.playerBasicInfo {
+  flex: 1 1 280px;
+  display: flex;
+  flex-direction: column;
+}
+
+.playerBasicInfo h1 {
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  margin: 0 0 0.6rem 0;
+}
+
+.position,
+.nation,
+.born {
+  margin: 0.25rem 0;
+}
+
+.position {
+  font-size: 1.05rem;
+}
+
+/* left/right arrangement for QR -------- */
+.infoRow {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+.infoColumn {
+  flex: 1;
+}
+.qrColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+.qrColumn img {
+  width: 80px;
+  height: 80px;
+}
+.qrLabel {
+  font-size: 0.8rem;
+}
+
+/* ---------- Description controls ---------- */
+.descriptionControls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.buttonGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.buttonGroup span {
+  font-weight: 600;
+}
+
+.buttonGroup button {
+  padding: 0.45rem 1rem;
+  border-radius: 100vmax; /* pill */
+  background: var(--background);
+  border-color: var(--secondary);
+  border: 2px solid var(--tertiary);
+  color: var(--secondary);
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    transform 0.15s;
+}
+
+.buttonGroup button:hover {
+  background: var(--secondary);
+  color: var(--background);
+  transform: translateY(-1px);
+}
+
+.buttonGroup button.active {
+  background: var(--secondary);
+  color: var(--background);
+  border-color: var(--secondary);
+}
+
+/* ---------- Description text ---------- */
+.descriptionSection {
+  margin-bottom: 2.5rem;
+}
+
+.descriptionText {
+  line-height: 1.7;
+  font-size: 1.05rem;
+  white-space: pre-line;
+}
+
+/* ---------- Stats ---------- */
+.statsSection {
+  margin-bottom: 3rem;
+}
+
+.statsSection h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid rgba(255 255 255 / 0.08);
+  padding-bottom: 0.4rem;
+  width: max-content;
+  color: var(--secondary);
+}
+
+.statsTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.96rem;
+}
+
+.statsTable th,
+.statsTable td {
+  padding: 0.8rem 0.6rem;
+  border-bottom: 1px solid rgba(255 255 255 / 0.06);
+}
+
+.statsTable th {
+  background: var(--secondary);
+  color: var(--background);
+  text-align: left;
+  font-weight: 600;
+}
+
+/* ---------- External link ---------- */
+.externalLink {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.externalLink a {
+  color: var(--secondary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.25s;
+}
+
+.externalLink a:hover {
+  color: var(--tertiary);
+  text-decoration: underline;
+}
+
+/* ---------- Responsive tweaks ---------- */
+@media (max-width: 720px) {
+  .playerHeader {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .playerImage {
+    width: 80%;
+    max-width: 320px;
+  }
+  .playerBasicInfo {
+    align-items: center;
+  }
+  .infoRow {
+    justify-content: center;
+  }
+}
+
+.filterBanner {
+  margin: 1rem 0 2rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--secondary);
+}
+
+.chip {
+  display: inline-block;
+  margin: 0 .25rem .4rem 0;
+  padding: .2rem .65rem;
+  border-radius: 100vmax;
+  background: var(--secondary);
+  color: var(--background);
+  font-size: .85rem;
+  text-decoration: none;
+}
+
+.clubChip { background: var(--tertiary); }
+
+.pager {
+  margin: 3rem 0;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+.prev, .next {
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+.filterBanner {
+  text-align: center;
+  margin: 1rem 0 2rem;
+  font-weight: 600;
+  color: var(--secondary);
+}
+
+.linkChip {
+  display: inline-block;
+  padding: .18rem .55rem;
+  border-radius: 100vmax;
+  background: var(--secondary);
+  color: var(--background);
+  font-size: .82rem;
+  text-decoration: none;
+  margin: 0 .3rem .35rem 0;
+}

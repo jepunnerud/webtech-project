@@ -1,16 +1,202 @@
-.container { max-width:1200px; margin:0 auto; padding:calc(64px + 2rem) 1.5rem 4rem; color:#e7ebf2; }
-.title     { font-size:clamp(2rem,4vw,2.6rem); color:#64b5f6; margin-bottom:1.5rem; text-align:center; }
+/* src/app/museum/[team]/page.module.css */
+.container {
+  height: fit-content;
+  max-width: 1000px;
+  min-width: 1000px;
+}
 
-.controls  { display:flex; flex-wrap:wrap; gap:1rem 1.25rem; margin:2rem 0; justify-content:center; }
+.header {
+  margin-bottom: 3rem;
+  text-align: center;
+  position: relative;
+}
+
+.backButton {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0.5rem 1rem;
+  background-color: var(--secondary);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.backButton:hover {
+  background-color: var(--tertiary);
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  font-size: 1.2rem;
+  color: var(--secondary);
+}
+
+.empty {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+}
+
+.playersGrid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.playerCard {
+  border: 1px solid var(--tertiary);
+  border-radius: 8px;
+  overflow: hidden;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+  text-decoration: none;
+  background-color: var(--secondary);
+  width: 300px;
+}
+
+.playerCard.mainTeam {
+  border-left: 4px solid #0066cc;
+}
+
+.playerCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.playerImage {
+  width: 100%;
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+}
+
+.playerImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.playerCard:hover .playerImage img {
+  transform: scale(1.05);
+}
+
+.playerInfo {
+  padding: 1.5rem;
+}
+
+.playerInfo h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+}
+
+.playerInfo p {
+  margin: 0.3rem 0;
+  color: #666;
+}
+
+.playerInfo .nation {
+  font-style: italic;
+}
+
+.teamStats {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.secondaryTeamNote {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: #888;
+  font-style: italic;
+}
+
+.allButton {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background:#64b5f6;
+  color:#000;
+  border-radius:100vmax;
+  font-weight:600;
+  text-decoration:none;
+  transition:transform .2s;
+}
+.allButton:hover { transform:translateY(-2px); }
+
+/* ────────── Controls bar (theme-aware) ────────── */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.25rem;
+  margin: 2rem 0 2.5rem;
+  justify-content: center;
+}
+
+/* basic pill */
 .controls button,
-.controls select { padding:.45rem 1rem; border-radius:100vmax; border:1px solid #444; background:#1b222d; color:#e7ebf2; cursor:pointer; }
-.controls button.active,
-.controls button:hover { background:#64b5f6; color:#000; }
-.selectWrap{ display:flex; align-items:center; gap:.4rem; }
+.controls select {
+  padding: 0.5rem 1.1rem;
+  border-radius: 100vmax;
+  background: var(--code);                 /* light → #f0f0f0, dark → #1e1e1e */
+  color: var(--primary);                   /* text adapts per theme           */
+  border: 1px solid rgba(0 0 0 / .12);     /* subtle outline for all themes   */
+  font-weight: 500;
+  cursor: pointer;
+  transition: background .2s, color .2s, transform .15s;
+}
 
-.grid      { display:grid; gap:2rem; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); }
-.card      { text-decoration:none; color:inherit; display:flex; flex-direction:column; align-items:center; gap:.6rem; }
-.img       { border-radius:8px; }
-.meta      { font-size:.9rem; opacity:.8; text-align:center; }
+.controls button:hover,
+.controls select:hover {
+  background: color-mix(in srgb, var(--code) 85%, var(--primary) 15%);
+  transform: translateY(-2px);
+}
 
-.empty     { text-align:center; margin:3rem 0; }
+/* active state = brand accent */
+.controls button.active {
+  background: var(--secondary);            /* accent token (pink / blue / etc.) */
+  color: var(--background);
+  border-color: var(--secondary);
+}
+
+/* label-select combo */
+.selectWrap {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+
+.selectWrap label {
+  font-size: .9rem;
+  color: color-mix(in srgb, var(--primary) 70%, var(--background) 30%);
+}
+
+/* native select arrow recoloured for dark & light */
+.controls select {
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: right .6rem center;
+  background-size: 10px 6px;
+  padding-right: 2rem;
+}
+
+/* ────────── Club tag on cards (uses accent) ────────── */
+.clubTag {
+  display: inline-block;
+  margin-top: .4rem;
+  padding: .1rem .6rem;
+  border-radius: 100vmax;
+  background: var(--secondary);
+  color: var(--background);
+  font-size: .75rem;
+  font-weight: 600;
+}

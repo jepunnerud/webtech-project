@@ -7,59 +7,60 @@ import players from '@/../public/players.json';
 import { Player } from '@/types';
 import styles from './page.module.css';
 
-/* ------------ helpers ------------ */
+/* helpers */
 const slug = (club: string) => club.toLowerCase().replace(/\s+/g, '');
 const sortByDebut = (a: Player, b: Player) =>
   a.debut_date.localeCompare(b.debut_date);
 const sortByMain = (a: Player, b: Player) => {
-  const max = (p: Player) =>
+  const best = (p: Player) =>
     p.teams.reduce((x, y) => (x.appearances > y.appearances ? x : y));
-  return max(b).appearances - max(a).appearances;
+  return best(b).appearances - best(a).appearances;
 };
 
 export default function AllViewer() {
-  const router      = useRouter();
-  const sp          = useSearchParams();
-  const narrative   = sp.get('narrative') ?? 'default';
-  const posFilter   = sp.get('pos') ?? '';
-  const teamFilter  = sp.get('team') ?? '';
+  const router       = useRouter();
+  const sp           = useSearchParams();
+  const narrative    = sp.get('narrative') ?? 'default';
+  const posFilter    = sp.get('pos') ?? '';
+  const teamFilter   = sp.get('team') ?? '';
 
-  /* ------------ option lists ------------ */
+  /* option lists */
   const positions = useMemo(
     () => Array.from(new Set(players.map(p => p.position))).sort(),
     []
   );
   const teams = useMemo(
     () =>
-      Array.from(
-        new Set(players.flatMap(p => p.teams.map(t => t.club)))
-      ).sort(),
+      Array.from(new Set(players.flatMap(p => p.teams.map(t => t.club)))).sort(),
     []
   );
 
-  /* ------------ derived list ------------ */
+  /* filtered + sorted list */
   const shown = useMemo(() => {
     let list = [...players];
-    if (narrative === 'debut') list.sort(sortByDebut);
-    else                       list.sort(sortByMain);
+    list.sort(narrative === 'debut' ? sortByDebut : sortByMain);
 
     if (narrative === 'position' && posFilter)
       list = list.filter(p => p.position === posFilter);
-
     if (narrative === 'team' && teamFilter)
       list = list.filter(p => p.teams.some(t => slug(t.club) === teamFilter));
 
     return list;
   }, [narrative, posFilter, teamFilter]);
 
-  /* ------------ query helper ------------ */
+  /* helper to push new query */
   const setQuery = (q: string) => router.push(`/museum/all?${q}`);
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>All-Time Legends</h1>
+      <div className={styles.header}>
+        <Link href="/museum" className={styles.backButton}>
+          &larr; Back to Museum
+        </Link>
+        <h1>All-Time Legends</h1>
+      </div>
 
-      {/* ---- controls ---- */}
+      {/* -------- controls -------- */}
       <div className={styles.controls}>
         <button
           onClick={() => setQuery('')}
@@ -115,32 +116,41 @@ export default function AllViewer() {
         </div>
       </div>
 
-      {/* ---- grid ---- */}
+      {/* -------- grid -------- */}
       {shown.length === 0 ? (
         <p className={styles.empty}>No players match.</p>
       ) : (
-        <div className={styles.grid}>
-          {shown.map(p => {
-            const main = p.teams.reduce((a, b) =>
+        <div className={styles.playersGrid}>
+          {shown.map(player => {
+            const main = player.teams.reduce((a, b) =>
               a.appearances > b.appearances ? a : b
             );
             return (
               <Link
-                key={p.id}
-                href={`/museum/${slug(main.club)}/${p.id}?${sp.toString()}`}
-                className={styles.card}
+                key={player.id}
+                href={`/museum/all/${player.id}?${sp.toString()}`}
+                className={styles.playerCard}
               >
-                <Image
-                  src={p.image_url}
-                  alt={p.name}
-                  width={200}
-                  height={200}
-                  className={styles.img}
-                />
-                <h3>{p.name}</h3>
-                <p className={styles.meta}>
-                  {p.position} • {main.club}
-                </p>
+                <div className={styles.playerImage}>
+                  <Image
+                    src={player.image_url}
+                    alt={player.name}
+                    width={200}
+                    height={200}
+                  />
+                </div>
+                <div className={styles.playerInfo}>
+                  <h3>{player.name}</h3>
+                  <p>{player.position}</p>
+                  <p className={styles.nation}>{player.nation}</p>
+                  <div className={styles.teamStats}>
+                    <span>Appearances: {main.appearances}</span>
+                    {main.goals !== undefined && (
+                      <span>Goals: {main.goals}</span>
+                    )}
+                  </div>
+                  <small className={styles.clubTag}>{main.club}</small>
+                </div>
               </Link>
             );
           })}
