@@ -44,6 +44,9 @@ export default function PlayerPage({
   const player    = list[idx];
   const prev      = list[(idx - 1 + list.length) % list.length];
   const next      = list[(idx + 1) % list.length];
+  const main = player.teams.reduce((a, b) =>
+              a.appearances > b.appearances ? a : b
+            );
 
   /* ---------- derived text ---------- */
   const descKey   = `${textLength}_${textLevel}_description` as const;
@@ -96,8 +99,21 @@ export default function PlayerPage({
               >
                 {player.nation}
               </Link>
-
-              <p className={styles.born}>Born: {player.born}</p>
+          
+              <p className={styles.born}>
+                    Born: {new Date(player.born).toLocaleDateString('en-GB', {
+                      year: 'numeric',
+                      month: 'short',
+                      day: 'numeric'
+                    })}
+                  </p>
+                <p className={styles.debutDate}>
+                    Debut for {main.club}: {new Date(player.debut_date).toLocaleDateString('en-GB', {
+                      year: 'numeric',
+                      month: 'short',
+                      day: 'numeric'
+                    })}
+                  </p>
             </div>
           </div>
         </div>

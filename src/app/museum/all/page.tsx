@@ -60,61 +60,69 @@ export default function AllViewer() {
         <h1>All-Time Legends</h1>
       </div>
 
-      {/* -------- controls -------- */}
+            {/* -------- controls -------- */}
       <div className={styles.controls}>
-        <button
-          onClick={() => setQuery('')}
-          className={narrative === 'default' ? styles.active : ''}
-        >
-          Main order
-        </button>
-        <button
-          onClick={() => setQuery('narrative=debut')}
-          className={narrative === 'debut' ? styles.active : ''}
-        >
-          Debut date
-        </button>
-
-        <div className={styles.selectWrap}>
-          <label>Position:</label>
-          <select
-            value={narrative === 'position' ? posFilter : ''}
-            onChange={e =>
-              setQuery(
-                e.target.value
-                  ? `narrative=position&pos=${e.target.value}`
-                  : ''
-              )
-            }
+        {/* --- row 1: sort buttons --- */}
+        <div className={styles.controlsRow}>
+          <span className={styles.sortLabel}>Sort by:</span>
+          <button
+            onClick={() => setQuery('')}
+            className={narrative === 'default' ? styles.active : ''}
           >
-            <option value="">—</option>
-            {positions.map(p => (
-              <option key={p}>{p}</option>
-            ))}
-          </select>
+            Appearances
+          </button>
+          <button
+            onClick={() => setQuery('narrative=debut')}
+            className={narrative === 'debut' ? styles.active : ''}
+          >
+            Debut date
+          </button>
         </div>
 
-        <div className={styles.selectWrap}>
-          <label>Team:</label>
-          <select
-            value={narrative === 'team' ? teamFilter : ''}
-            onChange={e =>
-              setQuery(
-                e.target.value
-                  ? `narrative=team&team=${e.target.value}`
-                  : ''
-              )
-            }
-          >
-            <option value="">—</option>
-            {teams.map(t => (
-              <option key={t} value={slug(t)}>
-                {t}
-              </option>
-            ))}
-          </select>
+        {/* --- row 2: filters --- */}
+        <div className={styles.controlsRow}>
+          <span className={styles.sortLabel}>Filters:</span>
+          <div className={styles.selectWrap}>
+            <label>Position:</label>
+            <select
+              value={narrative === 'position' ? posFilter : ''}
+              onChange={e =>
+                setQuery(
+                  e.target.value
+                    ? `narrative=position&pos=${e.target.value}`
+                    : ''
+                )
+              }
+            >
+              <option value="">—</option>
+              {positions.map(p => (
+                <option key={p}>{p}</option>
+              ))}
+            </select>
+          </div>
+          <div className={styles.selectWrap}>
+            <label>Team:</label>
+            <select
+              value={narrative === 'team' ? teamFilter : ''}
+              onChange={e =>
+                setQuery(
+                  e.target.value
+                    ? `narrative=team&team=${e.target.value}`
+                    : ''
+                )
+              }
+            >
+              <option value="">—</option>
+              {teams.map(t => (
+                <option key={t} value={slug(t)}>
+                  {t}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
       </div>
+
 
       {/* -------- grid -------- */}
       {shown.length === 0 ? (
@@ -149,8 +157,16 @@ export default function AllViewer() {
                       <span>Goals: {main.goals}</span>
                     )}
                   </div>
-                  <small className={styles.clubTag}>{main.club}</small>
+                  <small className={styles.clubTag}>Legend of {main.club}</small>
+                  <small className={styles.debutDate}>
+                    Debut: {new Date(player.debut_date).toLocaleDateString('en-GB', {
+                      year: 'numeric',
+                      month: 'short',
+                      day: 'numeric'
+                    })}
+                  </small>
                 </div>
+
               </Link>
             );
           })}

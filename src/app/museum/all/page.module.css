@@ -136,10 +136,19 @@
 /* ────────── Controls bar (theme-aware) ────────── */
 .controls {
   display: flex;
+  flex-direction: column;     /* stack rows vertically */
+  gap: 1.5rem;                /* space between sort row & filter row */
+  margin: 2rem 0 2.5rem;
+  align-items: center;        /* center both rows */
+}
+
+/* shared row styling (same gap as before) */
+.controlsRow {
+  display: flex;
   flex-wrap: wrap;
   gap: 1rem 1.25rem;
-  margin: 2rem 0 2.5rem;
   justify-content: center;
+  align-items: center;
 }
 
 /* basic pill */
@@ -190,7 +199,7 @@
 }
 
 /* ────────── Club tag on cards (uses accent) ────────── */
-.clubTag {
+.clubTag, .debutDate {
   display: inline-block;
   margin-top: .4rem;
   padding: .1rem .6rem;
@@ -200,3 +209,13 @@
   font-size: .75rem;
   font-weight: 600;
 }
+
+
+.sortLabel {
+  display: inline-block;
+  align-self: center;       /* keeps it vertically centered with the buttons */
+  margin-right: 0.5rem;     /* space between label and first button */
+  font-weight: 600;         /* match the weight of your pills */
+  color: var(--primary);    /* or another token to fit your theme */
+}
+

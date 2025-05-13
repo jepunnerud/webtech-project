@@ -354,9 +354,8 @@
     "image_url": "/player-images/rooney.png",
     "position": "Forward",
     "teams": [
-      { "club": "Everton", "appearances": 77, "goals": 15 },
+      { "club": "Everton", "appearances": 108, "goals": 25 },
       { "club": "Manchester United", "appearances": 393, "goals": 183 },
-      { "club": "Everton (second spell)", "appearances": 31, "goals": 10 },
       { "club": "D.C. United", "appearances": 48, "goals": 23 }
     ],
     "debut_date": "2004-08-28"
