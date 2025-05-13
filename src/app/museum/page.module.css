@@ -106,8 +106,8 @@
   display: inline-block;
   margin-top: 1rem;
   padding: 0.6rem 1.2rem;
-  background:#64b5f6;
-  color:#000;
+  background: var(--secondary);
+  color:var(--background);
   border-radius:100vmax;
   font-weight:600;
   text-decoration:none;
