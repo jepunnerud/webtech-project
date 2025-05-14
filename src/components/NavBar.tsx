@@ -23,6 +23,7 @@ export default function NavBar() {
           <Link href="/museum">Museum</Link>
           <Link href="/documentation">Documentation</Link>
           <Link href="/about-us">About&nbsp;Us</Link>
+          <Link href="/disclaimer">Disclaimer</Link>
         </nav>
 
         <div className={styles.themeSelector}>
