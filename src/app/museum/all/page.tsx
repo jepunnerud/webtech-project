@@ -1,49 +1,39 @@
-'use client';
-import { useRouter, useSearchParams } from 'next/navigation';
-import { useMemo } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import players from '@/../public/players.json';
-import { Player } from '@/types';
-import styles from './page.module.css';
+"use client";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useMemo } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import players from "@/../public/players.json";
+import { Player } from "@/types";
+import styles from "./page.module.css";
+import StandardButton from "@/components/StandardButton";
 
 /* helpers */
-const slug = (club: string) => club.toLowerCase().replace(/\s+/g, '');
-const sortByDebut = (a: Player, b: Player) =>
-  a.debut_date.localeCompare(b.debut_date);
+const slug = (club: string) => club.toLowerCase().replace(/\s+/g, "");
+const sortByDebut = (a: Player, b: Player) => a.debut_date.localeCompare(b.debut_date);
 const sortByMain = (a: Player, b: Player) => {
-  const best = (p: Player) =>
-    p.teams.reduce((x, y) => (x.appearances > y.appearances ? x : y));
+  const best = (p: Player) => p.teams.reduce((x, y) => (x.appearances > y.appearances ? x : y));
   return best(b).appearances - best(a).appearances;
 };
 
 export default function AllViewer() {
-  const router       = useRouter();
-  const sp           = useSearchParams();
-  const narrative    = sp.get('narrative') ?? 'default';
-  const posFilter    = sp.get('pos') ?? '';
-  const teamFilter   = sp.get('team') ?? '';
+  const router = useRouter();
+  const sp = useSearchParams();
+  const narrative = sp.get("narrative") ?? "default";
+  const posFilter = sp.get("pos") ?? "";
+  const teamFilter = sp.get("team") ?? "";
 
   /* option lists */
-  const positions = useMemo(
-    () => Array.from(new Set(players.map(p => p.position))).sort(),
-    []
-  );
-  const teams = useMemo(
-    () =>
-      Array.from(new Set(players.flatMap(p => p.teams.map(t => t.club)))).sort(),
-    []
-  );
+  const positions = useMemo(() => Array.from(new Set(players.map((p) => p.position))).sort(), []);
+  const teams = useMemo(() => Array.from(new Set(players.flatMap((p) => p.teams.map((t) => t.club)))).sort(), []);
 
   /* filtered + sorted list */
   const shown = useMemo(() => {
     let list = [...players];
-    list.sort(narrative === 'debut' ? sortByDebut : sortByMain);
+    list.sort(narrative === "debut" ? sortByDebut : sortByMain);
 
-    if (narrative === 'position' && posFilter)
-      list = list.filter(p => p.position === posFilter);
-    if (narrative === 'team' && teamFilter)
-      list = list.filter(p => p.teams.some(t => slug(t.club) === teamFilter));
+    if (narrative === "position" && posFilter) list = list.filter((p) => p.position === posFilter);
+    if (narrative === "team" && teamFilter) list = list.filter((p) => p.teams.some((t) => slug(t.club) === teamFilter));
 
     return list;
   }, [narrative, posFilter, teamFilter]);
@@ -54,27 +44,19 @@ export default function AllViewer() {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <Link href="/museum" className={styles.backButton}>
-          &larr; Back to Museum
-        </Link>
+        <StandardButton label="&larr; Back to Museum" href="/museum"></StandardButton>
         <h1>All-Time Legends</h1>
       </div>
 
-            {/* -------- controls -------- */}
+      {/* -------- controls -------- */}
       <div className={styles.controls}>
         {/* --- row 1: sort buttons --- */}
         <div className={styles.controlsRow}>
           <span className={styles.sortLabel}>Sort by:</span>
-          <button
-            onClick={() => setQuery('')}
-            className={narrative === 'default' ? styles.active : ''}
-          >
+          <button onClick={() => setQuery("")} className={narrative === "default" ? styles.active : ""}>
             Appearances
           </button>
-          <button
-            onClick={() => setQuery('narrative=debut')}
-            className={narrative === 'debut' ? styles.active : ''}
-          >
+          <button onClick={() => setQuery("narrative=debut")} className={narrative === "debut" ? styles.active : ""}>
             Debut date
           </button>
         </div>
@@ -85,17 +67,11 @@ export default function AllViewer() {
           <div className={styles.selectWrap}>
             <label>Position:</label>
             <select
-              value={narrative === 'position' ? posFilter : ''}
-              onChange={e =>
-                setQuery(
-                  e.target.value
-                    ? `narrative=position&pos=${e.target.value}`
-                    : ''
-                )
-              }
+              value={narrative === "position" ? posFilter : ""}
+              onChange={(e) => setQuery(e.target.value ? `narrative=position&pos=${e.target.value}` : "")}
             >
               <option value="">—</option>
-              {positions.map(p => (
+              {positions.map((p) => (
                 <option key={p}>{p}</option>
               ))}
             </select>
@@ -103,17 +79,11 @@ export default function AllViewer() {
           <div className={styles.selectWrap}>
             <label>Team:</label>
             <select
-              value={narrative === 'team' ? teamFilter : ''}
-              onChange={e =>
-                setQuery(
-                  e.target.value
-                    ? `narrative=team&team=${e.target.value}`
-                    : ''
-                )
-              }
+              value={narrative === "team" ? teamFilter : ""}
+              onChange={(e) => setQuery(e.target.value ? `narrative=team&team=${e.target.value}` : "")}
             >
               <option value="">—</option>
-              {teams.map(t => (
+              {teams.map((t) => (
                 <option key={t} value={slug(t)}>
                   {t}
                 </option>
@@ -123,29 +93,17 @@ export default function AllViewer() {
         </div>
       </div>
 
-
       {/* -------- grid -------- */}
       {shown.length === 0 ? (
         <p className={styles.empty}>No players match.</p>
       ) : (
         <div className={styles.playersGrid}>
-          {shown.map(player => {
-            const main = player.teams.reduce((a, b) =>
-              a.appearances > b.appearances ? a : b
-            );
+          {shown.map((player) => {
+            const main = player.teams.reduce((a, b) => (a.appearances > b.appearances ? a : b));
             return (
-              <Link
-                key={player.id}
-                href={`/museum/all/${player.id}?${sp.toString()}`}
-                className={styles.playerCard}
-              >
+              <Link key={player.id} href={`/museum/all/${player.id}?${sp.toString()}`} className={styles.playerCard}>
                 <div className={styles.playerImage}>
-                  <Image
-                    src={player.image_url}
-                    alt={player.name}
-                    width={200}
-                    height={200}
-                  />
+                  <Image src={player.image_url} alt={player.name} width={200} height={200} />
                 </div>
                 <div className={styles.playerInfo}>
                   <h3>{player.name}</h3>
@@ -153,20 +111,18 @@ export default function AllViewer() {
                   <p className={styles.nation}>{player.nation}</p>
                   <div className={styles.teamStats}>
                     <span>Appearances: {main.appearances}</span>
-                    {main.goals !== undefined && (
-                      <span>Goals: {main.goals}</span>
-                    )}
+                    {main.goals !== undefined && <span>Goals: {main.goals}</span>}
                   </div>
                   <small className={styles.clubTag}>Legend of {main.club}</small>
                   <small className={styles.debutDate}>
-                    Debut: {new Date(player.debut_date).toLocaleDateString('en-GB', {
-                      year: 'numeric',
-                      month: 'short',
-                      day: 'numeric'
+                    Debut:{" "}
+                    {new Date(player.debut_date).toLocaleDateString("en-GB", {
+                      year: "numeric",
+                      month: "short",
+                      day: "numeric",
                     })}
                   </small>
                 </div>
-
               </Link>
             );
           })}

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Player, TeamStats } from "@/types";
 import { getTeamName } from "@/utils/teamUtils";
+import StandardButton from "@/components/StandardButton";
 
 function getTeamPlayers(teamSlug: string): (Player & { mainTeam: TeamStats; currentTeamStats?: TeamStats })[] {
   const teamName = getTeamName(teamSlug);
@@ -20,11 +21,7 @@ function getTeamPlayers(teamSlug: string): (Player & { mainTeam: TeamStats; curr
     .filter((p) => p.mainTeam.club.toLowerCase() === teamName.toLowerCase() && p.currentTeamStats);
 }
 
-export default async function TeamPage({
-  params,
-}: {
-  params: Promise<{ team: string }>;
-}) {
+export default async function TeamPage({ params }: { params: Promise<{ team: string }> }) {
   const { team } = await params;
 
   const teamPlayers = getTeamPlayers(team);
@@ -33,9 +30,7 @@ export default async function TeamPage({
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <Link href="/museum" className={styles.backButton}>
-          &larr; Back to Museum
-        </Link>
+        <StandardButton label="&larr; Back to Museum" href="/museum"></StandardButton>
         <h1>{teamName} Legends</h1>
         <p>Players who made history for {teamName}</p>
       </div>

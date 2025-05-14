@@ -18,14 +18,26 @@
 }
 
 .brand {
+  position: relative;
   font-weight: 700;
   font-size: 1.2rem;
   letter-spacing: 0.02em;
   color: var(--primary);
   text-decoration: none;
-  border: 2px solid var(--primary);
-  padding: 0.5rem 0.75rem;
-  border-radius: 0.5rem;
+  background-image: linear-gradient(to right, var(--tertiary), var(--tertiary));
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: var(--primary);
+  transition: background-size 0.5s ease;
+}
+
+.brand:hover,
+.brand:focus-visible {
+  background-size: 100% 100%;
+  -webkit-text-fill-color: transparent;
 }
 
 .links {
