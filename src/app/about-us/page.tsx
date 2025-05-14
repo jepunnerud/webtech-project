@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import StandardButton from "@/components/StandardButton";
 
 interface Student {
   name: string;
@@ -91,6 +92,9 @@ export default function AboutUsPage() {
             </div>
           </div>
         ))}
+      </div>
+        <div style={{ display: "flex", justifyContent: "center", marginTop: "2rem" }}>
+        <StandardButton label="← Return Home" href="/" />
       </div>
     </div>
   );
