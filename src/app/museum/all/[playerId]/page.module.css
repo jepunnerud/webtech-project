@@ -1,3 +1,4 @@
+/* ---------- Layout ---------- */
 .container {
   max-width: 1000px;
   margin: 0 auto;
@@ -6,6 +7,7 @@
   min-width: 1000px;
 }
 
+/* ---------- Not-found ---------- */
 .notFound {
   text-align: center;
   padding: 3rem 0;
@@ -13,6 +15,7 @@
   opacity: 0.85;
 }
 
+/* ---------- Back button ---------- */
 .backButton {
   display: inline-block;
   margin-bottom: 2rem;
@@ -31,6 +34,7 @@
   transform: translateY(-2px);
 }
 
+/* ---------- Header ---------- */
 .playerHeader {
   display: flex;
   gap: 2rem;
@@ -53,6 +57,7 @@
   object-fit: cover;
 }
 
+/* basic info ------------------ */
 .playerBasicInfo {
   flex: 1 1 280px;
   display: flex;
@@ -66,7 +71,7 @@
 
 .position,
 .nation,
-.born {
+.born, .debut {
   margin: 0.25rem 0;
 }
 
@@ -74,6 +79,7 @@
   font-size: 1.05rem;
 }
 
+/* left/right arrangement for QR -------- */
 .infoRow {
   display: flex;
   gap: 1.25rem;
@@ -97,6 +103,7 @@
   font-size: 0.8rem;
 }
 
+/* ---------- Description controls ---------- */
 .descriptionControls {
   display: flex;
   flex-wrap: wrap;
@@ -117,7 +124,7 @@
 
 .buttonGroup button {
   padding: 0.45rem 1rem;
-  border-radius: 100vmax;
+  border-radius: 100vmax; /* pill */
   background: var(--background);
   border-color: var(--secondary);
   border: 2px solid var(--tertiary);
@@ -141,6 +148,7 @@
   border-color: var(--secondary);
 }
 
+/* ---------- Description text ---------- */
 .descriptionSection {
   margin-bottom: 2.5rem;
 }
@@ -151,6 +159,7 @@
   white-space: pre-line;
 }
 
+/* ---------- Stats ---------- */
 .statsSection {
   margin-bottom: 3rem;
 }
@@ -183,6 +192,7 @@
   font-weight: 600;
 }
 
+/* ---------- External link ---------- */
 .externalLink {
   margin-top: 2.5rem;
   text-align: center;
@@ -200,6 +210,7 @@
   text-decoration: underline;
 }
 
+/* ---------- Responsive tweaks ---------- */
 @media (max-width: 720px) {
   .playerHeader {
     flex-direction: column;
@@ -216,4 +227,54 @@
   .infoRow {
     justify-content: center;
   }
+}
+
+.filterBanner {
+  margin: 1rem 0 2rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--secondary);
+}
+
+.chip {
+  display: inline-block;
+  margin: 0 .25rem .4rem 0;
+  padding: .2rem .65rem;
+  border-radius: 100vmax;
+  background: var(--secondary);
+  color: var(--background);
+  font-size: .85rem;
+  text-decoration: none;
+}
+
+.clubChip { background: var(--tertiary); }
+
+.pager {
+  margin: 3rem 0;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+.prev, .next {
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+.filterBanner {
+  text-align: center;
+  margin: 1rem 0 2rem;
+  font-weight: 600;
+  color: var(--secondary);
+}
+
+.linkChip {
+  display: inline-block;
+  padding: .18rem .55rem;
+  border-radius: 100vmax;
+  background: var(--secondary);
+  color: var(--background);
+  font-size: .82rem;
+  text-decoration: none;
+  margin: 0 .3rem .35rem 0;
 }

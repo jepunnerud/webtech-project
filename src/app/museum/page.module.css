@@ -101,3 +101,16 @@
 .doorBottom {
   bottom: -3px;
 }
+
+.allButton {
+  display: inline-block;
+  margin: 1rem 0 2rem;
+  padding: 0.6rem 1.2rem;
+  background: var(--secondary);
+  color:var(--background);
+  border-radius:100vmax;
+  font-weight:600;
+  text-decoration:none;
+  transition:transform .2s;
+}
+.allButton:hover { transform:translateY(-2px); }

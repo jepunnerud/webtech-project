@@ -20,4 +20,5 @@ export interface TeamStats {
     teams: TeamStats[];
     long_description_qr?: string;
     long_description_wiki?: string;
+    debut_date: string;
   }
