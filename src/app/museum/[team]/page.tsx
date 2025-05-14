@@ -5,23 +5,38 @@ import Image from "next/image";
 import Link from "next/link";
 import { Player, TeamStats } from "@/types";
 import { getTeamName } from "@/utils/teamUtils";
+import PlayerCard from "@/components/playerCard/PlayerCard";
 import StandardButton from "@/components/StandardButton";
 
-function getTeamPlayers(teamSlug: string): (Player & { mainTeam: TeamStats; currentTeamStats?: TeamStats })[] {
+function getTeamPlayers(
+  teamSlug: string
+): (Player & { mainTeam: TeamStats; currentTeamStats?: TeamStats })[] {
   const teamName = getTeamName(teamSlug);
 
   return playersData
     .map((player) => {
-      const mainTeam = player.teams.reduce((prev, cur) => (prev.appearances > cur.appearances ? prev : cur));
+      const mainTeam = player.teams.reduce((prev, cur) =>
+        prev.appearances > cur.appearances ? prev : cur
+      );
 
-      const currentTeamStats = player.teams.find((t) => t.club.toLowerCase() === teamName.toLowerCase());
+      const currentTeamStats = player.teams.find(
+        (t) => t.club.toLowerCase() === teamName.toLowerCase()
+      );
 
       return { ...player, mainTeam, currentTeamStats };
     })
-    .filter((p) => p.mainTeam.club.toLowerCase() === teamName.toLowerCase() && p.currentTeamStats);
+    .filter(
+      (p) =>
+        p.mainTeam.club.toLowerCase() === teamName.toLowerCase() &&
+        p.currentTeamStats
+    );
 }
 
-export default async function TeamPage({ params }: { params: Promise<{ team: string }> }) {
+export default async function TeamPage({
+  params,
+}: {
+  params: Promise<{ team: string }>;
+}) {
   const { team } = await params;
 
   const teamPlayers = getTeamPlayers(team);
@@ -30,7 +45,10 @@ export default async function TeamPage({ params }: { params: Promise<{ team: str
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <StandardButton label="&larr; Back to Museum" href="/museum"></StandardButton>
+        <StandardButton
+          label="&larr; Back to Museum"
+          href="/museum"
+        ></StandardButton>
         <h1>{teamName} Legends</h1>
         <p>Players who made history for {teamName}</p>
       </div>
@@ -42,20 +60,11 @@ export default async function TeamPage({ params }: { params: Promise<{ team: str
       ) : (
         <div className={styles.playersGrid}>
           {teamPlayers.map((player) => (
-            <Link key={player.id} href={`/museum/${team}/${player.id}`} className={styles.playerCard}>
-              <div className={styles.playerImage}>
-                <Image src={player.image_url} alt={player.name} width={200} height={200} />
-              </div>
-              <div className={styles.playerInfo}>
-                <h3>{player.name}</h3>
-                <p>{player.position}</p>
-                <p className={styles.nation}>{player.nation}</p>
-                <div className={styles.teamStats}>
-                  <span>Appearances: {player.currentTeamStats?.appearances}</span>
-                  {player.currentTeamStats?.goals !== undefined && <span>Goals: {player.currentTeamStats.goals}</span>}
-                </div>
-              </div>
-            </Link>
+            <PlayerCard
+              key={player.id}
+              player={player}
+              href={`/museum/${team}/${player.id}`}
+            />
           ))}
         </div>
       )}

@@ -49,70 +49,6 @@
   gap: 2rem;
 }
 
-.playerCard {
-  border: 1px solid var(--tertiary);
-  border-radius: 8px;
-  overflow: hidden;
-  transition:
-    transform 0.3s,
-    box-shadow 0.3s;
-  text-decoration: none;
-  background-color: var(--secondary);
-  width: 300px;
-}
-
-.playerCard.mainTeam {
-  border-left: 4px solid #0066cc;
-}
-
-.playerCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.playerImage {
-  width: 100%;
-  height: 250px;
-  position: relative;
-  overflow: hidden;
-}
-
-.playerImage img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s;
-}
-
-.playerCard:hover .playerImage img {
-  transform: scale(1.05);
-}
-
-.playerInfo {
-  padding: 1.5rem;
-}
-
-.playerInfo h3 {
-  margin: 0 0 0.5rem 0;
-  font-size: 1.5rem;
-}
-
-.playerInfo p {
-  margin: 0.3rem 0;
-  color: #666;
-}
-
-.playerInfo .nation {
-  font-style: italic;
-}
-
-.teamStats {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
-  font-size: 0.9rem;
-}
-
 .secondaryTeamNote {
   margin-top: 0.5rem;
   font-size: 0.8rem;
@@ -124,21 +60,23 @@
   display: inline-block;
   margin-top: 1rem;
   padding: 0.6rem 1.2rem;
-  background:#64b5f6;
-  color:#000;
-  border-radius:100vmax;
-  font-weight:600;
-  text-decoration:none;
-  transition:transform .2s;
+  background: #64b5f6;
+  color: #000;
+  border-radius: 100vmax;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s;
 }
-.allButton:hover { transform:translateY(-2px); }
+.allButton:hover {
+  transform: translateY(-2px);
+}
 
 .controls {
   display: flex;
-  flex-direction: column;   
-  gap: 1.5rem;              
+  flex-direction: column;
+  gap: 1.5rem;
   margin: 2rem 0 2.5rem;
-  align-items: center;     
+  align-items: center;
 }
 
 .controlsRow {
@@ -153,12 +91,15 @@
 .controls select {
   padding: 0.5rem 1.1rem;
   border-radius: 100vmax;
-  background: var(--code);               
-  color: var(--primary);                   
-  border: 1px solid rgba(0 0 0 / .12);    
+  background: var(--code);
+  color: var(--primary);
+  border: 1px solid rgba(0 0 0 / 0.12);
   font-weight: 500;
   cursor: pointer;
-  transition: background .2s, color .2s, transform .15s;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    transform 0.15s;
 }
 
 .controls button:hover,
@@ -168,7 +109,7 @@
 }
 
 .controls button.active {
-  background: var(--secondary);           
+  background: var(--secondary);
   color: var(--background);
   border-color: var(--secondary);
 }
@@ -176,39 +117,26 @@
 .selectWrap {
   display: flex;
   align-items: center;
-  gap: .4rem;
+  gap: 0.4rem;
 }
 
 .selectWrap label {
-  font-size: .9rem;
+  font-size: 0.9rem;
   color: color-mix(in srgb, var(--primary) 70%, var(--background) 30%);
 }
 
 .controls select {
   appearance: none;
   background-repeat: no-repeat;
-  background-position: right .6rem center;
+  background-position: right 0.6rem center;
   background-size: 10px 6px;
   padding-right: 2rem;
 }
 
-.clubTag, .debutDate {
-  display: inline-block;
-  margin-top: .4rem;
-  padding: .1rem .6rem;
-  border-radius: 100vmax;
-  background: var(--secondary);
-  color: var(--background);
-  font-size: .75rem;
-  font-weight: 600;
-}
-
-
 .sortLabel {
   display: inline-block;
   align-self: center;
-  margin-right: 0.5rem;     
-  font-weight: 600;         
-  color: var(--primary);    
+  margin-right: 0.5rem;
+  font-weight: 600;
+  color: var(--primary);
 }
-
