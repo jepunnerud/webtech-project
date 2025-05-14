@@ -1,3 +1,4 @@
+/* src/app/documentation/page.module.css */
 .container {
   height: fit-content;
   max-width: 1000px;
@@ -54,12 +55,12 @@
 
 .footer { margin-top: 4rem; text-align: center; }
 .back {
-  color: #64b5f6;
+  color: var(--secondary);
   text-decoration: none;
   font-weight: 600;
   transition: color .25s;
 }
-.back:hover { color: #4e9be0; }
+.back:hover { color: var(--tertiary); }
 
 @media (max-width: 600px) {
   .page { padding-inline: 1rem; }
