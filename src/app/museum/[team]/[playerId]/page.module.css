@@ -1,4 +1,3 @@
-/* ---------- Layout ---------- */
 .container {
   max-width: 1000px;
   margin: 0 auto;
@@ -7,7 +6,6 @@
   min-width: 1000px;
 }
 
-/* ---------- Not-found ---------- */
 .notFound {
   text-align: center;
   padding: 3rem 0;
@@ -15,7 +13,6 @@
   opacity: 0.85;
 }
 
-/* ---------- Back button ---------- */
 .backButton {
   display: inline-block;
   margin-bottom: 2rem;
@@ -34,7 +31,6 @@
   transform: translateY(-2px);
 }
 
-/* ---------- Header ---------- */
 .playerHeader {
   display: flex;
   gap: 2rem;
@@ -57,7 +53,6 @@
   object-fit: cover;
 }
 
-/* basic info ------------------ */
 .playerBasicInfo {
   flex: 1 1 280px;
   display: flex;
@@ -79,7 +74,6 @@
   font-size: 1.05rem;
 }
 
-/* left/right arrangement for QR -------- */
 .infoRow {
   display: flex;
   gap: 1.25rem;
@@ -103,7 +97,6 @@
   font-size: 0.8rem;
 }
 
-/* ---------- Description controls ---------- */
 .descriptionControls {
   display: flex;
   flex-wrap: wrap;
@@ -124,7 +117,7 @@
 
 .buttonGroup button {
   padding: 0.45rem 1rem;
-  border-radius: 100vmax; /* pill */
+  border-radius: 100vmax;
   background: var(--background);
   border-color: var(--secondary);
   border: 2px solid var(--tertiary);
@@ -148,7 +141,6 @@
   border-color: var(--secondary);
 }
 
-/* ---------- Description text ---------- */
 .descriptionSection {
   margin-bottom: 2.5rem;
 }
@@ -159,7 +151,6 @@
   white-space: pre-line;
 }
 
-/* ---------- Stats ---------- */
 .statsSection {
   margin-bottom: 3rem;
 }
@@ -192,7 +183,6 @@
   font-weight: 600;
 }
 
-/* ---------- External link ---------- */
 .externalLink {
   margin-top: 2.5rem;
   text-align: center;
@@ -210,7 +200,6 @@
   text-decoration: underline;
 }
 
-/* ---------- Responsive tweaks ---------- */
 @media (max-width: 720px) {
   .playerHeader {
     flex-direction: column;

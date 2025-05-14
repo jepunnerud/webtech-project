@@ -133,16 +133,14 @@
 }
 .allButton:hover { transform:translateY(-2px); }
 
-/* ────────── Controls bar (theme-aware) ────────── */
 .controls {
   display: flex;
-  flex-direction: column;     /* stack rows vertically */
-  gap: 1.5rem;                /* space between sort row & filter row */
+  flex-direction: column;   
+  gap: 1.5rem;              
   margin: 2rem 0 2.5rem;
-  align-items: center;        /* center both rows */
+  align-items: center;     
 }
 
-/* shared row styling (same gap as before) */
 .controlsRow {
   display: flex;
   flex-wrap: wrap;
@@ -151,14 +149,13 @@
   align-items: center;
 }
 
-/* basic pill */
 .controls button,
 .controls select {
   padding: 0.5rem 1.1rem;
   border-radius: 100vmax;
-  background: var(--code);                 /* light → #f0f0f0, dark → #1e1e1e */
-  color: var(--primary);                   /* text adapts per theme           */
-  border: 1px solid rgba(0 0 0 / .12);     /* subtle outline for all themes   */
+  background: var(--code);               
+  color: var(--primary);                   
+  border: 1px solid rgba(0 0 0 / .12);    
   font-weight: 500;
   cursor: pointer;
   transition: background .2s, color .2s, transform .15s;
@@ -170,14 +167,12 @@
   transform: translateY(-2px);
 }
 
-/* active state = brand accent */
 .controls button.active {
-  background: var(--secondary);            /* accent token (pink / blue / etc.) */
+  background: var(--secondary);           
   color: var(--background);
   border-color: var(--secondary);
 }
 
-/* label-select combo */
 .selectWrap {
   display: flex;
   align-items: center;
@@ -189,7 +184,6 @@
   color: color-mix(in srgb, var(--primary) 70%, var(--background) 30%);
 }
 
-/* native select arrow recoloured for dark & light */
 .controls select {
   appearance: none;
   background-repeat: no-repeat;
@@ -198,7 +192,6 @@
   padding-right: 2rem;
 }
 
-/* ────────── Club tag on cards (uses accent) ────────── */
 .clubTag, .debutDate {
   display: inline-block;
   margin-top: .4rem;
@@ -213,9 +206,9 @@
 
 .sortLabel {
   display: inline-block;
-  align-self: center;       /* keeps it vertically centered with the buttons */
-  margin-right: 0.5rem;     /* space between label and first button */
-  font-weight: 600;         /* match the weight of your pills */
-  color: var(--primary);    /* or another token to fit your theme */
+  align-self: center;
+  margin-right: 0.5rem;     
+  font-weight: 600;         
+  color: var(--primary);    
 }
 

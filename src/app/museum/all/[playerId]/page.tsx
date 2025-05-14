@@ -8,7 +8,6 @@ import playersData from '@/../public/players.json';
 import styles from './page.module.css';
 import { Player } from '@/types';
 
-/* helpers */
 const slug = (s: string) => s.toLowerCase().replace(/\s+/g, '');
 const filterList = (list: Player[], type?: string, value?: string) => {
   if (!type || !value) return list;
@@ -22,21 +21,17 @@ const filterList = (list: Player[], type?: string, value?: string) => {
 export default function PlayerPage({
   params,
 }: { params: Promise<{ playerId: string }> }) {
-  /* ---------- unwrap route param ---------- */
   const { playerId } = use(params);
   const idNum        = Number(playerId);
 
-  /* ---------- URL search params ---------- */
   const sp           = useSearchParams();
   const filterType   = sp.get('filter') ?? undefined;   // team | position | country
   const filterValue  = sp.get('value')  ?? undefined;
   const qp           = filterType ? `?filter=${filterType}&value=${filterValue}` : '';
 
-  /* ---------- hooks for description ---------- */
   const [textLevel,  setTextLevel]  = useState<'easy'|'medium'|'advanced'>('medium');
   const [textLength, setTextLength] = useState<'short'|'extended'>('short');
 
-  /* ---------- list & neighbours ---------- */
   const list      = filterList(playersData, filterType, filterValue);
   const idx       = list.findIndex(p => p.id === idNum);
   if (idx === -1) return <div className={styles.notFound}>Player not found</div>;
@@ -48,11 +43,9 @@ export default function PlayerPage({
               a.appearances > b.appearances ? a : b
             );
 
-  /* ---------- derived text ---------- */
   const descKey   = `${textLength}_${textLevel}_description` as const;
   const description = player[descKey];
 
-  /* ---------- render ---------- */
   return (
     <div className={styles.container}>
       {/* back link */}

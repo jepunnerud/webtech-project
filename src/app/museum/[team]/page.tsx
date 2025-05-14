@@ -6,7 +6,6 @@ import Link from "next/link";
 import { Player, TeamStats } from "@/types";
 import { getTeamName } from "@/utils/teamUtils";
 
-/** Collect every player whose main club matches the slugged team */
 function getTeamPlayers(teamSlug: string): (Player & { mainTeam: TeamStats; currentTeamStats?: TeamStats })[] {
   const teamName = getTeamName(teamSlug);
 
@@ -24,10 +23,8 @@ function getTeamPlayers(teamSlug: string): (Player & { mainTeam: TeamStats; curr
 export default async function TeamPage({
   params,
 }: {
-  /** Next now passes a Promise here */
   params: Promise<{ team: string }>;
 }) {
-  // 👇 unwrap the promise
   const { team } = await params;
 
   const teamPlayers = getTeamPlayers(team);

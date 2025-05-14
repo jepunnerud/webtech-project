@@ -52,7 +52,6 @@
   font-size: .9rem;
 }
 
-/* ---------- Footer ---------- */
 .footer { margin-top: 4rem; text-align: center; }
 .back {
   color: #64b5f6;
@@ -62,7 +61,6 @@
 }
 .back:hover { color: #4e9be0; }
 
-/* ---------- Mobile tweaks ---------- */
 @media (max-width: 600px) {
   .page { padding-inline: 1rem; }
   .sectionTitle { font-size: 1.35rem; }

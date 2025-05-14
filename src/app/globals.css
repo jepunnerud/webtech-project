@@ -65,14 +65,13 @@ a {
 
 html,
 body {
-  height: 100%; /* not required for the hero, but nice baseline */
+  height: 100%; 
   margin: 0;
 }
 
 .global-container {
   display: flex;
   flex-direction: column;
-  /* gap: 3rem; */
   height: 100%;
 }
 
