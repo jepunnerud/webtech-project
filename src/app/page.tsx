@@ -1,8 +1,8 @@
 "use client";
 import { useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import styles from "./page.module.css";
+import StandardButton from "@/components/StandardButton";
 
 export default function Home() {
   /* ───── disable scrolling only on this page ───── */
@@ -25,12 +25,13 @@ export default function Home() {
           <p>Explore legendary clubs, deep-dive into historic careers and learn how this project was built.</p>
 
           <div className={styles.ctas}>
-            <Link href="/museum" className={styles.primary}>
-              Enter the Museum →
-            </Link>
-            <Link href="/documentation" className={styles.secondary}>
-              Project Docs
-            </Link>
+            <StandardButton label="Enter the museum →" href="/museum" size="large"></StandardButton>
+            <StandardButton
+              label="Project docs"
+              variant="secondary"
+              href="/documentation"
+              size="large"
+            ></StandardButton>
           </div>
         </div>
 

@@ -3,8 +3,8 @@ import { use, useEffect } from "react";
 import { useState } from "react";
 import playersData from "@/../public/players.json";
 import Image from "next/image";
-import Link from "next/link";
 import styles from "./page.module.css";
+import StandardButton from "@/components/StandardButton";
 
 /** The Page itself must be client-side because of useState */
 export default function PlayerPage({ params }: { params: Promise<{ team: string; playerId: string }> }) {
@@ -32,10 +32,9 @@ export default function PlayerPage({ params }: { params: Promise<{ team: string;
 
   return (
     <div className={styles.container}>
-      <Link href={`/museum/${team}`} className={styles.backButton}>
-        &larr; Back to {mainTeam.club}
-      </Link>
-
+      <div className={styles.buttonWrapper}>
+        <StandardButton label={`\u2190 Back to ${mainTeam.club}`} href={`/museum/${team}`}></StandardButton>
+      </div>
       <div className={styles.playerHeader}>
         <div className={styles.playerImage}>
           <Image src={player.image_url} alt={player.name} width={300} height={300} priority />

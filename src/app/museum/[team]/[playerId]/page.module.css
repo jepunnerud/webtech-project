@@ -217,3 +217,7 @@
     justify-content: center;
   }
 }
+
+.buttonWrapper {
+  margin-bottom: 1rem;
+}
