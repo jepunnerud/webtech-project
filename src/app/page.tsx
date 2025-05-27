@@ -22,10 +22,17 @@ export default function Home() {
           <h1>
             Welcome to the <span>Museum&nbsp;of&nbsp;Football</span>
           </h1>
-          <p>Explore legendary clubs, deep-dive into historic careers and learn how this project was built.</p>
+          <p>
+            Explore legendary clubs, deep-dive into historic careers and learn
+            how this project was built.
+          </p>
 
           <div className={styles.ctas}>
-            <StandardButton label="Enter the museum →" href="/museum" size="large"></StandardButton>
+            <StandardButton
+              label="Enter the museum →"
+              href="/museum"
+              size="large"
+            ></StandardButton>
             <StandardButton
               label="Project docs"
               variant="secondary"
