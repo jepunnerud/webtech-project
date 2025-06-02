@@ -1,69 +1,55 @@
-"use client";
-import { useRouter, useSearchParams } from "next/navigation";
-import { useMemo } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import players from "@/../public/players.json";
-import { Player } from "@/types";
-import styles from "./page.module.css";
-import PlayerCard from "@/components/playerCard/PlayerCard";
-import StandardButton from "@/components/StandardButton";
+'use client'
+import { useRouter, useSearchParams } from 'next/navigation'
+import { useMemo } from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import players from '@/../public/players.json'
+import { Player } from '@/types'
+import styles from './page.module.css'
+import PlayerCard from '@/components/playerCard/PlayerCard'
+import StandardButton from '@/components/StandardButton'
 
 /* helpers */
-const slug = (club: string) => club.toLowerCase().replace(/\s+/g, "");
-const sortByDebut = (a: Player, b: Player) =>
-  a.debut_date.localeCompare(b.debut_date);
+const slug = (club: string) => club.toLowerCase().replace(/\s+/g, '')
+const sortByDebut = (a: Player, b: Player) => a.debut_date.localeCompare(b.debut_date)
 const sortByMain = (a: Player, b: Player) => {
-  const best = (p: Player) =>
-    p.teams.reduce((x, y) => (x.appearances > y.appearances ? x : y));
-  return best(b).appearances - best(a).appearances;
-};
+  const best = (p: Player) => p.teams.reduce((x, y) => (x.appearances > y.appearances ? x : y))
+  return best(b).appearances - best(a).appearances
+}
 
 export default function AllViewer() {
-  const router = useRouter();
-  const sp = useSearchParams();
-  const narrative = sp.get("narrative") ?? "default";
-  const posFilter = sp.get("pos") ?? "";
-  const teamFilter = sp.get("team") ?? "";
+  const router = useRouter()
+  const sp = useSearchParams()
+  const narrative = sp.get('narrative') ?? 'default'
+  const posFilter = sp.get('pos') ?? ''
+  const teamFilter = sp.get('team') ?? ''
 
   /* option lists */
-  const positions = useMemo(
-    () => Array.from(new Set(players.map((p) => p.position))).sort(),
-    []
-  );
+  const positions = useMemo(() => Array.from(new Set(players.map((p) => p.position))).sort(), [])
   const teams = useMemo(
-    () =>
-      Array.from(
-        new Set(players.flatMap((p) => p.teams.map((t) => t.club)))
-      ).sort(),
+    () => Array.from(new Set(players.flatMap((p) => p.teams.map((t) => t.club)))).sort(),
     []
-  );
+  )
 
   /* filtered + sorted list */
   const shown = useMemo(() => {
-    let list = [...players];
-    list.sort(narrative === "debut" ? sortByDebut : sortByMain);
+    let list = [...players]
+    list.sort(narrative === 'debut' ? sortByDebut : sortByMain)
 
-    if (narrative === "position" && posFilter)
-      list = list.filter((p) => p.position === posFilter);
-    if (narrative === "team" && teamFilter)
-      list = list.filter((p) =>
-        p.teams.some((t) => slug(t.club) === teamFilter)
-      );
+    if (narrative === 'position' && posFilter) list = list.filter((p) => p.position === posFilter)
+    if (narrative === 'team' && teamFilter)
+      list = list.filter((p) => p.teams.some((t) => slug(t.club) === teamFilter))
 
-    return list;
-  }, [narrative, posFilter, teamFilter]);
+    return list
+  }, [narrative, posFilter, teamFilter])
 
   /* helper to push new query */
-  const setQuery = (q: string) => router.push(`/museum/all?${q}`);
+  const setQuery = (q: string) => router.push(`/museum/all?${q}`)
 
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <StandardButton
-          label="&larr; Back to Museum"
-          href="/museum"
-        ></StandardButton>
+        <StandardButton label="&larr; Back to Museum" href="/museum"></StandardButton>
         <h1>All-Time Legends</h1>
       </div>
 
@@ -73,14 +59,14 @@ export default function AllViewer() {
         <div className={styles.controlsRow}>
           <span className={styles.sortLabel}>Sort by:</span>
           <button
-            onClick={() => setQuery("")}
-            className={narrative === "default" ? styles.active : ""}
+            onClick={() => setQuery('')}
+            className={narrative === 'default' ? styles.active : ''}
           >
             Appearances
           </button>
           <button
-            onClick={() => setQuery("narrative=debut")}
-            className={narrative === "debut" ? styles.active : ""}
+            onClick={() => setQuery('narrative=debut')}
+            className={narrative === 'debut' ? styles.active : ''}
           >
             Debut date
           </button>
@@ -92,13 +78,9 @@ export default function AllViewer() {
           <div className={styles.selectWrap}>
             <label>Position:</label>
             <select
-              value={narrative === "position" ? posFilter : ""}
+              value={narrative === 'position' ? posFilter : ''}
               onChange={(e) =>
-                setQuery(
-                  e.target.value
-                    ? `narrative=position&pos=${e.target.value}`
-                    : ""
-                )
+                setQuery(e.target.value ? `narrative=position&pos=${e.target.value}` : '')
               }
             >
               <option value="">—</option>
@@ -110,11 +92,9 @@ export default function AllViewer() {
           <div className={styles.selectWrap}>
             <label>Team:</label>
             <select
-              value={narrative === "team" ? teamFilter : ""}
+              value={narrative === 'team' ? teamFilter : ''}
               onChange={(e) =>
-                setQuery(
-                  e.target.value ? `narrative=team&team=${e.target.value}` : ""
-                )
+                setQuery(e.target.value ? `narrative=team&team=${e.target.value}` : '')
               }
             >
               <option value="">—</option>
@@ -143,5 +123,5 @@ export default function AllViewer() {
         </div>
       )}
     </div>
-  );
+  )
 }

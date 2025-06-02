@@ -1,53 +1,41 @@
-"use client";
-import React, {
-  createContext,
-  useContext,
-  useState,
-  ReactNode,
-  useEffect,
-} from "react";
+'use client'
+import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react'
 
 export interface ThemeContextType {
-  theme: string;
-  changeTheme: (newTheme: string) => void;
+  theme: string
+  changeTheme: (newTheme: string) => void
 }
 
-export const ThemeContext = createContext<ThemeContextType | undefined>(
-  undefined
-);
+export const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 export const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState('dark')
 
   const rawSetTheme = (newTheme: string) => {
-    const root = window.document.documentElement;
+    const root = window.document.documentElement
 
     // Remove the old theme, if it exists, else remove the default theme
-    root.classList.remove(localStorage.getItem("color-theme") || "dark");
-    root.classList.add(newTheme);
+    root.classList.remove(localStorage.getItem('color-theme') || 'dark')
+    root.classList.add(newTheme)
 
-    localStorage.setItem("color-theme", newTheme);
-  };
+    localStorage.setItem('color-theme', newTheme)
+  }
 
   const changeTheme = (newTheme: string) => {
-    setTheme(newTheme);
-  };
+    setTheme(newTheme)
+  }
 
   useEffect(() => {
-    rawSetTheme(theme);
-  }, [theme]);
+    rawSetTheme(theme)
+  }, [theme])
 
-  return (
-    <ThemeContext.Provider value={{ theme, changeTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  );
-};
+  return <ThemeContext.Provider value={{ theme, changeTheme }}>{children}</ThemeContext.Provider>
+}
 
 export const useTheme = () => {
-  const context = useContext(ThemeContext);
+  const context = useContext(ThemeContext)
   if (!context) {
-    throw new Error("useTheme must be used within a ThemeContextProvider");
+    throw new Error('useTheme must be used within a ThemeContextProvider')
   }
-  return context;
-};
+  return context
+}

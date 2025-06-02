@@ -2,7 +2,8 @@
 .container {
   height: fit-content;
   max-width: 1000px;
-  min-width: 1000px;
+  /* min-width: 1000px; */
+  margin: 0 1rem;
 }
 
 .header {
@@ -31,17 +32,21 @@
   margin-bottom: 1rem;
   border-bottom: 2px solid rgba(255 255 255 / 0.08);
   padding-bottom: 0.4rem;
-  width: max-content;
+  width: 100%;
   color: var(--secondary);
 }
 
 /* ---------- Lists & code ---------- */
-.list { padding-left: 1.2rem; }
-.list li { margin: .35rem 0; }
+.list {
+  padding-left: 1.2rem;
+}
+.list li {
+  margin: 0.35rem 0;
+}
 
 .container code {
   background: var(--code);
-  padding: .15rem .4rem;
+  padding: 0.15rem 0.4rem;
   border-radius: 4px;
   font-family: inherit;
 }
@@ -50,19 +55,28 @@
   padding: 1rem;
   border-radius: 6px;
   overflow: auto;
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
-.footer { margin-top: 4rem; text-align: center; }
+.footer {
+  margin-top: 4rem;
+  text-align: center;
+}
 .back {
   color: var(--secondary);
   text-decoration: none;
   font-weight: 600;
-  transition: color .25s;
+  transition: color 0.25s;
 }
-.back:hover { color: var(--tertiary); }
+.back:hover {
+  color: var(--tertiary);
+}
 
-@media (max-width: 600px) {
-  .page { padding-inline: 1rem; }
-  .sectionTitle { font-size: 1.35rem; }
+@media (max-width: 640px) {
+  .page {
+    padding-inline: 1rem;
+  }
+  .sectionTitle {
+    font-size: 1.35rem;
+  }
 }

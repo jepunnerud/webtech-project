@@ -40,7 +40,26 @@
   -webkit-text-fill-color: transparent;
 }
 
+.hamburger {
+  all: unset;
+  display: none;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  font-size: 3rem;
+  transition: rotate 0.25s ease;
+  tranform-origin: center;
+}
+
+.menu {
+  position: relative;
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+}
+
 .links {
+  position: relative;
   display: flex;
   gap: 1.25rem;
   font-weight: 500;
@@ -60,7 +79,7 @@
 }
 
 .links a::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   bottom: -4px;
@@ -71,7 +90,7 @@
 }
 
 .links a:hover::after,
-.links a[aria-current="page"]::after {
+.links a[aria-current='page']::after {
   width: 100%;
 }
 
@@ -83,6 +102,7 @@
 }
 
 .themeSelector {
+  position: relative;
   display: flex;
   gap: 0.5rem;
   align-items: center;
@@ -98,4 +118,49 @@
   border: none;
   color: var(--primary);
   font-size: 0.85rem;
+}
+
+@media only screen and (max-width: 640px) {
+  .hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hamburger.show {
+    rotate: 90deg; /* Rotate hamburger icon when menu is open */
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .menu.show {
+    display: block; /* Hide links on small screens */
+    z-index: 1000; /* Ensure it appears above other content */
+    flex-direction: column;
+    position: absolute;
+    top: 64px; /* Below the navbar */
+    left: 0;
+    width: 100%;
+    background: var(--secondary);
+  }
+
+  .links {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 0.25rem;
+  }
+  .links a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .themeSelector {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
 }

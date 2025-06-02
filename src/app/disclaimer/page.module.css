@@ -3,8 +3,7 @@
 .container {
   height: fit-content;
   max-width: 1000px;
-  min-width: 1000px;
-  margin: 0 auto;
+  margin: 0 1rem;
   padding: 2rem 0;
 }
 
@@ -37,7 +36,9 @@
   border: 1px solid var(--tertiary);
   border-radius: 8px;
   overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
   text-decoration: none;
 }
 
