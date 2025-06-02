@@ -1,39 +1,48 @@
-"use client";
-import { use, useEffect } from "react";
-import { useState } from "react";
-import playersData from "@/../public/players.json";
-import Image from "next/image";
-import styles from "./page.module.css";
-import StandardButton from "@/components/StandardButton";
+'use client'
+import { use, useEffect } from 'react'
+import { useState } from 'react'
+import playersData from '@/../public/players.json'
+import Image from 'next/image'
+import styles from './page.module.css'
+import StandardButton from '@/components/StandardButton'
 
 /** The Page itself must be client-side because of useState */
-export default function PlayerPage({ params }: { params: Promise<{ team: string; playerId: string }> }) {
-  const { team, playerId } = use(params);
+export default function PlayerPage({
+  params,
+}: {
+  params: Promise<{ team: string; playerId: string }>
+}) {
+  const { team, playerId } = use(params)
 
-  const player = playersData.find((p) => p.id === Number(playerId));
+  const player = playersData.find((p) => p.id === Number(playerId))
 
-  const [textLevel, setTextLevel] = useState<"easy" | "medium" | "advanced">("medium");
-  const [textLength, setTextLength] = useState<"short" | "extended">("short");
+  const [textLevel, setTextLevel] = useState<'easy' | 'medium' | 'advanced'>('medium')
+  const [textLength, setTextLength] = useState<'short' | 'extended'>('short')
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    window.scrollTo(0, 0)
+  }, [])
 
   if (!player) {
-    return <div className={styles.notFound}>Player not found</div>;
+    return <div className={styles.notFound}>Player not found</div>
   }
 
   const getDescription = () => {
-    const key = `${textLength}_${textLevel}_description` as const;
-    return player[key];
-  };
+    const key = `${textLength}_${textLevel}_description` as const
+    return player[key]
+  }
 
-  const mainTeam = player.teams.reduce((prev, current) => (prev.appearances > current.appearances ? prev : current));
+  const mainTeam = player.teams.reduce((prev, current) =>
+    prev.appearances > current.appearances ? prev : current
+  )
 
   return (
     <div className={styles.container}>
       <div className={styles.buttonWrapper}>
-        <StandardButton label={`\u2190 Back to ${mainTeam.club}`} href={`/museum/${team}`}></StandardButton>
+        <StandardButton
+          label={`\u2190 Back to ${mainTeam.club}`}
+          href={`/museum/${team}`}
+        ></StandardButton>
       </div>
       <div className={styles.playerHeader}>
         <div className={styles.playerImage}>
@@ -60,23 +69,38 @@ export default function PlayerPage({ params }: { params: Promise<{ team: string;
       <div className={styles.descriptionControls}>
         <div className={styles.buttonGroup}>
           <span>Text Complexity:</span>
-          <button onClick={() => setTextLevel("easy")} className={textLevel === "easy" ? styles.active : ""}>
+          <button
+            onClick={() => setTextLevel('easy')}
+            className={textLevel === 'easy' ? styles.active : ''}
+          >
             Easy
           </button>
-          <button onClick={() => setTextLevel("medium")} className={textLevel === "medium" ? styles.active : ""}>
+          <button
+            onClick={() => setTextLevel('medium')}
+            className={textLevel === 'medium' ? styles.active : ''}
+          >
             Medium
           </button>
-          <button onClick={() => setTextLevel("advanced")} className={textLevel === "advanced" ? styles.active : ""}>
+          <button
+            onClick={() => setTextLevel('advanced')}
+            className={textLevel === 'advanced' ? styles.active : ''}
+          >
             Advanced
           </button>
         </div>
 
         <div className={styles.buttonGroup}>
           <span>Text Length:</span>
-          <button onClick={() => setTextLength("short")} className={textLength === "short" ? styles.active : ""}>
+          <button
+            onClick={() => setTextLength('short')}
+            className={textLength === 'short' ? styles.active : ''}
+          >
             Short
           </button>
-          <button onClick={() => setTextLength("extended")} className={textLength === "extended" ? styles.active : ""}>
+          <button
+            onClick={() => setTextLength('extended')}
+            className={textLength === 'extended' ? styles.active : ''}
+          >
             Extended
           </button>
         </div>
@@ -116,5 +140,5 @@ export default function PlayerPage({ params }: { params: Promise<{ team: string;
         </div>
       )}
     </div>
-  );
+  )
 }

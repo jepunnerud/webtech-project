@@ -268,7 +268,9 @@
     "long_description_wiki": "https://en.wikipedia.org/wiki/Ryan_Giggs",
     "image_url": "/player-images/giggs.png",
     "position": "Winger",
-    "teams": [{ "club": "Manchester United", "appearances": 672, "goals": 114 }],
+    "teams": [
+      { "club": "Manchester United", "appearances": 672, "goals": 114 }
+    ],
     "debut_date": "1991-03-02"
   },
   {
@@ -287,7 +289,9 @@
     "long_description_wiki": "https://en.wikipedia.org/wiki/Paul_Scholes",
     "image_url": "/player-images/scholes.png",
     "position": "Midfielder",
-    "teams": [{ "club": "Manchester United", "appearances": 499, "goals": 107 }],
+    "teams": [
+      { "club": "Manchester United", "appearances": 499, "goals": 107 }
+    ],
     "debut_date": "1994-09-21"
   },
   {

@@ -1,42 +1,42 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-import StandardButton from "@/components/StandardButton";
+import Image from 'next/image'
+import styles from './page.module.css'
+import StandardButton from '@/components/StandardButton'
 
 interface Student {
-  name: string;
-  imageSrc: string;
-  linkedin: string;
-  github: string;
-  nationality: string;
-  age: number;
+  name: string
+  imageSrc: string
+  linkedin: string
+  github: string
+  nationality: string
+  age: number
 }
 
 const students: Student[] = [
   {
-    name: "Åke Sjursen Hauge",
-    imageSrc: "/guttabilder/aake.png",
-    linkedin: "https://www.linkedin.com/in/aake-sjursen-hauge/",
-    github: "https://github.com/aakesj",
-    nationality: "Norwegian",
+    name: 'Åke Sjursen Hauge',
+    imageSrc: '/guttabilder/aake.png',
+    linkedin: 'https://www.linkedin.com/in/aake-sjursen-hauge/',
+    github: 'https://github.com/aakesj',
+    nationality: 'Norwegian',
     age: 15,
   },
   {
-    name: "Andreas Omholt Olsen",
-    imageSrc: "/guttabilder/andreas.png",
-    linkedin: "https://www.linkedin.com/in/andreas-omholt-olsen-890b9724b/",
-    github: "https://github.com/andreas-ols1",
-    nationality: "Norwegian",
+    name: 'Andreas Omholt Olsen',
+    imageSrc: '/guttabilder/andreas.png',
+    linkedin: 'https://www.linkedin.com/in/andreas-omholt-olsen-890b9724b/',
+    github: 'https://github.com/andreas-ols1',
+    nationality: 'Norwegian',
     age: 24,
   },
   {
-    name: "Jakob Eilertsen Punnerud",
-    imageSrc: "/guttabilder/jakob.png",
-    linkedin: "https://www.linkedin.com/in/jakobpunnerud-208771233/",
-    github: "https://github.com/jepunnerud",
-    nationality: "Norwegian",
+    name: 'Jakob Eilertsen Punnerud',
+    imageSrc: '/guttabilder/jakob.png',
+    linkedin: 'https://www.linkedin.com/in/jakobpunnerud-208771233/',
+    github: 'https://github.com/jepunnerud',
+    nationality: 'Norwegian',
     age: 23,
   },
-];
+]
 
 export default function AboutUsPage() {
   return (
@@ -77,7 +77,13 @@ export default function AboutUsPage() {
                   aria-label={`${student.name}'s LinkedIn profile`}
                   className={styles.link}
                 >
-                  <Image src="/icons/linkedin.svg" alt="LinkedIn logo" width={24} height={24} className={styles.icon} />
+                  <Image
+                    src="/icons/linkedin.svg"
+                    alt="LinkedIn logo"
+                    width={24}
+                    height={24}
+                    className={styles.icon}
+                  />
                 </a>
                 <a
                   href={student.github}
@@ -86,16 +92,22 @@ export default function AboutUsPage() {
                   aria-label={`${student.name}'s GitHub profile`}
                   className={styles.link}
                 >
-                  <Image src="/icons/github.svg" alt="GitHub logo" width={24} height={24} className={styles.icon} />
+                  <Image
+                    src="/icons/github.svg"
+                    alt="GitHub logo"
+                    width={24}
+                    height={24}
+                    className={styles.icon}
+                  />
                 </a>
               </div>
             </div>
           </div>
         ))}
       </div>
-        <div style={{ display: "flex", justifyContent: "center", marginTop: "2rem" }}>
+      <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
         <StandardButton label="← Return Home" href="/" />
       </div>
     </div>
-  );
+  )
 }

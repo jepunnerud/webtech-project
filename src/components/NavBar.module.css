@@ -79,7 +79,7 @@
 }
 
 .links a::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   bottom: -4px;
@@ -90,7 +90,7 @@
 }
 
 .links a:hover::after,
-.links a[aria-current="page"]::after {
+.links a[aria-current='page']::after {
   width: 100%;
 }
 
