@@ -12,27 +12,27 @@ export default function Documentation() {
       <header className={styles.header}>
         <h1>Styling&nbsp;Documentation</h1>
         <p className={styles.subtitle}>
-          How colour, spacing, and the golden ratio guide every component, to make a user experience that feels natural and good to use.
+          How colour, consistent spacing, and deliberate design choices guide every component, to make a user experience that feels natural and good to use.
         </p>
       </header>
 
       {/* ---------- Design Philosophy ---------- */}
       <section>
         <h2 className={styles.sectionTitle}>Design Philosophy</h2>
-        <p>Our way of styling is not random. It follows clear rules from the project description. These rules help make sure that everything you see has a purpose. This makes the website feel connected, easy to understand, and nice to look at. Our main ideas are: making choices for a reason (&apos;deliberate design&apos;), using different media to tell stories (&apos;multimedia narratives&apos;), and using a special number called the golden ratio to make things look balanced. Le Corbusier, a famous architect, said, &quot;;The plan is the generator... Without plan, you have lack of order... The plan holds in itself the essence of sensation.&quot;; This means good planning is key to good design, and we agree.
+        <p>Our way of styling is not random. It follows clear rules from the project description. These rules help make sure that everything you see has a purpose. This makes the website feel connected, easy to understand, and nice to look at. Our main ideas are: making choices for a reason (&apos;deliberate design&apos;), using different media to tell stories (&apos;multimedia narratives&apos;), and using a structured approach to spacing and proportions to make things look balanced. Le Corbusier, a famous architect, said, &quot;The plan is the generator... Without plan, you have lack of order... The plan holds in itself the essence of sensation.&quot; This means good planning is key to good design, and we agree.
         </p>
         <ul className={styles.list}>
           <li>
-            <strong>Golden Ratio (φ ≈ 1.618):</strong> This is a special number, about 1.618. We use it a lot. It helps us decide how much space to put around things (like margins and padding), the shape of pictures and boxes (aspect ratios), and how big text should be. When we use the golden ratio, things look balanced and nice. It&apos;s a number found in nature and art, and it feels good to look at. For example, if we have a small space of 10 pixels, the next bigger space might be 16 pixels (10 * 1.618 ≈ 16). This is a core part of our design system.
+            <strong>Consistent Spacing System:</strong> We use a consistent system for spacing. This helps us decide how much space to put around things (like margins and padding), the shape of pictures and boxes (aspect ratios), and how big text should be. When we use a consistent system, things look balanced and harmonious. For example, if we have a small space of 8 pixels, the next bigger space might be 12 or 16 pixels, following a defined scale based on our base unit (often 4px or 1rem). This is a core part of our design system.
           </li>
           <li>
-            <strong>Modular Scale:</strong> This is a system for sizes. We start with a base font size, which is <code>1rem</code> (this is usually 16 pixels on most screens). Then, we get other sizes, like for headings or spaces, by multiplying or dividing this 1rem by the golden ratio (φ). So, a heading might be 1.618rem, and a smaller text might be 0.618rem. This makes all the sizes related and look good together. It helps make the design feel consistent.
+            <strong>Modular Scale & Typographic Hierarchy:</strong> This is a system for sizes. We start with a base font size, which is <code>1rem</code> (this is usually 16 pixels on most screens). Then, we get other sizes, like for headings or spaces, by multiplying or dividing this 1rem by values from our established typographic scale (e.g., 1.25, 1.5, 2.0). So, a heading might be 1.5rem or 1.8rem, and a smaller text might be 0.8rem or 0.9rem, based on values that create clear hierarchy and visual appeal. This makes all the sizes related and look good together. It helps make the design feel consistent.
           </li>
           <li>
             <strong>Multimedia & Narratives:</strong> The website needs to show different kinds of information, like text, pictures, and maybe videos. The design should change to fit what the user wants to see. We have different &apos;themes&apos; (looks for the site), ways to see information (&apos;metadata views&apos;), and different styles of text. These can change based on how much detail the user wants, or what kind of information they are looking for. For example, some users might want short, easy text, while others want long, detailed text. Our design tries to support this.
           </li>
           <li>
-            <strong>Deliberate Choices & Justification:</strong> We don&apos;t just pick a style because &quot;it looked nicer.&quot; Every choice, like a color or a size, has a reason. We write down these reasons. Often, the reason is connected to our main ideas, like the golden ratio, or making the site easy to use for everyone (accessibility). This makes it easier to work on the site later and for everyone on the team to understand why things are the way they are. This is a very important rule for our project.
+            <strong>Deliberate Choices & Justification:</strong> We don&apos;t just pick a style because &quot;it looked nicer.&quot; Every choice, like a color or a size, has a reason. We write down these reasons. Often, the reason is connected to our main ideas, like our spacing system and typographic scale, or making the site easy to use for everyone (accessibility). This makes it easier to work on the site later and for everyone on the team to understand why things are the way they are. This is a very important rule for our project.
           </li>
           <li>
             <strong>Theming:</strong> We have six different looks, or &apos;themes&apos;, for the website: dark, light, forest, sunset, cyberpunk, and pastel. Users can switch between them. These themes are made using CSS variables, which are like placeholders for style values. When you change a theme, these placeholders get new values. Each theme changes colors and maybe some fonts, but they all should be easy to read and use.
@@ -60,10 +60,10 @@ export default function Documentation() {
             <strong><code>.global-container</code> Flex Layout:</strong> We often use a class like <code>.global-container</code> on the main part of the page. We style it with <code>display: flex; flex-direction: column; min-height: 100vh;</code>. Flexbox is a modern way to arrange things. <code>flex-direction: column;</code> stacks things vertically. <code>min-height: 100vh;</code> means it will be at least as tall as the screen. This is useful to make sure the footer (bottom part of the page) stays at the bottom, even if there isn&apos;t much content.
           </li>
           <li>
-            <strong>Main Content Offset for Fixed Navigation:</strong> The navigation bar at the top is fixed, meaning it stays visible when you scroll. It has a height of <code>64px</code>. So, the main content below it needs some top padding, otherwise the navbar would cover it. We use <code>padding-top: calc(64px + 1rem);</code>. The <code>1rem</code> (which is 16px) is extra &quot;breathing room&quot;. This 16px is φ⁰ (phi to the power of 0, which is 1, times our base 16px) or derived from our golden ratio spacing.
+            <strong>Main Content Offset for Fixed Navigation:</strong> The navigation bar at the top is fixed, meaning it stays visible when you scroll. It has a height of <code>64px</code>. So, the main content below it needs some top padding, otherwise the navbar would cover it. We use <code>padding-top: calc(64px + 1rem);</code>. The <code>1rem</code> (which is 16px) is extra &quot;breathing room&quot;. This 16px serves as a common spacing unit, fitting into our established 4px grid system.
           </li>
           <li>
-            <strong>Rhythmic Spacing (Margins, Gaps, Line-Height):</strong> We want the spaces between things to feel consistent. So, for margins, padding, gaps, and often line-height (the space between lines of text), we use our base size (<code>1rem</code>) and multiply or divide it by the golden ratio (φ). For example, <code>1rem * φ</code> (about 26px) or <code>1rem / φ</code> (about 10px). Then, we round these numbers to the nearest 4px (like 4px, 8px, 12px, 16px, 24px, 40px, 64px, 104px). This makes a nice rhythm and helps things line up on a sort of invisible grid.
+            <strong>Rhythmic Spacing (Margins, Gaps, Line-Height):</strong> We want the spaces between things to feel consistent and create a visual rhythm. So, for margins, padding, gaps, and often line-height (the space between lines of text), we use a scale of values derived from our base size (<code>1rem</code>). These values are typically multiples of 4px (e.g., 4px, 8px, 12px, 16px, 24px, 32px, 40px, 64px). This system ensures harmonious proportions and helps things line up on an implicit grid, contributing to a clean and organized layout.
           </li>
         </ul>
       </section>
@@ -76,19 +76,19 @@ export default function Documentation() {
         </p>
         <ul className={styles.list}>
           <li>
-            <strong><code>.navbar</code> Positioning & Sizing:</strong> We use <code>position: fixed; inset: 0 0 auto 0;</code>. This CSS sticks the navbar to the top of the screen. The <code>height</code> is <code>64px</code>. This size is like a main building block for our vertical spacing (it&apos;s 4 times 16px, or related to φ). The <code>z-index: 100;</code> makes sure the navbar is on top of other things on the page, so it doesn&apos;t get hidden.
+            <strong><code>.navbar</code> Positioning & Sizing:</strong> We use <code>position: fixed; inset: 0 0 auto 0;</code>. This CSS sticks the navbar to the top of the screen. The <code>height</code> is <code>64px</code>. This size is a key value in our design, (it&apos;s 4 times our base unit of 16px, aligning with our 4px grid system). The <code>z-index: 100;</code> makes sure the navbar is on top of other things on the page, so it doesn&apos;t get hidden.
           </li>
           <li>
             <strong>Background & Shadow:</strong> The navbar&apos;s background color is <code>var(--secondary)</code>, which is one of our main theme accent colors. This makes it stand out. It also has a small shadow (<code>box-shadow: 0 2px 6px rgba(0 0 0 /.25);</code>) which makes it look a bit lifted from the page.
           </li>
           <li>
-            <strong><code>.inner</code> Container:</strong> Inside the navbar, there&apos;s an <code>.inner</code> div. It has <code>max-width: 960px;</code>. This means on wide screens, the content inside the navbar (logo, links) won&apos;t stretch too wide; it will stay centered. It also has <code>padding: 0 0.75rem;</code>. This 0.75rem (which is 12px) is for space on the left and right. This 12px is φ⁻² times our base rhythm or related to 1rem (16px * 0.618 ≈ 10px, then we pick 12px because it fits our 4px grid).
+            <strong><code>.inner</code> Container:</strong> Inside the navbar, there&apos;s an <code>.inner</code> div. It has <code>max-width: 960px;</code>. This means on wide screens, the content inside the navbar (logo, links) won&apos;t stretch too wide; it will stay centered. It also has <code>padding: 0 0.75rem;</code>. This 0.75rem (which is 12px) provides adequate spacing and aligns with our 4px grid system for consistency.
           </li>
           <li>
             <strong><code>.brand</code> Styling:</strong> The site logo or name (<code>.brand</code>) is styled to be important. It uses <code>font-weight: 700;</code> (this makes it bold) and <code>font-size: 1.2rem;</code> (this is 1.2 times our base font size, so 19.2px). The <code>letter-spacing: 0.02em;</code> adds a tiny bit of space between letters, which can make it easier to read. It has a 2px border and 0.5rem (8px) rounded corners, like our buttons, to make it feel like something you can click.
           </li>
           <li>
-            <strong><code>.links</code> Spacing:</strong> The navigation links inside <code>.links</code> are arranged using flexbox. The space between them is <code>gap: 1.25rem;</code> (which is 20px). This 20px is also based on φ (for example, 1.25 * 16px). The text for links has <code>font-weight: 500;</code>, which is less bold than the brand, so they look different.
+            <strong><code>.links</code> Spacing:</strong> The navigation links inside <code>.links</code> are arranged using flexbox. The space between them is <code>gap: 1.25rem;</code> (which is 20px). This 20px is chosen from our spacing scale to provide comfortable separation between links and aligns with our 4px grid. The text for links has <code>font-weight: 500;</code>, which is less bold than the brand, so they look different.
           </li>
           <li>
             <strong><code>.links a</code> Interaction:</strong> Each link has <code>padding-block:.25rem;</code> (4px on top and bottom). This makes the clickable area bigger, which is good for touch screens. When you hover over a link, the color changes. This change takes 0.2 seconds. The hover color is <code>var(--tertiary)</code>, another theme accent color.
@@ -97,7 +97,7 @@ export default function Documentation() {
             <strong><code>.links a::after</code> Underline Animation:</strong> We use an animated underline for links. The <code>::after</code> is a CSS trick to add something after the link text. This &quot;something&quot; is an underline that starts at 0% width and grows to 100% width in 0.25 seconds when you hover. This clearly shows which link you are pointing at and is a nice detail. It also helps meet accessibility rules for links.
           </li>
           <li>
-            <strong>Responsive Adjustments:</strong> On small screens (less than <code>640px</code> wide, like on many phones), the space between links (<code>.links</code> gap) gets smaller to <code>0.85rem</code> (about 14px, also from φ). The font size also gets a bit smaller, to <code>0.92rem</code>. This is so the links don&apos;t look too crowded on small screens. We also show a &quot;hamburger&quot; icon to open/close the menu.
+            <strong>Responsive Adjustments:</strong> On small screens (less than <code>640px</code> wide, like on many phones), the space between links (<code>.links</code> gap) gets smaller to <code>0.85rem</code> (about 14px, a value chosen from our responsive spacing scale to fit better). The font size also gets a bit smaller, to <code>0.92rem</code>. This is so the links don&apos;t look too crowded on small screens. We also show a &quot;hamburger&quot; icon to open/close the menu.
           </li>
           <li>
             <strong><code>.themeSelector</code> Styling:</strong> The dropdown menu to choose a theme (<code>.themeSelector</code>) also uses flexbox with a small space (<code>gap:.5rem;</code> or 8px) between the label and the dropdown. The dropdown (<code>select</code> element) has some padding (<code>.25rem</code>) and rounded corners (<code>.25rem</code>) to look like other elements. Its background (<code>var(--background)</code>) and text color (<code>var(--primary)</code>) change with the theme so it always looks correct and is easy to read.
@@ -149,16 +149,16 @@ export default function Documentation() {
         <p>The &apos;About Us&apos; page shows information about the people who made the project. It uses cards for each person. The cards lift up a bit when you hover over them. We wanted it to look clean and professional.</p>
         <ul className={styles.list}>
           <li>
-            <strong><code>.container</code> Padding:</strong> The main area of the About Us page has <code>padding-top: 50px;</code>. This 50px space is calculated using our golden ratio idea (it&apos;s about φ⁻² times 104px, where 104px is another key size in our system). This space makes sure the content doesn&apos;t start too close to the navigation bar.
+            <strong><code>.container</code> Padding:</strong> The main area of the About Us page has <code>padding-top: 50px;</code>. This 50px space is a deliberate choice from our spacing scale, providing ample room and ensuring the content doesn&apos;t start too close to the navigation bar.
           </li>
           <li>
-            <strong><code>.aboutCardContainer</code> Gap:</strong> The container that holds all the person-cards has a <code>gap: 1rem;</code> (this is 16px). 16px is our basic spacing unit (φ⁰). This ensures the cards have a nice, even space between them, so it doesn&apos;t look too crowded or too empty.
+            <strong><code>.aboutCardContainer</code> Gap:</strong> The container that holds all the person-cards has a <code>gap: 1rem;</code> (this is 16px). 16px is our base spacing unit, aligning with our 4px grid. This ensures the cards have a nice, even space between them, so it doesn&apos;t look too crowded or too empty.
           </li>
           <li>
             <strong><code>.card</code> Visuals:</strong> The cards have rounded corners (<code>border-radius: 0.5rem;</code> which is 8px). They also have a shadow made of two layers. This makes them look a bit lifted from the page, but not too much. It gives a nice depth.
           </li>
           <li>
-            <strong>Card Hover States:</strong> When you move your mouse over a card, it lifts up by <code>4px</code> (<code>transform: translateY(-4px);</code>). This 4px is a smaller space, also from our golden ratio calculations (maybe φ⁻³ times 104px). The change happens smoothly (<code>transition: 0.3s ease-out;</code>) to feel nice.
+            <strong>Card Hover States:</strong> When you move your mouse over a card, it lifts up by <code>4px</code> (<code>transform: translateY(-4px);</code>). This 4px lift is a subtle increment from our spacing scale, providing clear visual feedback. The change happens smoothly (<code>transition: 0.3s ease-out;</code>) to feel nice.
           </li>
           <li>
             <strong><code>.imageWrapper</code> Styling:</strong> The pictures of people are usually in a circle shape, <code>160px</code> wide. There is a <code>4px</code> border around the circle. When you hover over the card, this border might change color (for example, to <code>var(--secondary)</code>) to give a bit more feedback.
@@ -175,16 +175,16 @@ export default function Documentation() {
             <strong><code>.container</code> Width:</strong> The main content area has a <code>max-width: 1000px;</code>. We picked this width because it makes lines of text not too long. If lines are too long, it&apos;s hard to read. The best length is usually 60 to 75 characters.
           </li>
           <li>
-            <strong><code>.sectionTitle</code> Styling:</strong> The titles for each section (like the one above) have a <code>font-size: 1.5rem;</code> (this is 24px, which is our 1rem base size multiplied by φ, then adjusted to our 4px grid). There is a <code>2px</code> line under the title (<code>border-bottom</code>). This line is 8% opaque version of the main text color (<code>rgba(var(--primary-rgb-components), 0.08)</code>), so it&apos;s very subtle and just helps to separate the title from the text.
+            <strong><code>.sectionTitle</code> Styling:</strong> The titles for each section (like the one above) have a <code>font-size: 1.5rem;</code> (this is 24px, typically 1.5 times our base 1rem font size, and aligns with our 4px grid for visual consistency). There is a <code>2px</code> line under the title (<code>border-bottom</code>). This line is 8% opaque version of the main text color (<code>rgba(var(--primary-rgb-components), 0.08)</code>), so it&apos;s very subtle and just helps to separate the title from the text.
           </li>
           <li>
-            <strong><code>.list</code> Padding:</strong> For lists like this one, there is <code>padding-left: 1.2rem;</code> (about 19px). This moves the bullet points or numbers in a bit, and we picked this value so they line up nicely with our 24px spacing grid or a similar idea from the golden ratio.
+            <strong><code>.list</code> Padding:</strong> For lists like this one, there is <code>padding-left: 1.2rem;</code> (about 19px). This moves the bullet points or numbers in a bit, and we picked this value so they line up nicely with our overall spacing system and create a clear visual hierarchy for list content.
           </li>
           <li>
             <strong>Inline Code & Code Blocks:</strong> When we write code in the text, like <code>&lt;code&gt;</code>, it has a light background (<code>var(--code-bg)</code>) and a little padding (<code>0.2rem 0.4rem;</code>). For bigger blocks of code (like the <code>&lt;pre&gt;</code> tags), there is more padding, usually <code>1rem</code>, to give the code space to breathe. Both use a special font for code (<code>var(--font-family-monospace)</code>).
           </li>
           <li>
-            <strong>Mobile Responsiveness:</strong> On small screens (like phones, around <code>600px</code> wide), the section titles might get a bit smaller (e.g., to <code>1.35rem</code>, which is also from our φ calculations). The page might also get some extra padding on the sides (<code>1rem</code>) so the text is not right against the edge of the screen, making it easier to read and use with your thumb.
+            <strong>Mobile Responsiveness:</strong> On small screens (like phones, around <code>600px</code> wide), the section titles might get a bit smaller (e.g., to <code>1.35rem</code>, a size chosen from our typographic scale to maintain readability on smaller screens). The page might also get some extra padding on the sides (<code>1rem</code>) so the text is not right against the edge of the screen, making it easier to read and use with your thumb.
           </li>
         </ul>
       </section>
@@ -195,13 +195,13 @@ export default function Documentation() {
         <p>The &apos;Museum: Team Page&apos; is where we might show a list of players from a team, or different items in a category. It usually uses a grid of cards. The style needs to be flexible for different numbers of items and give clear signs for interaction.</p>
         <ul className={styles.list}>
           <li>
-            <strong><code>.playersGrid</code> Layout:</strong> This grid uses <code>display: flex; flex-wrap: wrap;</code>. This means if there isn&apos;t enough space for all cards in one row, they will wrap to the next line. The space between cards is <code>gap: 2rem;</code> (32px). This 32px is a larger space (maybe φ³ times our base unit, or 1rem * φ²), which gives the cards plenty of room. Because it wraps, the cards won&apos;t overlap on small or very wide screens.
+            <strong><code>.playersGrid</code> Layout:</strong> This grid uses <code>display: flex; flex-wrap: wrap;</code>. This means if there isn&apos;t enough space for all cards in one row, they will wrap to the next line. The space between cards is <code>gap: 2rem;</code> (32px). This 32px is a larger value from our spacing scale, which gives the cards plenty of room. Because it wraps, the cards won&apos;t overlap on small or very wide screens.
           </li>
           <li>
             <strong><code>.playerCard</code> Dimensions & Accents:</strong> Each card could be <code>300px</code> wide. This size is good for showing a standard picture (maybe 250px wide) and some text next to or below it. Sometimes, we might add a special border, like <code>border-left: 4px solid var(--brand-blue);</code> (or a theme color like <code>var(--accent-feature)</code>). This border can show that a card belongs to a special group or is the main item.
           </li>
           <li>
-            <strong>Card Hover Effects (Museum):</strong> When you hover over these cards, they might lift up by <code>5px</code> and get a stronger shadow, like <code>box-shadow: 0 10px 20px rgba(0,0,0,0.2);</code>. This 5px lift and darker shadow are more noticeable than on smaller elements because these cards are larger. This effect is also related to φ (maybe φ⁴ for a bigger effect) and makes the card feel more interactive.
+            <strong>Card Hover Effects (Museum):</strong> When you hover over these cards, they might lift up by <code>5px</code> and get a stronger shadow, like <code>box-shadow: 0 10px 20px rgba(0,0,0,0.2);</code>. This 5px lift and darker shadow are more noticeable than on smaller elements because these cards are larger. This more pronounced effect uses a clear increment from our spacing scale and makes the card feel more interactive.
           </li>
           <li>
             <strong>Image Zoom on Hover:</strong> Pictures inside the cards might zoom in a little bit (e.g., <code>transform: scale(1.05);</code>) when you hover. This happens over <code>0.3s</code>. This small zoom makes the picture stand out and adds a nice, dynamic feeling. It goes back to normal smoothly when you move the mouse away.
@@ -215,7 +215,7 @@ export default function Documentation() {
         <p>The &apos;Player Detail Page&apos; shows all the information about one player or item. On big screens, it often has two columns (like picture on one side, text on the other). On small screens, these columns stack on top of each other. Buttons and stats tables have their own special styles.</p>
         <ul className={styles.list}>
           <li>
-            <strong>Responsive Layout:</strong> It uses a two-column layout until the screen is <code>720px</code> wide. This 720px number (maybe from φ⁵ times a base unit, or chosen because a 280px image and a 455px text block fit well) is where the two columns don&apos;t have enough space anymore. Below 720px, the layout changes to one column, which is better for reading on phones. (455px is about φ times 280px).
+            <strong>Responsive Layout:</strong> It uses a two-column layout until the screen is <code>720px</code> wide. This 720px breakpoint is chosen to ensure both image and text blocks remain legible and well-proportioned before stacking for smaller screens. Below 720px, the layout changes to one column, which is better for reading on phones.
           </li>
           <li>
             <strong>Pill Buttons in <code>.buttonGroup</code>:</strong> Buttons that are grouped together (in a <code>.buttonGroup</code>) might have very rounded ends, making them look like pills. We do this with <code>border-radius: 100vmax;</code> (or a big number like <code>9999px</code>). This makes them look different from square cards or input fields and clearly shows they are buttons for actions.
@@ -235,7 +235,7 @@ export default function Documentation() {
         <p>The &apos;Museum: Index Page&apos; is like the main entrance or map to the museum. It might have big clickable boxes or &apos;doors&apos; that lead to different parts of the museum. The style here should have a lot of space and make it very clear what you can click on.</p>
         <ul className={styles.list}>
           <li>
-            <strong>Grid Layout (<code>.grid</code>):</strong> It might use a 2x2 grid. For this, we can use CSS Grid (<code>display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;</code>) or Flexbox. The space between the grid items (the &apos;doors&apos;) could be very big, like <code>80px</code>. This large gap (maybe φ⁴ times our base unit) gives each &apos;door&apos; its own space and makes the page feel open.
+            <strong>Grid Layout (<code>.grid</code>):</strong> It might use a 2x2 grid. For this, we can use CSS Grid (<code>display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;</code>) or Flexbox. The space between the grid items (the &apos;doors&apos;) could be very big, like <code>80px</code>. This large gap, a significant value from our spacing scale, gives each &apos;door&apos; its own space and makes the page feel open.
           </li>
           <li>
             <strong>Box/Panel Styling (<code>.box</code>):</strong> Each clickable box or panel could have a set height, for example <code>250px</code>, so they all look the same size. They might have a <code>3px</code> border. To make them look like a museum frame or a door, we might add small <code>4px</code> gaps or indents using padding or other CSS tricks.
@@ -253,20 +253,20 @@ export default function Documentation() {
       <section>
         <h2 className={styles.sectionTitle}>Home Hero Styling</h2>
         <p>
-          The Home Hero is the big section you see first on the main page. It should grab your attention. It often takes up the whole screen height. The background might be a radial gradient (colors fading out from a center point) that changes with the theme. The text is big, and the sizes are based on our φ ratios. Buttons here are usually styled as &apos;pills&apos; (very rounded).
+          The Home Hero is the big section you see first on the main page. It should grab your attention. It often takes up the whole screen height. The background might be a radial gradient (colors fading out from a center point) that changes with the theme. The text is big, and the sizes are based on our established typographic scale. Buttons here are usually styled as &apos;pills&apos; (very rounded).
         </p>
         <ul className={styles.list}>
           <li>
             <strong>Headline Typography:</strong> The main title here uses a flexible font size. We use <code>clamp()</code> in CSS for this. For example, <code>clamp(2rem, 5vw, 3.5rem)</code>. This means the font size will be at least <code>2rem</code>, at most <code>3.5rem</code>, and in between it will be <code>5vw</code> (5% of the viewport width). This way, the title looks good on small phone screens and big desktop screens without getting too small or too big and messy.
           </li>
           <li>
-            <strong>Subhead Typography:</strong> Smaller text under the main title (subheads) are also sized with φ. For example, <code>1.125rem</code> (which is 18px). This size might be φ⁻¹ (0.618) times a bigger title size, or φ times a smaller body text. This makes a clear difference between the main title and the subhead, which helps people quickly understand the information.
+            <strong>Subhead Typography:</strong> Smaller text under the main title (subheads) are also sized based on our typographic scale. For example, <code>1.125rem</code> (which is 18px). This size is chosen from our typographic scale to create a clear visual step down from the main headline, ensuring a clear hierarchy. This makes a clear difference between the main title and the subhead, which helps people quickly understand the information.
           </li>
           <li>
-            <strong>CTA Button Styling (<code>.primary</code> & <code>.secondary</code>):</strong> The main buttons (Call To Action buttons) are styled like pills (fully rounded ends). They have consistent padding, for example, <code>padding: 0.75rem 1.25rem;</code>. Here, the side padding (1.25rem) could be φ times the top/bottom padding (0.75rem). This keeps the nice φ proportion even inside the button. When you hover, they lift up by <code>2px</code> (<code>transform: translateY(-2px);</code>) to show they are clickable.
+            <strong>CTA Button Styling (<code>.primary</code> & <code>.secondary</code>):</strong> The main buttons (Call To Action buttons) are styled like pills (fully rounded ends). They have consistent padding, for example, <code>padding: 0.75rem 1.25rem;</code>. The padding values are selected from our spacing scale to ensure comfortable click targets and a balanced appearance. When you hover, they lift up by <code>2px</code> (<code>transform: translateY(-2px);</code>) to show they are clickable.
           </li>
           <li>
-            <strong>Decorative &quot;Ball&quot; Element:</strong> Sometimes we add a small decorative circle or &quot;ball&quot;. This might have a shadow like <code>box-shadow: 0 6px 10px rgba(0,0,0,0.15);</code> to make it look like it&apos;s floating a bit off the page. This just adds a bit of visual interest. Its size and where we put it would also likely be guided by φ ratios.
+            <strong>Decorative &quot;Ball&quot; Element:</strong> Sometimes we add a small decorative circle or &quot;ball&quot;. This might have a shadow like <code>box-shadow: 0 6px 10px rgba(0,0,0,0.15);</code> to make it look like it&apos;s floating a bit off the page. This just adds a bit of visual interest. Its size and placement would also be guided by our established spacing and sizing principles for visual harmony.
           </li>
         </ul>
       </section>
@@ -355,7 +355,7 @@ export default function Documentation() {
                 <strong>Believable:</strong>
                 <ul>
                   <li><strong>Narrative Cohesion:</strong> The Museum Index Page looks like a map with &quot;doors.&quot; The titles and content in the rooms match the story you picked. This makes the experience feel like a real guided tour in a museum.</li>
-                  <li><strong>Aesthetic Principles:</strong> We used the golden ratio and modular scales. The themes (like &quot;Forest&quot; or &quot;Cyberpunk&quot;) are designed to look good and fit the content. All styles are chosen carefully to look professional and elegant.</li>
+                  <li><strong>Aesthetic Principles:</strong> We used established design principles like a consistent modular scale for typography and a well-defined spacing system (e.g., based on a 4px grid). The themes (like &quot;Forest&quot; or &quot;Cyberpunk&quot;) are designed to look good and fit the content. All styles are chosen carefully to look professional and elegant.</li>
                 </ul>
               </li>
               <li>
@@ -368,7 +368,7 @@ export default function Documentation() {
               <li>
                 <strong>Deliberate:</strong>
                 <ul>
-                  <li><strong>Justified Choices:</strong> Every style choice has a reason. For example, the navbar is 64px high for a reason. The space between player cards is 2rem for a reason. The 1000px width for content is to make reading easy. These reasons are based on our design philosophy (golden ratio, modular scale, etc.) or the project rules.</li>
+                  <li><strong>Justified Choices:</strong> Every style choice has a reason. For example, the navbar is 64px high for a reason. The space between player cards is 2rem for a reason. The 1000px width for content is to make reading easy. These reasons are based on our design philosophy (our typographic scale, 4px grid spacing system, responsive considerations, etc.) or the project rules.</li>
                   <li><strong>Conceptual Grounding:</strong> The whole site structure, like choosing narratives and changing text styles, is based on the MMMM ideas from the project guidelines. For example, the text controls on the Player Detail Page are there because the project requirements asked for different text presentations.</li>
                 </ul>
               </li>
@@ -406,7 +406,7 @@ export default function Documentation() {
         </ul>
       </section>
 
-      <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem', marginBottom: '2rem' }}>
         <StandardButton label="← Return Home" href="/" />
       </div>
     </div>

@@ -48,14 +48,13 @@
   gap: 2rem;
   border: 3px solid var(--secondary);
   padding: 2rem;
-  width: 80vw;
+  width: 60vw;
 }
 
 .cell {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 20vw;
 }
 
 .roomText {
