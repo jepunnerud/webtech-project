@@ -1,65 +1,123 @@
 :root.light {
-  --background: #ffffff;
+  --background-color: #ffffff;
   --primary: #171717;
   --secondary: #ff69b4;
   --tertiary: #6b5b95;
   --code: #f0f0f0;
   --font-family: 'Helvetica Neue', sans-serif;
+  --background-img: url('../../public/Stadio_Maradona_Serie_A.jpg');
+  --text-light: var(--primary);
+  --text-dark: var(--primary);
 }
 
 :root.dark {
-  --background: #0a0a0a;
+  --background-color: #0a0a0a;
   --primary: #ededed;
   --secondary: #64b5f6;
   --tertiary: #90caf9;
   --code: #1e1e1e;
   --font-family: 'Fira Code', monospace;
+  --background-img: url('../../public/Stadio_Maradona_Serie_A.jpg');
+  --text-light: var(--primary);
+  --text-dark: var(--primary);
 }
 
 :root.forest {
-  --background: #1e2d24;
+  --background-color: #1e2d24;
   --primary: #f0fdf4;
   --secondary: #a3d9a5;
   --tertiary: #709775;
   --code: #2e3a2c;
   --font-family: 'Georgia', serif;
+  --text-light: var(--primary);
+  --text-dark: var(--primary);
 }
 
 :root.sunset {
-  --background: #ffedd5;
+  --background-color: #ffedd5;
   --primary: #3b0a0a;
   --secondary: #ff6b6b;
   --tertiary: #ffb347;
   --code: #f5f5f5;
   --font-family: 'Playfair Display', serif;
+  --text-light: var(--primary);
+  --text-dark: var(--primary);
 }
 
 :root.cyberpunk {
-  --background: #1a0033;
+  --background-color: #1a0033;
   --primary: #e0ffe0;
   --secondary: #ff00ff;
   --tertiary: #00ffff;
   --code: #000000;
   --font-family: 'Orbitron', sans-serif;
+  --text-light: var(--primary);
+  --text-dark: var(--primary);
 }
 
 :root.pastel {
-  --background: #fdf6f0;
+  --background-color: #fdf6f0;
   --primary: #4a4a4a;
   --secondary: #a6c1ee;
   --tertiary: #f7aef8;
   --code: #f0e5d8;
   --font-family: 'Quicksand', sans-serif;
+  --text-light: var(--primary);
+  --text-dark: var(--primary);
+}
+
+:root.arsenal {
+  --background-color: #f5f5f5;
+  --primary: #000000;
+  --secondary: #ef0107;
+  --tertiary: #063672;
+  --code: #db0007;
+  --font-family: Arial, sans-serif;
+  --text-light: #ffffff;
+  --text-dark: #000000;
+}
+
+:root.chelsea {
+  --background-color: #dddddd; /* A very light grey */
+  --primary: #0d0d0d; /* Chelsea's royal blue */
+  --secondary: #034694; /* White, a strong contrast and common element */
+  --tertiary: #ffffff; /* Red from their crest details */
+  --code: #022e62; /* A deeper blue for code blocks */
+  --font-family: Verdana, sans-serif; /* Clean and modern font */
+  --text-light: #ffffff;
+  --text-dark: #000000;
+}
+
+:root.liverpool {
+  --background-color: #fafafa; /* A very light, almost white background */
+  --primary: #000000; /* Liverpool's famous red */
+  --secondary: #c8102e; /* Teal/Green, often seen in their branding and kits */
+  --tertiary: #00a398; /* Gold/Yellow from the LFC crest */
+  --code: #a70000; /* A darker, classic red for code blocks */
+  --font-family: Helvetica, Arial, sans-serif; /* Popular, clean font */
+  --text-light: #ffffff;
+  --text-dark: #000000;
+}
+
+:root.manUtd {
+  --background-color: #f3f3f3; /* Light grey background */
+  --primary: #000000; /* Manchester United's prominent red */
+  --secondary: #da291c; /* Black, a strong secondary color for United */
+  --tertiary: #fbe122; /* Yellow/Gold from their crest */
+  --code: #c2170b; /* A slightly desaturated red for code blocks */
+  --font-family: 'Comic Sans MS', sans-serif; /* Modern and widely used font */
+  --text-light: #000000;
+  --text-dark: #000000;
 }
 
 :root {
   font-family: var(--font-family);
-  background-color: var(--background);
+  background-color: var(--background-color);
   color: var(--primary);
 }
 
 a {
-  color: var(--background);
+  color: var(--background-color);
   text-decoration: none;
 }
 
@@ -73,12 +131,21 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
+  /* background: var(--background-img) no-repeat center fixed; */
+  /* box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.8); */
 }
 
 .main-content {
   padding-top: calc(64px + 1rem);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  /* background: var(--background-img) no-repeat center center fixed; */
+  /* box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.8); */
+  height: 100vh;
+}
+
+button {
+  all: unset;
 }

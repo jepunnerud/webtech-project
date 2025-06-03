@@ -24,6 +24,11 @@
   background: var(--secondary);
   color: var(--background);
   border: 2px solid var(--secondary);
+  font-color: var(--text-light);
+}
+
+a.primary {
+  color: var(--text-light);
 }
 
 .secondary {

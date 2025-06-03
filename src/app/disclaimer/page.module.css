@@ -48,6 +48,7 @@
 }
 
 .cardContent {
+  color: var(--primary);
   padding: 1.5rem;
 }
 
@@ -59,7 +60,7 @@
 
 .cardContent p {
   margin: 0.3rem 0;
-  color: #666;
+  color: var(--primary);
   line-height: 1.5;
 }
 

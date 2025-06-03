@@ -12,7 +12,18 @@ export default function NavBar() {
     changeTheme(event.target.value)
   }
   const menuRef = useRef<HTMLDivElement | null>(null)
-  const themes = ['dark', 'light', 'forest', 'cyberpunk', 'sunset', 'pastel']
+  const themes = [
+    'dark',
+    'light',
+    'forest',
+    'cyberpunk',
+    'sunset',
+    'pastel',
+    'arsenal',
+    'chelsea',
+    'liverpool',
+    'manUtd',
+  ]
   const navLinks: Array<{ href: string; label: string }> = [
     { href: '/museum', label: 'Museum' },
     { href: '/documentation', label: 'Documentation' },
