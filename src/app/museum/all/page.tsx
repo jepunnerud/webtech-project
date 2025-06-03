@@ -4,8 +4,8 @@ import { useMemo } from 'react'
 import players from '@/../public/players.json'
 import { Player } from '@/types'
 import styles from './page.module.css'
-import PlayerCard from '@/components/playerCard/PlayerCard'
-import StandardButton from '@/components/StandardButton'
+import PlayerCard from '@/components/PlayerCard/PlayerCard'
+import StandardButton from '@/components/StandardButton/StandardButton'
 
 /* helpers */
 const slug = (club: string) => club.toLowerCase().replace(/\s+/g, '')

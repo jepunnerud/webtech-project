@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import styles from './NavBar.module.css'
-import { useTheme } from '../stores/theme-context'
+import { useTheme } from '../../stores/theme-context'
 import { useRef, useState } from 'react'
 
 export default function NavBar() {

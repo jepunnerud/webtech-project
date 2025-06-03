@@ -25,9 +25,9 @@ const StandardButton: React.FC<StandardButtonProps> = ({
   }
 
   return (
-    <div className={`${styles[variant]} ${styles[size]}`} onClick={onClick}>
+    <button className={`${styles[variant]} ${styles[size]}`} onClick={onClick}>
       {label}
-    </div>
+    </button>
   )
 }
 

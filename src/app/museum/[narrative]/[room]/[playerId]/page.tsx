@@ -4,7 +4,7 @@ import { useState } from 'react'
 import playersData from '@/../public/players.json'
 import Image from 'next/image'
 import styles from './page.module.css'
-import StandardButton from '@/components/StandardButton'
+import StandardButton from '@/components/StandardButton/StandardButton'
 
 export default function PlayerPage({
   params,

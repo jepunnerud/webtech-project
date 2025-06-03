@@ -7,7 +7,7 @@ import Link from 'next/link'
 import playersData from '@/../public/players.json'
 import styles from './page.module.css'
 import { Player } from '@/types'
-import StandardButton from '@/components/StandardButton'
+import StandardButton from '@/components/StandardButton/StandardButton'
 
 const slug = (s: string) => s.toLowerCase().replace(/\s+/g, '')
 const filterList = (list: Player[], type?: string, value?: string) => {
