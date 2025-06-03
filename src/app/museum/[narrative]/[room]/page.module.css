@@ -55,3 +55,16 @@
   color: #888;
   font-style: italic;
 }
+
+.pager {
+  margin: 3rem 0;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+.prev,
+.next {
+  color: var(--secondary);
+  text-decoration: none;
+}
