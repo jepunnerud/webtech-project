@@ -49,6 +49,7 @@
   font-size: 3rem;
   transition: rotate 0.25s ease;
   tranform-origin: center;
+  color: var(--text-light);
 }
 
 .menu {
@@ -129,7 +130,7 @@
   }
 
   .hamburger.show {
-    rotate: 90deg; /* Rotate hamburger icon when menu is open */
+    rotate: 90deg;
   }
 
   .menu {

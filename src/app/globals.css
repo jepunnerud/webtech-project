@@ -5,7 +5,6 @@
   --tertiary: #6b5b95;
   --code: #f0f0f0;
   --font-family: 'Helvetica Neue', sans-serif;
-  --background-img: url('../../public/Stadio_Maradona_Serie_A.jpg');
   --text-light: var(--primary);
   --text-dark: var(--primary);
 }
@@ -17,7 +16,6 @@
   --tertiary: #90caf9;
   --code: #1e1e1e;
   --font-family: 'Fira Code', monospace;
-  --background-img: url('../../public/Stadio_Maradona_Serie_A.jpg');
   --text-light: var(--primary);
   --text-dark: var(--primary);
 }
@@ -75,39 +73,47 @@
   --font-family: Arial, sans-serif;
   --text-light: #ffffff;
   --text-dark: #000000;
+  --background-img: url('../../public/stadium-images/emirates-stadium.jpeg');
+  --bg-rgb: 245, 245, 245;
 }
 
 :root.chelsea {
-  --background-color: #dddddd; /* A very light grey */
-  --primary: #0d0d0d; /* Chelsea's royal blue */
-  --secondary: #034694; /* White, a strong contrast and common element */
-  --tertiary: #ffffff; /* Red from their crest details */
-  --code: #022e62; /* A deeper blue for code blocks */
-  --font-family: Verdana, sans-serif; /* Clean and modern font */
+  --background-color: #dddddd;
+  --primary: #0d0d0d;
+  --secondary: #034694;
+  --tertiary: #ffffff;
+  --code: #022e62;
+  --font-family: Verdana, sans-serif;
   --text-light: #ffffff;
   --text-dark: #000000;
+  --background-img: url('../../public/stadium-images/stamford-bridge.jpg');
+  --bg-rgb: 221, 221, 221;
 }
 
 :root.liverpool {
-  --background-color: #fafafa; /* A very light, almost white background */
-  --primary: #000000; /* Liverpool's famous red */
-  --secondary: #c8102e; /* Teal/Green, often seen in their branding and kits */
-  --tertiary: #00a398; /* Gold/Yellow from the LFC crest */
-  --code: #a70000; /* A darker, classic red for code blocks */
-  --font-family: Helvetica, Arial, sans-serif; /* Popular, clean font */
+  --background-color: #fafafa;
+  --primary: #000000;
+  --secondary: #c8102e;
+  --tertiary: #00a398;
+  --code: #a70000;
+  --font-family: Helvetica, Arial, sans-serif;
   --text-light: #ffffff;
   --text-dark: #000000;
+  --background-img: url('../../public/stadium-images/anfield.jpg');
+  --bg-rgb: 250, 250, 250;
 }
 
 :root.manUtd {
-  --background-color: #f3f3f3; /* Light grey background */
-  --primary: #000000; /* Manchester United's prominent red */
-  --secondary: #da291c; /* Black, a strong secondary color for United */
-  --tertiary: #fbe122; /* Yellow/Gold from their crest */
-  --code: #c2170b; /* A slightly desaturated red for code blocks */
-  --font-family: 'Comic Sans MS', sans-serif; /* Modern and widely used font */
+  --background-color: #f3f3f3;
+  --primary: #000000;
+  --secondary: #da291c;
+  --tertiary: #fbe122;
+  --code: #c2170b;
+  --font-family: 'Comic Sans MS', sans-serif;
   --text-light: #000000;
   --text-dark: #000000;
+  --background-img: url('../../public/stadium-images/old-trafford.jpg');
+  --bg-rgb: 243, 243, 243;
 }
 
 :root {
@@ -131,8 +137,6 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
-  /* background: var(--background-img) no-repeat center fixed; */
-  /* box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.8); */
 }
 
 .main-content {
@@ -141,8 +145,6 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  /* background: var(--background-img) no-repeat center center fixed; */
-  /* box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.8); */
   height: 100vh;
 }
 
