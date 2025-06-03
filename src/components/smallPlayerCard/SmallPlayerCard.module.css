@@ -7,8 +7,9 @@
     box-shadow 0.3s;
   text-decoration: none;
   background-color: var(--secondary);
-  width: 25vw;
+  width: 70%;
   max-width: 300px;
+  height: 100%;
 }
 
 .playerCard.mainTeam {
@@ -22,7 +23,7 @@
 
 .playerImage {
   width: 100%;
-  height: 250px;
+  height: 70%;
   position: relative;
   overflow: hidden;
 }
@@ -39,12 +40,12 @@
 }
 
 .playerInfo {
-  padding: 1.5rem;
+  padding: 0.5rem;
 }
 
 .playerInfo h3 {
   margin: 0 0 0.5rem 0;
-  font-size: 1.5rem;
+  font-size: 2vw;
 }
 
 .playerInfo p {
@@ -73,4 +74,11 @@
   color: var(--background);
   font-size: 0.75rem;
   font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .playerInfo h3 {
+    font-size: 1.5vw;
+    margin: 0;
+  }
 }

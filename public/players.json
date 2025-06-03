@@ -14,7 +14,7 @@
     "long_description_qr": "/player-qrcode/drogba-qr.png",
     "long_description_wiki": "https://en.wikipedia.org/wiki/Didier_Drogba",
     "image_url": "/player-images/drogba.png",
-    "position": "Striker",
+    "position": "Forward",
     "teams": [
       { "club": "Le Mans", "appearances": 64, "goals": 12 },
       { "club": "Guingamp", "appearances": 45, "goals": 20 },
@@ -105,7 +105,7 @@
     "long_description_qr": "/player-qrcode/fowler-qr.png",
     "long_description_wiki": "https://en.wikipedia.org/wiki/Robbie_Fowler",
     "image_url": "/player-images/fowler.png",
-    "position": "Striker",
+    "position": "Forward",
     "teams": [
       { "club": "Liverpool", "appearances": 236, "goals": 120 },
       { "club": "Leeds United", "appearances": 30, "goals": 14 },
@@ -242,7 +242,7 @@
     "long_description_qr": "/player-qrcode/pires-qr.png",
     "long_description_wiki": "https://en.wikipedia.org/wiki/Robert_Pir%C3%A8s",
     "image_url": "/player-images/pires.png",
-    "position": "Winger",
+    "position": "Midfielder",
     "teams": [
       { "club": "Metz", "appearances": 162, "goals": 43 },
       { "club": "Marseille", "appearances": 66, "goals": 8 },
@@ -267,7 +267,7 @@
     "long_description_qr": "/player-qrcode/giggs-qr.png",
     "long_description_wiki": "https://en.wikipedia.org/wiki/Ryan_Giggs",
     "image_url": "/player-images/giggs.png",
-    "position": "Winger",
+    "position": "Midfielder",
     "teams": [
       { "club": "Manchester United", "appearances": 672, "goals": 114 }
     ],
@@ -443,7 +443,7 @@
     "long_description_qr": "/player-qrcode/rush-qr.png",
     "long_description_wiki": "https://en.wikipedia.org/wiki/Ian_Rush",
     "image_url": "/player-images/rush.png",
-    "position": "Striker",
+    "position": "Forward",
     "teams": [{ "club": "Liverpool", "appearances": 516, "goals": 229 }],
     "debut_date": "1980-12-13"
   }

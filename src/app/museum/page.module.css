@@ -3,15 +3,18 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100px;
+  height: 12vw;
+  min-height: 60px;
+  max-height: 120px;
 }
 
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 80px;
-  width: 600px;
+  gap: 5vw;
+  width: 80vw;
+  max-width: 600px;
   height: fit-content;
   position: relative;
 }
@@ -43,11 +46,6 @@
 }
 
 .text {
-  position: absolute;
-  top: 90%;
-  left: 85%;
-  transform: translate(-50%, -50%);
-  min-width: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,7 +58,16 @@
   transform: translate(-50%, -50%);
 }
 
-/* Reusable door gap styles */
+@media (max-width: 640px) {
+  .centerText {
+    left: 20%;
+  }
+
+  .grid {
+    gap: 10vw;
+  }
+}
+
 .doorRight,
 .doorLeft,
 .doorTop,
@@ -72,36 +79,75 @@
 
 .doorLeft,
 .doorRight {
-  width: 4px;
-  height: 40px;
+  width: 0.5vw;
+  height: 5vw;
   top: 50%;
   transform: translateY(-50%);
+  min-width: 2px;
+  min-height: 20px;
 }
 
 .doorRight {
-  right: -3px;
+  right: -0.4vw;
 }
 
 .doorLeft {
-  left: -3px;
+  left: -0.4vw;
 }
 
 .doorTop,
 .doorBottom {
-  width: 40px;
-  height: 4px;
+  width: 5vw;
+  height: 0.5vw;
   left: 50%;
   transform: translateX(-50%);
+  min-width: 20px;
+  min-height: 2px;
 }
 
 .doorTop {
-  top: -3px;
+  top: -0.4vw;
 }
 
 .doorBottom {
-  bottom: -3px;
+  bottom: -0.4vw;
 }
 
 .buttonWrapper {
   margin-bottom: 2rem;
+  justify-content: space-between;
+}
+
+.selectWrap {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.selectWrap label {
+  font-size: 0.9rem;
+  color: color-mix(in srgb, var(--primary) 70%, var(--background) 30%);
+}
+
+.selectWrap select {
+  padding: 0.5rem 1.1rem;
+  border-radius: 100vmax;
+  background: var(--code);
+  color: var(--primary);
+  border: 1px solid rgba(0 0 0 / 0.12);
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    transform 0.15s;
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: right 0.6rem center;
+  background-size: 10px 6px;
+}
+
+.selectWrap select:hover {
+  background: color-mix(in srgb, var(--code) 85%, var(--primary) 15%);
+  transform: translateY(-2px);
 }

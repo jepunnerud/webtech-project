@@ -6,13 +6,15 @@ import Image from 'next/image'
 import styles from './page.module.css'
 import StandardButton from '@/components/StandardButton'
 
-/** The Page itself must be client-side because of useState */
 export default function PlayerPage({
   params,
+  searchParams,
 }: {
-  params: Promise<{ team: string; playerId: string }>
+  params: Promise<{ narrative: string; room: string; playerId: string }>
+  searchParams: Promise<{ roomNumber?: string }>
 }) {
-  const { team, playerId } = use(params)
+  const { narrative, room, playerId } = use(params)
+  const roomNumber = use(searchParams).roomNumber || '1'
 
   const player = playersData.find((p) => p.id === Number(playerId))
 
@@ -32,16 +34,12 @@ export default function PlayerPage({
     return player[key]
   }
 
-  const mainTeam = player.teams.reduce((prev, current) =>
-    prev.appearances > current.appearances ? prev : current
-  )
-
   return (
     <div className={styles.container}>
       <div className={styles.buttonWrapper}>
         <StandardButton
-          label={`\u2190 Back to ${mainTeam.club}`}
-          href={`/museum/${team}`}
+          label={`\u2190 Back to room ${roomNumber}`}
+          href={`/museum/${narrative + '/' + room + '?roomNumber=' + roomNumber}`}
         ></StandardButton>
       </div>
       <div className={styles.playerHeader}>
@@ -121,11 +119,11 @@ export default function PlayerPage({
             </tr>
           </thead>
           <tbody>
-            {player.teams.map((team, index) => (
+            {player.teams.map((room, index) => (
               <tr key={index}>
-                <td>{team.club}</td>
-                <td>{team.appearances}</td>
-                <td>{team.goals}</td>
+                <td>{room.club}</td>
+                <td>{room.appearances}</td>
+                <td>{room.goals}</td>
               </tr>
             ))}
           </tbody>
