@@ -47,8 +47,8 @@
   height: 3rem;
   cursor: pointer;
   font-size: 3rem;
-  transition: rotate 0.25s ease;
-  tranform-origin: center;
+  transition: 0.25s ease;
+  transform-origin: center;
   color: var(--text-light);
 }
 
@@ -130,7 +130,7 @@
   }
 
   .hamburger.show {
-    rotate: 90deg;
+    transform: rotate(90deg);
   }
 
   .menu {
