@@ -5,14 +5,15 @@ import playersData from '@/../public/players.json'
 import Image from 'next/image'
 import styles from './page.module.css'
 import StandardButton from '@/components/StandardButton'
+import { getTeamName } from "@/utils/teamUtils";
 
 /** The Page itself must be client-side because of useState */
 export default function PlayerPage({
   params,
 }: {
-  params: Promise<{ team: string; playerId: string }>
+  params: Promise<{ narrative: string; room: string; playerId: string }>
 }) {
-  const { team, playerId } = use(params)
+  const { narrative, room, playerId } = use(params)
 
   const player = playersData.find((p) => p.id === Number(playerId))
 
@@ -32,17 +33,20 @@ export default function PlayerPage({
     return player[key]
   }
 
-  const mainTeam = player.teams.reduce((prev, current) =>
-    prev.appearances > current.appearances ? prev : current
-  )
+  const backLabel =
+  narrative === "teams"
+    ? `← Back to ${getTeamName(room)}`
+    : narrative === "position"
+    ? `← Back to ${room.charAt(0).toUpperCase() + room.slice(1)}`
+    : `← Back to ${room}s`;
+
+  const backHref = `/museum/${narrative}/${room}`;
+
 
   return (
     <div className={styles.container}>
       <div className={styles.buttonWrapper}>
-        <StandardButton
-          label={`\u2190 Back to ${mainTeam.club}`}
-          href={`/museum/${team}`}
-        ></StandardButton>
+      <StandardButton label={backLabel} href={backHref} />
       </div>
       <div className={styles.playerHeader}>
         <div className={styles.playerImage}>
