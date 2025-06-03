@@ -47,7 +47,10 @@ export default function MuseumPage() {
         {teams.map((team) => (
           <Link
             key={team.id}
-            href={`/museum/${team.id}`}
+            href={{
+              pathname: `/museum/${team.id}`,
+              query: { room: team.roomNumber },
+            }}
             className={`${styles.box} ${styles[`room${team.roomNumber}`]}`}
           >
             {team.doors.map((side) => (

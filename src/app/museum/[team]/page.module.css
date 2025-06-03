@@ -1,8 +1,7 @@
 /* src/app/museum/[team]/page.module.css */
 .container {
   height: fit-content;
-  max-width: 1000px;
-  min-width: 1000px;
+  margin-bottom: 3rem;
 }
 
 .header {
@@ -42,11 +41,35 @@
   font-size: 1.2rem;
 }
 
-.playersGrid {
+.room {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 2rem;
+  border: 3px solid var(--secondary);
+  padding: 2rem;
+  width: 80vw;
+}
+
+.cell {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
+  align-items: center;
+  height: 20vw;
+}
+
+.roomText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.emptyCell {
+  background-color: transparent;
+  /* border: 1px dashed var(--tertiary); */
+  min-height: 150px; /* match SmallPlayerCard height if possible */
+  border-radius: 0.5rem;
 }
 
 .secondaryTeamNote {
