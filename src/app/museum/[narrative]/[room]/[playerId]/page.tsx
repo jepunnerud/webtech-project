@@ -19,6 +19,7 @@ const slug = (s: string) => s.toLowerCase().replace(/\s+/g, '')
  */
 export default function PlayerPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ narrative: string; room: string; playerId: string }>
 }) {
@@ -207,11 +208,11 @@ export default function PlayerPage({
             </tr>
           </thead>
           <tbody>
-            {player.teams.map((team, index) => (
+            {player.teams.map((room, index) => (
               <tr key={index}>
-                <td>{team.club}</td>
-                <td>{team.appearances}</td>
-                <td>{team.goals}</td>
+                <td>{room.club}</td>
+                <td>{room.appearances}</td>
+                <td>{room.goals}</td>
               </tr>
             ))}
           </tbody>
