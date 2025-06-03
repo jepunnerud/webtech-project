@@ -75,3 +75,10 @@
   font-size: 0.75rem;
   font-weight: 600;
 }
+
+@media (max-width: 640px) {
+  .playerInfo h3 {
+    font-size: 1.5vw;
+    margin: 0;
+  }
+}

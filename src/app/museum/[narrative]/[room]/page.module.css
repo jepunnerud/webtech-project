@@ -67,8 +67,7 @@
 
 .emptyCell {
   background-color: transparent;
-  /* border: 1px dashed var(--tertiary); */
-  min-height: 150px; /* match SmallPlayerCard height if possible */
+  min-height: 150px;
   border-radius: 0.5rem;
 }
 
