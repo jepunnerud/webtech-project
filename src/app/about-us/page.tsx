@@ -16,9 +16,9 @@ const students: Student[] = [
     name: 'Åke Sjursen Hauge',
     imageSrc: '/guttabilder/aake.png',
     linkedin: 'https://www.linkedin.com/in/aake-sjursen-hauge/',
-    github: 'https://github.com/aakesj',
+    github: 'https://github.com/aakesjh',
     nationality: 'Norwegian',
-    age: 15,
+    age: 25,
   },
   {
     name: 'Andreas Omholt Olsen',

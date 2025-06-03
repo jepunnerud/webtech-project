@@ -1,8 +1,6 @@
 'use client'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useMemo } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
 import players from '@/../public/players.json'
 import { Player } from '@/types'
 import styles from './page.module.css'
