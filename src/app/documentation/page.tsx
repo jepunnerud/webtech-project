@@ -1,5 +1,5 @@
 import styles from './page.module.css'
-import StandardButton from '@/components/StandardButton'
+import StandardButton from '@/components/StandardButton/StandardButton'
 
 export const metadata = {
   title: 'Styling Documentation',
@@ -141,8 +141,7 @@ export default function Documentation() {
       {/* ---------- CSS Variables (Themes) ---------- */}
       <section>
         <h2 className={styles.sectionTitle}>CSS Variables (Themes)</h2>
-        <pre className={styles.code}>{`
-:root.light {
+        <pre className={styles.code}>{`:root.light {
   --background  : #ffffff;
   --primary     : #171717;
   --secondary   : #ff69b4;

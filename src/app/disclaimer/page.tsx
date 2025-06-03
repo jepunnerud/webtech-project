@@ -1,6 +1,6 @@
 // src/app/disclaimer/page.tsx
 import styles from './page.module.css'
-import StandardButton from '@/components/StandardButton'
+import StandardButton from '@/components/StandardButton/StandardButton'
 
 export const metadata = {
   title: 'Disclaimer',
