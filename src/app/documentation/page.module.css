@@ -2,8 +2,7 @@
 .container {
   height: fit-content;
   max-width: 1000px;
-  margin: 0 1rem; /* Default side margins */
-}
+  margin: 0 1rem; 
 
 .header {
   margin-bottom: 2rem;
@@ -29,8 +28,7 @@
 .sectionTitle {
   font-size: 1.5rem;
   margin-bottom: 0.75rem;
-  /* Consider using a CSS variable for border colors, e.g., var(--border-color-translucent) or var(--border-color) */
-  border-bottom: 2px solid rgba(255 255 255 / 0.08); /* Current color implies a dark theme or a specific design choice */
+  border-bottom: 2px solid rgba(255 255 255 / 0.08); 
   padding-bottom: 0.25rem;
   width: 100%;
   color: var(--secondary);
@@ -46,83 +44,38 @@
   margin: 0.4rem 0; /* Vertical spacing for top-level list items */
 }
 
-/* Styling for nested <ul> elements within .list */
-/* This ensures nested lists don't use browser default (large) padding */
 .list ul {
-  padding-left: 1.2rem;  /* Indent nested lists by the same relative amount as parent .list */
-                         /* This creates a cumulative visual indent. Adjust if a different indent is desired. */
-  margin-top: 0.15rem;   /* Spacing above the nested list block */
-  margin-bottom: 0.15rem;/* Spacing below the nested list block */
-  list-style-type: circle; /* Optional: different bullet for visual distinction */
+  padding-left: 1.2rem;  
+                         
+  margin-top: 0.15rem;   
+  margin-bottom: 0.15rem;
+  list-style-type: circle;
 }
 
-/* Styling for list items (<li>) within a nested <ul> */
 .list ul li {
-  margin: 0.5rem 0; /* Tighter vertical spacing for nested list items */
-  /* list-style-type: square; /* Optional: further differentiate bullets */
+  margin: 0.5rem 0; 
 }
 
-
-/* Styles for inline <code> elements within .container */
 .container code {
-  background: var(--code-bg, var(--code)); /* Fallback to --code if --code-bg isn't defined */
-  color: var(--code-text, var(--primary)); /* Ensure text color for code is readable */
+  background: var(--code-bg, var(--code)); 
+  color: var(--code-text, var(--primary)); 
   padding: 0.15rem 0.4rem;
   border-radius: 4px;
   font-family: var(--font-family-monospace, var(--font-mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace));
 }
 
-/* Styles for <pre> elements, typically used for code blocks */
 .code {
-  background: var(--code-bg, var(--code)); /* Fallback to --code if --code-bg isn't defined */
-  color: var(--code-text, var(--primary)); /* Ensure text color for code is readable */
+  background: var(--code-bg, var(--code)); 
+  color: var(--code-text, var(--primary)); 
   padding: 0.75rem;
   border-radius: 6px;
   overflow: auto;
   font-size: 0.9rem;
-  line-height: 1.45; /* Slightly adjusted for better block readability */
+  line-height: 1.45; 
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   font-family: var(--font-family-monospace, var(--font-mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace));
 }
-
-/*
-  Note: The .footer class was marked as not used in the TSX.
-  If it's not needed, it can be removed. Commenting out for now.
-*/
-/*
-.footer {
-  margin-top: 4rem;
-  text-align: center;
-}
-*/
-
-/*
-  Note: The .back class was marked as not used in the TSX.
-  If it's not needed, it can be removed. Commenting out for now.
-*/
-/*
-.back {
-  color: var(--secondary);
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.25s;
-}
-.back:hover {
-  color: var(--tertiary);
-}
-*/
-
-@media (max-width: 640px) {
-  /*
-    Note: The .page class was marked as not used in the TSX's main container.
-    If it's not needed, it can be removed. Commenting out for now.
-  */
-  /*
-  .page {
-    padding-inline: 1rem;
-  }
-  */
 
   .sectionTitle {
     font-size: 1.35rem;
@@ -132,9 +85,4 @@
     margin: 0 0.5rem;
   }
 
-  /* Adjust list padding for smaller screens if needed */
-  .list,
-  .list ul {
-    padding-left: 1rem;
-  }
 }
