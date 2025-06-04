@@ -45,7 +45,7 @@
 
 .playerInfo h3 {
   margin: 0 0 0.5rem 0;
-  font-size: 2vw;
+  font-size: 1.5vw;
 }
 
 .playerInfo p {
@@ -78,7 +78,11 @@
 
 @media (max-width: 640px) {
   .playerInfo h3 {
-    font-size: 1.5vw;
+    font-size: 1.3vw;
     margin: 0;
+  }
+
+  .playerInfo {
+    padding: 0.1rem;
   }
 }
