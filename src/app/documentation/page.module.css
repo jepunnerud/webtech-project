@@ -3,6 +3,7 @@
   height: fit-content;
   max-width: 1000px;
   margin: 0 1rem; 
+}
 
 .header {
   margin-bottom: 2rem;
@@ -90,6 +91,14 @@
   color: var(--tertiary);
 }
 
+.centeredButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+
 @media (max-width: 640px) {
   .page {
     padding-inline: 1rem;
@@ -101,5 +110,4 @@
   .container {
     margin: 0 0.5rem;
   }
-
 }

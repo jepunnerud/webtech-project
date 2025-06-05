@@ -58,7 +58,7 @@
   --primary: #4a4a4a;
   --secondary: #a6c1ee;
   --tertiary: #f7aef8;
-  --code: #f0e5d8;
+  --code: #f7e6e6;
   --font-family: 'Quicksand', sans-serif;
   --text-light: var(--primary);
   --text-dark: var(--primary);
@@ -69,10 +69,10 @@
   --primary: #000000;
   --secondary: #ef0107;
   --tertiary: #063672;
-  --code: #db0007;
+  --code: #f7e6e6;
   --font-family: Arial, sans-serif;
-  --text-light: #ffffff;
-  --text-dark: #000000;
+  --text-light: #000000;
+  --text-dark: #ffffff;
   --background-img: url('../../public/stadium-images/emirates-stadium.jpeg');
   --bg-rgb: 245, 245, 245;
 }
@@ -82,10 +82,10 @@
   --primary: #0d0d0d;
   --secondary: #034694;
   --tertiary: #ffffff;
-  --code: #022e62;
+  --code: #dad7f7;
   --font-family: Verdana, sans-serif;
-  --text-light: #ffffff;
-  --text-dark: #000000;
+  --text-light: #000000;
+  --text-dark: #ffffff;
   --background-img: url('../../public/stadium-images/stamford-bridge.jpg');
   --bg-rgb: 221, 221, 221;
 }
@@ -95,10 +95,10 @@
   --primary: #000000;
   --secondary: #c8102e;
   --tertiary: #00a398;
-  --code: #a70000;
+  --code: #f7e6e6;
   --font-family: Helvetica, Arial, sans-serif;
-  --text-light: #ffffff;
-  --text-dark: #000000;
+  --text-light: #000000;
+  --text-dark: #ffffff;
   --background-img: url('../../public/stadium-images/anfield.jpg');
   --bg-rgb: 250, 250, 250;
 }
@@ -108,10 +108,10 @@
   --primary: #000000;
   --secondary: #da291c;
   --tertiary: #fbe122;
-  --code: #c2170b;
+  --code: #f7e6e6;
   --font-family: 'Comic Sans MS', sans-serif;
   --text-light: #000000;
-  --text-dark: #000000;
+  --text-dark: #ffffff;
   --background-img: url('../../public/stadium-images/old-trafford.jpg');
   --bg-rgb: 243, 243, 243;
 }

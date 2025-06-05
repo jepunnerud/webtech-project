@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import playersData from '@/../public/players.json'
 import styles from './page.module.css'
-import StandardButton from '@/components/StandardButton'
+import StandardButton from '@/components/StandardButton/StandardButton'
 import { getTeamName } from '@/utils/teamUtils'
 
 const slug = (s: string) => s.toLowerCase().replace(/\s+/g, '')

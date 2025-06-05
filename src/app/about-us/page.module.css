@@ -136,3 +136,10 @@
 .icon {
   transition: filter 0.2s ease;
 }
+
+.centeredButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}

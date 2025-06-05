@@ -118,7 +118,7 @@
   border-radius: 0.25rem;
   background: var(--background-color);
   border: none;
-  color: var(--text-dark);
+  color: var(--text-light);
   font-size: 0.85rem;
 }
 
