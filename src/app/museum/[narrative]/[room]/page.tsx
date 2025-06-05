@@ -148,6 +148,8 @@ export default function RoomPage({ params, searchParams }: Params) {
         ? `Players who played as ${room.charAt(0).toUpperCase() + room.slice(1)}`
         : `Players who debuted in the ${room}s`
 
+  const roomQuery = roomNumber ? `?roomNumber=${roomNumber}` : ''
+
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -174,7 +176,7 @@ export default function RoomPage({ params, searchParams }: Params) {
                 ) : player ? (
                   <SmallPlayerCard
                     player={player}
-                    href={`/museum/${narrative}/${room}/${player.id}?roomNumber=${searchParams.roomNumber ?? ''}`}
+                    href={`/museum/${narrative}/${room}/${player.id}${roomQuery}`}
                   />
                 ) : (
                   <div className={styles.emptyCell} />

@@ -16,12 +16,15 @@ function computeMainTeam(teams: { club: string; appearances: number; goals: numb
 }
 export default function PlayerPage({
   params,
+   searchParams,
 }: {
   params: Promise<{ narrative: string; room: string; playerId: string }>
+  searchParams: Promise<{ roomNumber?: string }>
 }) {
   const { narrative, room, playerId } = use(params)
+  const { roomNumber } = use(searchParams)
   const idNum = Number(playerId)
-
+  
   const player = playersData.find((p) => p.id === idNum)
   const [textLevel, setTextLevel] = useState<'easy' | 'medium' | 'advanced'>('medium')
   const [textLength, setTextLength] = useState<'short' | 'extended'>('short')
@@ -83,7 +86,7 @@ export default function PlayerPage({
       ? `← Back to ${room}`
       : `← Back to ${room}s`
 
-  const backHref = `/museum/${narrative}/${room}`
+  const backHref = `/museum/${narrative}/${room}?roomNumber=${roomNumber ?? ''}`
 
   return (
     <div className={styles.container}>
@@ -168,13 +171,13 @@ export default function PlayerPage({
         {filtered.length > 1 && (
           <div className={styles.pager}>
             <Link
-              href={`/museum/${narrative}/${room}/${prev.id}`}
+              href={`/museum/${narrative}/${room}/${prev.id}?roomNumber=${roomNumber ?? ''}`}
               className={styles.prev}
             >
               ← {prev.name}
             </Link>
             <Link
-              href={`/museum/${narrative}/${room}/${next.id}`}
+              href={`/museum/${narrative}/${room}/${next.id}?roomNumber=${roomNumber ?? ''}`}
               className={styles.next}
             >
               {next.name} →
