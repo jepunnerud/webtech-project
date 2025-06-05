@@ -48,13 +48,13 @@ export default function PlayerPage({
     filtered = filtered.filter(
       (p) => p.position.toLowerCase() === room.toLowerCase()
     )
-  } else if (narrative === 'decade') {
+  } else if (narrative === 'debut') {
     const decadeNum = parseInt(room.replace(/[^0-9]/g, ''), 10)
     if (!isNaN(decadeNum)) {
       const start = decadeNum
       const end = decadeNum + 9
       filtered = filtered.filter((p) => {
-        const year = new Date(p.born).getFullYear()
+        const year = new Date(p.debut_date).getFullYear()
         return year >= start && year <= end
       })
     }
@@ -110,7 +110,8 @@ export default function PlayerPage({
             <div className={styles.infoColumn}>
               <p className={styles.position}>{player.position}</p>
               <p className={styles.nation}>{player.nation}</p>
-              <p className={styles.born}>Born: {player.born}</p>
+              <p className={styles.born}>Born: {new Date(player.born).toLocaleDateString()}</p>
+              <p className={styles.debut}>Debut: {new Date(player.debut_date).toLocaleDateString()}</p>
             </div>
             {player.long_description_qr && (
               <div className={styles.qrColumn}>

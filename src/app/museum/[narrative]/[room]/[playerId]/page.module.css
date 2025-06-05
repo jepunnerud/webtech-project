@@ -65,9 +65,11 @@
 
 .position,
 .nation,
-.born {
+.born, 
+.debut  {
   margin: 0.25rem 0;
 }
+
 
 .position {
   font-size: 1.05rem;
