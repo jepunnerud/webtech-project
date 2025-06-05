@@ -49,6 +49,7 @@
   border: 3px solid var(--secondary);
   padding: 2rem;
   width: 60vw;
+  margin-bottom: 3rem;
 }
 
 .cell {
