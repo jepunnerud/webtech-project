@@ -1,7 +1,7 @@
 .cardGrid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; 
+  justify-content: center;
   padding: 0.5rem;
 }
 
@@ -16,7 +16,9 @@
   background-color: var(--secondary);
   overflow: hidden;
   text-decoration: none;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
 }
 
 .playerCard.mainTeam {
@@ -58,7 +60,6 @@
   margin: 0 0 0.5rem 0;
   font-size: 1.5vw;
 }
-
 
 @media (max-width: 480px) {
   .playerInfo h3 {

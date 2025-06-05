@@ -10,9 +10,7 @@ import { getTeamName } from '@/utils/teamUtils'
 
 const slug = (s: string) => s.toLowerCase().replace(/\s+/g, '')
 function computeMainTeam(teams: { club: string; appearances: number; goals: number }[]) {
-  return teams.reduce((prev, cur) =>
-    prev.appearances > cur.appearances ? prev : cur
-  )
+  return teams.reduce((prev, cur) => (prev.appearances > cur.appearances ? prev : cur))
 }
 export default function PlayerPage({
   params,
@@ -24,7 +22,7 @@ export default function PlayerPage({
   const { narrative, room, playerId } = use(params)
   const { roomNumber } = use(searchParams)
   const idNum = Number(playerId)
-  
+
   const player = playersData.find((p) => p.id === idNum)
   const [textLevel, setTextLevel] = useState<'easy' | 'medium' | 'advanced'>('medium')
   const [textLength, setTextLength] = useState<'short' | 'extended'>('short')
@@ -45,9 +43,7 @@ export default function PlayerPage({
   if (narrative === 'teams') {
     filtered = filtered.filter((p) => slug(p.mainTeam.club) === room)
   } else if (narrative === 'position') {
-    filtered = filtered.filter(
-      (p) => p.position.toLowerCase() === room.toLowerCase()
-    )
+    filtered = filtered.filter((p) => p.position.toLowerCase() === room.toLowerCase())
   } else if (narrative === 'debut') {
     const decadeNum = parseInt(room.replace(/[^0-9]/g, ''), 10)
     if (!isNaN(decadeNum)) {
@@ -60,10 +56,7 @@ export default function PlayerPage({
     }
   }
 
-  if (
-    filtered.length === 0 ||
-    !filtered.some((p) => p.id === idNum)
-  ) {
+  if (filtered.length === 0 || !filtered.some((p) => p.id === idNum)) {
     filtered = [{ ...player, mainTeam: computeMainTeam(player.teams) }]
   }
 
@@ -81,10 +74,10 @@ export default function PlayerPage({
     narrative === 'teams'
       ? `← Back to ${getTeamName(room)}`
       : narrative === 'position'
-      ? `← Back to ${room.charAt(0).toUpperCase() + room.slice(1)}`
-      : narrative === 'debut'
-      ? `← Back to ${room}s`
-      : `← Back to ${room}s`
+        ? `← Back to ${room.charAt(0).toUpperCase() + room.slice(1)}`
+        : narrative === 'debut'
+          ? `← Back to ${room}s`
+          : `← Back to ${room}s`
 
   const backHref = `/museum/${narrative}/${room}?roomNumber=${roomNumber ?? ''}`
 
@@ -96,31 +89,22 @@ export default function PlayerPage({
 
       <div className={styles.playerHeader}>
         <div className={styles.playerImage}>
-          <Image
-            src={player.image_url}
-            alt={player.name}
-            width={300}
-            height={300}
-            priority
-          />
+          <Image src={player.image_url} alt={player.name} width={300} height={300} priority />
         </div>
         <div className={styles.playerBasicInfo}>
-          <h1>{player.name}</h1>
+          <h1>{player.name + (player.id === 19 || player.id === 1 ? '❤️' : '')}</h1>
           <div className={styles.infoRow}>
             <div className={styles.infoColumn}>
               <p className={styles.position}>{player.position}</p>
               <p className={styles.nation}>{player.nation}</p>
               <p className={styles.born}>Born: {new Date(player.born).toLocaleDateString()}</p>
-              <p className={styles.debut}>Debut: {new Date(player.debut_date).toLocaleDateString()}</p>
+              <p className={styles.debut}>
+                Debut: {new Date(player.debut_date).toLocaleDateString()}
+              </p>
             </div>
             {player.long_description_qr && (
               <div className={styles.qrColumn}>
-                <Image
-                  src={player.long_description_qr}
-                  alt="QR Code"
-                  width={100}
-                  height={100}
-                />
+                <Image src={player.long_description_qr} alt="QR Code" width={100} height={100} />
                 <span className={styles.qrLabel}>Scan for more info</span>
               </div>
             )}
@@ -215,11 +199,7 @@ export default function PlayerPage({
 
       {player.long_description_wiki && (
         <div className={styles.externalLink}>
-          <a
-            href={player.long_description_wiki}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href={player.long_description_wiki} target="_blank" rel="noopener noreferrer">
             Read more on Wikipedia →
           </a>
         </div>
