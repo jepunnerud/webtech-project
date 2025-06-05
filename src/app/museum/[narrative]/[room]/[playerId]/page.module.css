@@ -125,7 +125,6 @@
   padding: 0.45rem 1rem;
   border-radius: 100vmax;
   background: var(--background);
-  border-color: var(--secondary);
   border: 2px solid var(--tertiary);
   color: var(--secondary);
   cursor: pointer;

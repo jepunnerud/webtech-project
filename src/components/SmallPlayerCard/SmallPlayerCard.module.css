@@ -1,0 +1,94 @@
+.cardGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  padding: 0.5rem;
+}
+
+.playerCard {
+  display: flex;
+  flex-direction: column;
+  height: 30vh;
+  aspect-ratio: 4 / 5;
+  max-width: none;
+
+  border: 1px solid var(--tertiary);
+  border-radius: 8px;
+  background-color: var(--secondary);
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.playerCard.mainTeam {
+  border-left: 4px solid #0066cc;
+}
+
+.playerCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.playerImage {
+  width: 100%;
+  flex: 0 0 65%;
+  position: relative;
+  overflow: hidden;
+}
+
+.playerImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.playerCard:hover .playerImage img {
+  transform: scale(1.05);
+}
+
+.playerInfo {
+  flex: 1 1 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.4rem 0.6rem;
+}
+
+.playerInfo h3 {
+<<<<<<< HEAD:src/components/smallPlayerCard/SmallPlayerCard.module.css
+  margin: 0 0 0.3rem 0;
+  /* e.g. make the heading always ~3vh tall (10% of a 30vh card) */
+  font-size: 3vh;
+  line-height: 1.2;
+  word-break: break-word;
+=======
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5vw;
+>>>>>>> 8c4ecadd90ee74961b50fbdf7f1c9f8776484811:src/components/SmallPlayerCard/SmallPlayerCard.module.css
+}
+
+
+@media (max-width: 480px) {
+  .playerInfo h3 {
+<<<<<<< HEAD:src/components/smallPlayerCard/SmallPlayerCard.module.css
+    font-size: clamp(0.8rem, 3vw, 1rem);
+  }
+  .teamStats {
+    gap: 0.4rem;
+    font-size: 0.7rem;
+  }
+  .clubTag,
+  .debutDate {
+    font-size: 0.6rem;
+    padding: 0.15rem 0.4rem;
+=======
+    font-size: 1.3vw;
+    margin: 0;
+>>>>>>> 8c4ecadd90ee74961b50fbdf7f1c9f8776484811:src/components/SmallPlayerCard/SmallPlayerCard.module.css
+  }
+
+  .playerInfo {
+    padding: 0.1rem;
+  }
+}

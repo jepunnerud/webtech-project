@@ -92,7 +92,7 @@
   padding: 0.5rem 1.1rem;
   border-radius: 100vmax;
   background: var(--code);
-  color: var(--primary);
+  color: var(--text-light);
   border: 1px solid rgba(0 0 0 / 0.12);
   font-weight: 500;
   cursor: pointer;
@@ -110,7 +110,7 @@
 
 .controls button.active {
   background: var(--secondary);
-  color: var(--background);
+  color: var(--background-color);
   border-color: var(--secondary);
 }
 

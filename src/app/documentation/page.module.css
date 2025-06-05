@@ -61,22 +61,39 @@
   color: var(--code-text, var(--primary)); 
   padding: 0.15rem 0.4rem;
   border-radius: 4px;
-  font-family: var(--font-family-monospace, var(--font-mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace));
+  font-family: inherit;
+  color: var(--text-light);
+  font-family: monospace;
 }
 
 .code {
-  background: var(--code-bg, var(--code)); 
-  color: var(--code-text, var(--primary)); 
-  padding: 0.75rem;
+  background: var(--code);
+  color: var(--text-light);
+  padding: 1rem;
   border-radius: 6px;
   overflow: auto;
   font-size: 0.9rem;
-  line-height: 1.45; 
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  font-family: var(--font-family-monospace, var(--font-mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace));
+  font-family: monospace;
 }
 
+.footer {
+  margin-top: 4rem;
+  text-align: center;
+}
+.back {
+  color: var(--secondary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.25s;
+}
+.back:hover {
+  color: var(--tertiary);
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding-inline: 1rem;
+  }
   .sectionTitle {
     font-size: 1.35rem;
   }

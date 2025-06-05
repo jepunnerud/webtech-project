@@ -5,7 +5,7 @@ import styles from './page.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
 import playersData from '@/../public/players.json'
-import StandardButton from '@/components/StandardButton'
+import StandardButton from '@/components/StandardButton/StandardButton'
 import { useEffect, useState } from 'react'
 
 const teams: {

@@ -1,65 +1,129 @@
 :root.light {
-  --background: #ffffff;
+  --background-color: #ffffff;
   --primary: #171717;
   --secondary: #ff69b4;
   --tertiary: #6b5b95;
   --code: #f0f0f0;
   --font-family: 'Helvetica Neue', sans-serif;
+  --text-light: var(--primary);
+  --text-dark: var(--primary);
 }
 
 :root.dark {
-  --background: #0a0a0a;
+  --background-color: #0a0a0a;
   --primary: #ededed;
   --secondary: #64b5f6;
   --tertiary: #90caf9;
   --code: #1e1e1e;
   --font-family: 'Fira Code', monospace;
+  --text-light: var(--primary);
+  --text-dark: var(--primary);
 }
 
 :root.forest {
-  --background: #1e2d24;
+  --background-color: #1e2d24;
   --primary: #f0fdf4;
   --secondary: #a3d9a5;
   --tertiary: #709775;
   --code: #2e3a2c;
   --font-family: 'Georgia', serif;
+  --text-light: var(--primary);
+  --text-dark: var(--primary);
 }
 
 :root.sunset {
-  --background: #ffedd5;
+  --background-color: #ffedd5;
   --primary: #3b0a0a;
   --secondary: #ff6b6b;
   --tertiary: #ffb347;
   --code: #f5f5f5;
   --font-family: 'Playfair Display', serif;
+  --text-light: var(--primary);
+  --text-dark: var(--primary);
 }
 
 :root.cyberpunk {
-  --background: #1a0033;
+  --background-color: #1a0033;
   --primary: #e0ffe0;
   --secondary: #ff00ff;
   --tertiary: #00ffff;
   --code: #000000;
   --font-family: 'Orbitron', sans-serif;
+  --text-light: var(--primary);
+  --text-dark: var(--primary);
 }
 
 :root.pastel {
-  --background: #fdf6f0;
+  --background-color: #fdf6f0;
   --primary: #4a4a4a;
   --secondary: #a6c1ee;
   --tertiary: #f7aef8;
   --code: #f0e5d8;
   --font-family: 'Quicksand', sans-serif;
+  --text-light: var(--primary);
+  --text-dark: var(--primary);
+}
+
+:root.arsenal {
+  --background-color: #f5f5f5;
+  --primary: #000000;
+  --secondary: #ef0107;
+  --tertiary: #063672;
+  --code: #db0007;
+  --font-family: Arial, sans-serif;
+  --text-light: #ffffff;
+  --text-dark: #000000;
+  --background-img: url('../../public/stadium-images/emirates-stadium.jpeg');
+  --bg-rgb: 245, 245, 245;
+}
+
+:root.chelsea {
+  --background-color: #dddddd;
+  --primary: #0d0d0d;
+  --secondary: #034694;
+  --tertiary: #ffffff;
+  --code: #022e62;
+  --font-family: Verdana, sans-serif;
+  --text-light: #ffffff;
+  --text-dark: #000000;
+  --background-img: url('../../public/stadium-images/stamford-bridge.jpg');
+  --bg-rgb: 221, 221, 221;
+}
+
+:root.liverpool {
+  --background-color: #fafafa;
+  --primary: #000000;
+  --secondary: #c8102e;
+  --tertiary: #00a398;
+  --code: #a70000;
+  --font-family: Helvetica, Arial, sans-serif;
+  --text-light: #ffffff;
+  --text-dark: #000000;
+  --background-img: url('../../public/stadium-images/anfield.jpg');
+  --bg-rgb: 250, 250, 250;
+}
+
+:root.manUtd {
+  --background-color: #f3f3f3;
+  --primary: #000000;
+  --secondary: #da291c;
+  --tertiary: #fbe122;
+  --code: #c2170b;
+  --font-family: 'Comic Sans MS', sans-serif;
+  --text-light: #000000;
+  --text-dark: #000000;
+  --background-img: url('../../public/stadium-images/old-trafford.jpg');
+  --bg-rgb: 243, 243, 243;
 }
 
 :root {
   font-family: var(--font-family);
-  background-color: var(--background);
+  background-color: var(--background-color);
   color: var(--primary);
 }
 
 a {
-  color: var(--background);
+  color: var(--background-color);
   text-decoration: none;
 }
 
@@ -79,6 +143,11 @@ body {
   padding-top: calc(64px + 1rem);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  height: 100vh;
+}
+
+button {
+  all: unset;
 }

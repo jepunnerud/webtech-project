@@ -74,7 +74,7 @@
 .doorTop,
 .doorBottom {
   position: absolute;
-  background-color: var(--background);
+  background-color: var(--background-color);
   z-index: 2;
 }
 
@@ -127,14 +127,14 @@
 
 .selectWrap label {
   font-size: 0.9rem;
-  color: color-mix(in srgb, var(--primary) 70%, var(--background) 30%);
+  color: color-mix(in srgb, var(--primary) 70%, var(--background-color) 30%);
 }
 
 .selectWrap select {
   padding: 0.5rem 1.1rem;
   border-radius: 100vmax;
   background: var(--code);
-  color: var(--primary);
+  color: var(--text-light);
   border: 1px solid rgba(0 0 0 / 0.12);
   font-weight: 500;
   cursor: pointer;

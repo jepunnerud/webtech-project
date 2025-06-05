@@ -1,0 +1,45 @@
+.primary,
+.secondary {
+  border-radius: 8px;
+  transition: transform 0.15s;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.large {
+  padding: 0.7rem 0.8rem;
+  font-weight: 600;
+}
+
+.small {
+  padding: 0.4rem 0.7rem;
+  font-weight: 500;
+}
+
+.primary {
+  background: var(--secondary);
+  color: var(--background);
+  border: 2px solid var(--secondary);
+  font-color: var(--text-light);
+}
+
+a.primary {
+  color: var(--text-light);
+}
+
+.secondary {
+  border: 2px solid var(--secondary);
+  color: var(--secondary);
+  background: transparent;
+}
+
+.primary:hover,
+.primary:focus-visible,
+.secondary:hover,
+.secondary:focus-visible {
+  transform: translateY(-2px);
+}

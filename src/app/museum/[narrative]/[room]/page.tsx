@@ -3,8 +3,8 @@ import styles from './page.module.css'
 import playersData from '@/../public/players.json'
 import { Player, TeamStats } from '@/types'
 import { getTeamName } from '@/utils/teamUtils'
-import SmallPlayerCard from '@/components/smallPlayerCard/SmallPlayerCard'
-import StandardButton from '@/components/StandardButton'
+import SmallPlayerCard from '@/components/SmallPlayerCard/SmallPlayerCard'
+import StandardButton from '@/components/StandardButton/StandardButton'
 
 type Params = {
   params: {
