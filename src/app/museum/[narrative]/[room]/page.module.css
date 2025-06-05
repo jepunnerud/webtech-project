@@ -1,6 +1,6 @@
 /* src/app/museum/[team]/page.module.css */
 .container {
-  height: fit-content;
+  width: fit-content;
   margin-bottom: 3rem;
 }
 
@@ -19,7 +19,6 @@
   text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.3s;
-  color: var(--text-light);
 }
 
 .backButton:hover {
@@ -46,10 +45,10 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, auto);
-  gap: 2rem;
   border: 3px solid var(--secondary);
-  padding: 2rem;
-  width: 80vw;
+  gap: 0 1rem;
+  padding: 1rem 2rem;
+  width: 60vw;
 }
 
 .cell {
@@ -63,7 +62,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 3vw;
+  font-size: 2.5vw;
 }
 
 .emptyCell {
@@ -77,4 +76,17 @@
   font-size: 0.8rem;
   color: #888;
   font-style: italic;
+}
+
+.pager {
+  margin: 3rem 0;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+.prev,
+.next {
+  color: var(--secondary);
+  text-decoration: none;
 }

@@ -1,9 +1,7 @@
 .container {
-  max-width: 1000px;
   margin: 0 auto;
   min-height: 100vh;
-  max-width: 1000px;
-  min-width: 1000px;
+  width: 70vw;
 }
 
 .notFound {
@@ -42,6 +40,7 @@
 .playerImage {
   position: relative;
   flex: 0 0 280px;
+  aspect-ratio: 3 / 4;
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow);
@@ -66,7 +65,8 @@
 
 .position,
 .nation,
-.born {
+.born,
+.debut {
   margin: 0.25rem 0;
 }
 
@@ -79,27 +79,32 @@
   gap: 1.25rem;
   margin-top: 1rem;
   flex-wrap: wrap;
+  align-items: flex-start;
 }
 .infoColumn {
   flex: 1;
 }
+
 .qrColumn {
+  flex: 1 1 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0.4rem;
+  margin-top: 1rem;
 }
 .qrColumn img {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
 }
 .qrLabel {
-  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  font-size: 0.65rem;
 }
 
 .descriptionControls {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
+  justify-items: space-between;
   gap: 1rem 2rem;
   margin-bottom: 2rem;
 }
@@ -219,4 +224,39 @@
 
 .buttonWrapper {
   margin-bottom: 1rem;
+}
+
+.pager {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  flex: 0 0 100%;
+}
+
+.pager .prev,
+.pager .next {
+  padding: 0.45rem 1rem;
+  border-radius: 100vmax;
+  background: var(--background);
+  border: 2px solid var(--tertiary);
+  color: var(--secondary);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    transform 0.15s;
+}
+
+/* ─── Hover/focus for pager links ───────────────────────────────────────────── */
+.pager .prev:hover,
+.pager .prev:focus-visible,
+.pager .next:hover,
+.pager .next:focus-visible {
+  background: var(--secondary);
+  color: var(--background);
+  border-color: var(--secondary);
+  transform: translateY(-1px);
 }

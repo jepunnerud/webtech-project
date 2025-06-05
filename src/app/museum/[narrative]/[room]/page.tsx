@@ -1,3 +1,5 @@
+// app/museum/[narrative]/[room]/page.tsx
+
 import { notFound } from 'next/navigation'
 import styles from './page.module.css'
 import playersData from '@/../public/players.json'
@@ -12,7 +14,7 @@ type Params = {
     room: string
   }
   searchParams: {
-    roomNumber?: string
+    roomNumber: string
   }
 }
 
@@ -40,12 +42,20 @@ function getFilteredPlayers(narrative: string, room: string) {
         )
         return { ...player, mainTeam, currentTeamStats }
       })
-      .filter((p) => p.mainTeam.club.toLowerCase() === teamName.toLowerCase() && p.currentTeamStats)
+      .filter(
+        (p) =>
+          p.mainTeam.club.toLowerCase() === teamName.toLowerCase() &&
+          p.currentTeamStats
+      )
   }
 
   if (narrative === 'position') {
     return enrichPlayers(
-      playersData.filter((p) => p.position && p.position.toLowerCase().replace(/\s+/g, '') === room)
+      playersData.filter(
+        (p) =>
+          p.position &&
+          p.position.toLowerCase().replace(/\s+/g, '') === room
+      )
     )
   }
 
@@ -76,18 +86,30 @@ function isBetween(
   [xr, xc]: [number, number]
 ) {
   return (
-    r >= Math.min(er, xr) && r <= Math.max(er, xr) && c >= Math.min(ec, xc) && c <= Math.max(ec, xc)
+    r >= Math.min(er, xr) &&
+    r <= Math.max(er, xr) &&
+    c >= Math.min(ec, xc) &&
+    c <= Math.max(ec, xc)
   )
 }
 
-export default function RoomPage({ params, searchParams }: Params) {
-  const { narrative, room } = params
-  const roomNumber = searchParams.roomNumber
+export default async function RoomPage(props: Params) {
+  const { params, searchParams } = await Promise.resolve(props)
+  const { narrative, room } = await Promise.resolve(params)
+  const roomNumber = await Promise.resolve(searchParams)
+  
+
   const players = getFilteredPlayers(narrative, room)
-
   if (!players.length) notFound()
+  
 
-  const layout = roomLayout[roomNumber as keyof typeof roomLayout] || roomLayout['1']
+  const roomNumStr =
+    typeof roomNumber === 'object' && roomNumber.roomNumber
+      ? roomNumber.roomNumber
+      : '1'
+  const layout =
+    roomLayout[(roomNumStr as keyof typeof roomLayout) || '1'] ||
+    roomLayout['1']
   const { entrance, exit } = layout
 
   const blockedCells = new Set([
@@ -138,21 +160,25 @@ export default function RoomPage({ params, searchParams }: Params) {
     narrative === 'teams'
       ? `${getTeamName(room)} Legends`
       : narrative === 'position'
-        ? `Position: ${room.charAt(0).toUpperCase() + room.slice(1)}`
-        : `Debut: ${room}s`
+      ? `Position: ${room.charAt(0).toUpperCase() + room.slice(1)}`
+      : `Debut: ${room}s`
 
   const subtitleText =
     narrative === 'teams'
       ? `Players who made history for ${getTeamName(room)}`
       : narrative === 'position'
-        ? `Players who played as ${room.charAt(0).toUpperCase() + room.slice(1)}`
-        : `Players who debuted in the ${room}s`
+      ? `Players who played as ${
+          room.charAt(0).toUpperCase() + room.slice(1)
+        }`
+      : `Players who debuted in the ${room}s`
+
+  const roomQuery = roomNumStr ? `?roomNumber=${roomNumStr}` : '1'
 
   return (
     <div className={styles.container}>
       <div className={styles.header}>
         <StandardButton label="← Back to Museum" href="/museum" />
-        <h1>Room: {roomNumber}</h1>
+        <h1>Room: {roomNumStr}</h1>
         <h2>{titleText}</h2>
         <p>{subtitleText}</p>
       </div>
@@ -174,7 +200,7 @@ export default function RoomPage({ params, searchParams }: Params) {
                 ) : player ? (
                   <SmallPlayerCard
                     player={player}
-                    href={`/museum/${narrative}/${room}/${player.id}?roomNumber=${searchParams.roomNumber ?? ''}`}
+                    href={`/museum/${narrative}/${room}/${player.id}${roomQuery}`}
                   />
                 ) : (
                   <div className={styles.emptyCell} />

@@ -1,6 +1,6 @@
 .container {
   padding-top: 50px;
-  min-width: 90vw;
+  min-width: 80vw;
   height: 100vh;
 }
 
@@ -135,4 +135,11 @@
 
 .icon {
   transition: filter 0.2s ease;
+}
+
+.centeredButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }

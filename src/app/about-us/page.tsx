@@ -105,7 +105,7 @@ export default function AboutUsPage() {
           </div>
         ))}
       </div>
-      <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
+      <div className={styles.centeredButton}>
         <StandardButton label="← Return Home" href="/" />
       </div>
     </div>

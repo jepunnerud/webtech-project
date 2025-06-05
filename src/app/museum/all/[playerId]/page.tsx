@@ -96,6 +96,17 @@ export default function PlayerPage({ params }: { params: Promise<{ playerId: str
                   day: 'numeric',
                 })}
               </p>
+              {player.long_description_qr && (
+              <div className={styles.qrColumn}>
+                <Image
+                  src={player.long_description_qr}
+                  alt="QR Code"
+                  width={100}
+                  height={100}
+                />
+                <span className={styles.qrLabel}>Scan for more info</span>
+              </div>
+            )}
             </div>
           </div>
         </div>

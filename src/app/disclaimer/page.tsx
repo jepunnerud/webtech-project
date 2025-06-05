@@ -11,55 +11,56 @@ export default function DisclaimerPage() {
     <div className={styles.container}>
       <div className={styles.header}>
         <h1>Disclaimer</h1>
-        <p>Scope, Purpose, Project Context, and Copyright</p>
+        <p>About this site and its purpose</p>
       </div>
 
       <div className={styles.playersGrid}>
-        {/* Project Context */}
+        {/* Course Context */}
         <div className={styles.card}>
           <div className={styles.cardContent}>
             <h3>Project Context</h3>
             <p>
-              This site is the final project for the “Information Modeling and Web Technologies”
-              course (Digital Humanities & Digital Knowledge, University of Bologna).
+              This website is a final project for the “Information Modeling and Web Technologies” course 
+              in the Digital Humanities & Digital Knowledge master&apos;s program at the University of Bologna.
             </p>
           </div>
         </div>
 
-        {/* Scope */}
+        {/* What This Is */}
         <div className={styles.card}>
           <div className={styles.cardContent}>
-            <h3>Scope</h3>
+            <h3>What This Is</h3>
             <p>
-              The Museum of Football is a digital companion to the physical exhibition, presenting
-              curated artifacts with detailed metadata and narrative descriptions.
+              A simple web app designed to support a museum exhibition by organizing real-world items 
+              into themed, interactive visits. Visitors can explore items through metadata, stories, 
+              and media content.
             </p>
           </div>
         </div>
 
-        {/* Purpose */}
+        {/* Why We Made It */}
         <div className={styles.card}>
           <div className={styles.cardContent}>
-            <h3>Purpose</h3>
+            <h3>Why We Made It</h3>
             <p>
-              To document our styling decisions, design tokens, and narrative structure—supporting
-              collaboration, transparency, and future pedagogical use.
+              To demonstrate how web technologies and information modeling can support cultural 
+              storytelling. It also documents our work, styles, and structure.
             </p>
           </div>
         </div>
 
-        {/* Copyright */}
+        {/* Copyright Info */}
         <div className={styles.card}>
           <div className={styles.cardContent}>
             <h3>Copyright</h3>
             <p>
-              © 2025 Museum of Football. All layout, typography, and code are © Museum of Football
-              2025. Third-party content retains its own copyrights.
+              © 2025 Museum of Football. The content, layout, and code are by the student team. 
+              External images and media remain the property of their original creators.
             </p>
           </div>
         </div>
       </div>
-      <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
+      <div className={styles.centeredButton}>
         <StandardButton label="← Return Home" href="/" />
       </div>
     </div>

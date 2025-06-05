@@ -1,8 +1,8 @@
 /* src/app/museum/[team]/page.module.css */
 .container {
   height: fit-content;
-  max-width: 1000px;
-  min-width: 1000px;
+  margin-bottom: 3rem;
+  width: 90%;
 }
 
 .header {
@@ -47,6 +47,7 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 2rem;
+  margin-bottom: 3rem;
 }
 
 .secondaryTeamNote {

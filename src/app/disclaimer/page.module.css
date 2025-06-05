@@ -2,7 +2,7 @@
 
 .container {
   height: fit-content;
-  max-width: 1000px;
+  max-width: 80vw;
   margin: 0 1rem;
   padding: 2rem 0;
 }
@@ -78,4 +78,11 @@
 
 .allButton:hover {
   transform: translateY(-2px);
+}
+
+.centeredButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
