@@ -59,7 +59,7 @@ export default function DisclaimerPage() {
           </div>
         </div>
       </div>
-      <div className={styles.centerButton}>
+      <div className={styles.centeredButton}>
         <StandardButton label="← Return Home" href="/" />
       </div>
     </div>
