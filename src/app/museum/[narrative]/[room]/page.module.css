@@ -1,6 +1,6 @@
 /* src/app/museum/[team]/page.module.css */
 .container {
-  height: fit-content;
+  width: fit-content;
   margin-bottom: 3rem;
 }
 
@@ -45,9 +45,9 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, auto);
-  gap: 2rem;
   border: 3px solid var(--secondary);
-  padding: 2rem;
+  gap: 0 1rem ;
+  padding: 1rem 2rem;
   width: 60vw;
 }
 
@@ -55,6 +55,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 20vw;
 }
 
 .roomText {

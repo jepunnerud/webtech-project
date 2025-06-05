@@ -111,14 +111,14 @@
 
 .themeSelector label {
   font-size: 0.85rem;
-  color: var(--text-light);
+  color: var(--text-dark);
 }
 .themeSelector select {
   padding: 0.25rem;
   border-radius: 0.25rem;
   background: var(--background-color);
   border: none;
-  color: var(--text-light);
+  color: var(--text-dark);
   font-size: 0.85rem;
 }
 

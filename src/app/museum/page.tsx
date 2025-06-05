@@ -115,29 +115,37 @@ export default function MuseumIndexPage() {
       }[]
     | null = null
 
-  const roomNumberMap = [1, 2, 4, 3]
+  const roomNumberMap = [1, 2, 4, 3] 
 
   if (narrative === 'teams') {
+    // No change needed here: each team already has both roomNumber and doors baked in
     roomsToShow = teams
   } else if (narrative === 'position') {
     const allPositions = getAllPositions()
-    roomsToShow = allPositions.map((pos, idx) => ({
-      id: pos.toLowerCase().replace(/\s+/g, ''),
-      name: pos,
-      roomNumber: roomNumberMap[idx],
-      doors: getDoorsByIndex(idx),
-    }))
+    roomsToShow = allPositions.map((pos, idx) => {
+      const rn = roomNumberMap[idx] // e.g. idx=2 → rn=4
+      return {
+        id: pos.toLowerCase().replace(/\s+/g, ''),
+        name: pos,
+        roomNumber: rn,
+        doors: getDoorsByIndex(rn - 1),
+      }
+    })
   } else if (narrative === 'debut') {
     const allDecades = getAllDecades()
-    roomsToShow = allDecades.map((dec, idx) => ({
-      id: `${dec}`,
-      name: `${dec}s`,
-      roomNumber: roomNumberMap[idx],
-      doors: getDoorsByIndex(idx),
-    }))
+    roomsToShow = allDecades.map((dec, idx) => {
+      const rn = roomNumberMap[idx] // e.g. idx=2 → rn=4
+      return {
+        id: `${dec}`,
+        name: `${dec}s`,
+        roomNumber: rn,
+        doors: getDoorsByIndex(rn - 1),
+      }
+    })
   }
 
   return (
+    <div className={styles.container}>
     <div>
       <div className={styles.header}>
         <h1>Interactive museum map</h1>
@@ -192,6 +200,10 @@ export default function MuseumIndexPage() {
           <h3>Entrance/Exit</h3>
         </div>
       </div>
+    </div>
+    <div className={styles.centeredButton}>
+        <StandardButton label="← Return Home" href="/" />
+    </div>
     </div>
   )
 }

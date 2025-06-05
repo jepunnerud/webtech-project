@@ -16,7 +16,7 @@ function computeMainTeam(teams: { club: string; appearances: number; goals: numb
 }
 export default function PlayerPage({
   params,
-   searchParams,
+  searchParams,
 }: {
   params: Promise<{ narrative: string; room: string; playerId: string }>
   searchParams: Promise<{ roomNumber?: string }>
@@ -82,8 +82,8 @@ export default function PlayerPage({
       ? `← Back to ${getTeamName(room)}`
       : narrative === 'position'
       ? `← Back to ${room.charAt(0).toUpperCase() + room.slice(1)}`
-      : narrative === 'decade'
-      ? `← Back to ${room}`
+      : narrative === 'debut'
+      ? `← Back to ${room}s`
       : `← Back to ${room}s`
 
   const backHref = `/museum/${narrative}/${room}?roomNumber=${roomNumber ?? ''}`
@@ -150,7 +150,6 @@ export default function PlayerPage({
             Advanced
           </button>
         </div>
-
         <div className={styles.buttonGroup}>
           <span>Text Length:</span>
           <button
