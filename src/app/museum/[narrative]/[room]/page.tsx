@@ -1,3 +1,5 @@
+'use client'
+
 import { notFound } from 'next/navigation'
 import styles from './page.module.css'
 import playersData from '@/../public/players.json'
@@ -5,16 +7,7 @@ import { Player, TeamStats } from '@/types'
 import { getTeamName } from '@/utils/teamUtils'
 import SmallPlayerCard from '@/components/SmallPlayerCard/SmallPlayerCard'
 import StandardButton from '@/components/StandardButton/StandardButton'
-
-type Params = {
-  params: {
-    narrative: string
-    room: string
-  }
-  searchParams: {
-    roomNumber: string
-  }
-}
+import { use } from 'react'
 
 function enrichPlayers(
   players: Player[]
@@ -80,16 +73,20 @@ function isBetween(
   )
 }
 
-export default async function RoomPage(props: Params) {
-  const { params, searchParams } = await Promise.resolve(props)
-  const { narrative, room } = await Promise.resolve(params)
-  const roomNumber = await Promise.resolve(searchParams)
+export default function RoomPage({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ narrative: string; room: string }>
+  searchParams: Promise<{ roomNumber?: string }>
+}) {
+  const { narrative, room } = use(params)
+  const { roomNumber } = use(searchParams)
 
   const players = getFilteredPlayers(narrative, room)
   if (!players.length) notFound()
 
-  const roomNumStr =
-    typeof roomNumber === 'object' && roomNumber.roomNumber ? roomNumber.roomNumber : '1'
+  const roomNumStr = typeof roomNumber === 'string' ? roomNumber : '1'
   const layout = roomLayout[(roomNumStr as keyof typeof roomLayout) || '1'] || roomLayout['1']
   const { entrance, exit } = layout
 

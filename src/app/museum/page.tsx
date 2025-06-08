@@ -1,12 +1,12 @@
 'use client'
 
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import styles from './page.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
 import playersData from '@/../public/players.json'
 import StandardButton from '@/components/StandardButton/StandardButton'
-import { useEffect, useState } from 'react'
+import { use, useEffect, useState } from 'react'
 
 const teams: {
   id: string
@@ -79,18 +79,21 @@ function getDoorsByIndex(idx: number): Array<'top' | 'bottom' | 'left' | 'right'
   return doorMapping[idx] || ['right', 'bottom']
 }
 
-export default function MuseumIndexPage() {
+export default function MuseumIndexPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ narrative?: string }>
+}) {
   const router = useRouter()
-  const searchParams = useSearchParams()
-  const [narrative, setNarrative] = useState<string>('teams')
+  const { narrative: narrativeFromQuery } = use(searchParams)
+  const [narrative, setNarrative] = useState<string>(narrativeFromQuery ?? 'teams')
 
   useEffect(() => {
-    const urlParam = searchParams.get('narrative')
     const stored = localStorage.getItem('narrative')
-
-    const initial = urlParam || stored || 'teams'
-    setNarrative(initial)
-  }, [searchParams])
+    if (stored && stored !== narrative) {
+      setNarrative(stored)
+    }
+  }, [narrative])
 
   const onNarrativeChange = (evt: React.ChangeEvent<HTMLSelectElement>) => {
     const val = evt.target.value

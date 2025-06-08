@@ -23,7 +23,7 @@ export default function PlayerPage({ params }: { params: Promise<{ playerId: str
   const idNum = Number(playerId)
 
   const sp = useSearchParams()
-  const filterType = sp.get('filter') ?? undefined // team | position | country
+  const filterType = sp.get('filter') ?? undefined
   const filterValue = sp.get('value') ?? undefined
   const qp = filterType ? `?filter=${filterType}&value=${filterValue}` : ''
 
