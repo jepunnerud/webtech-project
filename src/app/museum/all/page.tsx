@@ -7,7 +7,6 @@ import styles from './page.module.css'
 import PlayerCard from '@/components/PlayerCard/PlayerCard'
 import StandardButton from '@/components/StandardButton/StandardButton'
 
-/* helpers */
 const slug = (club: string) => club.toLowerCase().replace(/\s+/g, '')
 const sortByDebut = (a: Player, b: Player) => a.debut_date.localeCompare(b.debut_date)
 const sortByMain = (a: Player, b: Player) => {
@@ -22,14 +21,12 @@ export default function AllViewer() {
   const posFilter = sp.get('pos') ?? ''
   const teamFilter = sp.get('team') ?? ''
 
-  /* option lists */
   const positions = useMemo(() => Array.from(new Set(players.map((p) => p.position))).sort(), [])
   const teams = useMemo(
     () => Array.from(new Set(players.flatMap((p) => p.teams.map((t) => t.club)))).sort(),
     []
   )
 
-  /* filtered + sorted list */
   const shown = useMemo(() => {
     let list = [...players]
     list.sort(narrative === 'debut' ? sortByDebut : sortByMain)
@@ -41,7 +38,6 @@ export default function AllViewer() {
     return list
   }, [narrative, posFilter, teamFilter])
 
-  /* helper to push new query */
   const setQuery = (q: string) => router.push(`/museum/all?${q}`)
 
   return (
@@ -51,9 +47,7 @@ export default function AllViewer() {
         <h1>All-Time Legends</h1>
       </div>
 
-      {/* -------- controls -------- */}
       <div className={styles.controls}>
-        {/* --- row 1: sort buttons --- */}
         <div className={styles.controlsRow}>
           <span className={styles.sortLabel}>Sort by:</span>
           <button
@@ -70,7 +64,6 @@ export default function AllViewer() {
           </button>
         </div>
 
-        {/* --- row 2: filters --- */}
         <div className={styles.controlsRow}>
           <span className={styles.sortLabel}>Filters:</span>
           <div className={styles.selectWrap}>
@@ -106,7 +99,6 @@ export default function AllViewer() {
         </div>
       </div>
 
-      {/* -------- grid -------- */}
       {shown.length === 0 ? (
         <p className={styles.empty}>No players match.</p>
       ) : (

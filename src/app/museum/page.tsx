@@ -45,7 +45,6 @@ const teams: {
   },
 ]
 
-// (2) Helpers to extract “positions” and “debut decades” from players.json
 function getAllPositions(): string[] {
   const preferredOrder = ['Goalkeeper', 'Defender', 'Forward', 'Midfielder']
   const actualPositions = new Set<string>()
@@ -72,10 +71,10 @@ function getAllDecades(): number[] {
 
 function getDoorsByIndex(idx: number): Array<'top' | 'bottom' | 'left' | 'right'> {
   const doorMapping: Array<Array<'top' | 'bottom' | 'left' | 'right'>> = [
-    ['right', 'bottom'], // room 1
-    ['left', 'bottom'], // room 2
-    ['top', 'left'], // room 3
-    ['top', 'right'], // room 4
+    ['right', 'bottom'],
+    ['left', 'bottom'],
+    ['top', 'left'],
+    ['top', 'right'],
   ]
   return doorMapping[idx] || ['right', 'bottom']
 }
@@ -115,15 +114,14 @@ export default function MuseumIndexPage() {
       }[]
     | null = null
 
-  const roomNumberMap = [1, 2, 4, 3] 
+  const roomNumberMap = [1, 2, 4, 3]
 
   if (narrative === 'teams') {
-    // No change needed here: each team already has both roomNumber and doors baked in
     roomsToShow = teams
   } else if (narrative === 'position') {
     const allPositions = getAllPositions()
     roomsToShow = allPositions.map((pos, idx) => {
-      const rn = roomNumberMap[idx] // e.g. idx=2 → rn=4
+      const rn = roomNumberMap[idx]
       return {
         id: pos.toLowerCase().replace(/\s+/g, ''),
         name: pos,
@@ -134,7 +132,7 @@ export default function MuseumIndexPage() {
   } else if (narrative === 'debut') {
     const allDecades = getAllDecades()
     roomsToShow = allDecades.map((dec, idx) => {
-      const rn = roomNumberMap[idx] // e.g. idx=2 → rn=4
+      const rn = roomNumberMap[idx]
       return {
         id: `${dec}`,
         name: `${dec}s`,
@@ -146,64 +144,64 @@ export default function MuseumIndexPage() {
 
   return (
     <div className={styles.container}>
-    <div>
-      <div className={styles.header}>
-        <h1>Interactive museum map</h1>
-      </div>
+      <div>
+        <div className={styles.header}>
+          <h1>Interactive museum map</h1>
+        </div>
 
-      <div className={styles.buttonWrapper} style={{ display: 'flex', alignItems: 'center' }}>
-        <StandardButton label="View all legends →" href="/museum/all" />
+        <div className={styles.buttonWrapper} style={{ display: 'flex', alignItems: 'center' }}>
+          <StandardButton label="View all legends →" href="/museum/all" />
 
-        <div className={styles.selectWrap}>
-          <label htmlFor="narrativeSelect">Narrative: </label>
-          <select id="narrativeSelect" value={narrative} onChange={onNarrativeChange}>
-            <option value="teams">Teams</option>
-            <option value="position">Position</option>
-            <option value="debut">Debut Decade</option>
-          </select>
+          <div className={styles.selectWrap}>
+            <label htmlFor="narrativeSelect">Narrative: </label>
+            <select id="narrativeSelect" value={narrative} onChange={onNarrativeChange}>
+              <option value="teams">Teams</option>
+              <option value="position">Position</option>
+              <option value="debut">Debut Decade</option>
+            </select>
+          </div>
+        </div>
+
+        <div className={styles.grid}>
+          {roomsToShow!.map((room) => (
+            <Link
+              key={room.id}
+              href={{
+                pathname: `/museum/${narrative}/${room.id}`,
+                query: { roomNumber: room.roomNumber },
+              }}
+              className={`${styles.box} ${styles[`room${room.roomNumber}`]}`}
+            >
+              {room.doors.map((side) => (
+                <span
+                  key={side}
+                  className={styles[`door${side.charAt(0).toUpperCase() + side.slice(1)}`]}
+                />
+              ))}
+              {narrative === 'teams' ? (
+                <Image
+                  src={room.logo!}
+                  alt={`${room.name} logo`}
+                  width={120}
+                  height={120}
+                  style={{ height: '70%', width: 'auto' }}
+                />
+              ) : (
+                <div className={styles.text}>
+                  <h3>{room.name}</h3>
+                </div>
+              )}
+            </Link>
+          ))}
+
+          <div className={styles.centerText}>
+            <h3>Entrance/Exit</h3>
+          </div>
         </div>
       </div>
-
-      <div className={styles.grid}>
-        {roomsToShow!.map((room) => (
-          <Link
-            key={room.id}
-            href={{
-              pathname: `/museum/${narrative}/${room.id}`,
-              query: { roomNumber: room.roomNumber },
-            }}
-            className={`${styles.box} ${styles[`room${room.roomNumber}`]}`}
-          >
-            {room.doors.map((side) => (
-              <span
-                key={side}
-                className={styles[`door${side.charAt(0).toUpperCase() + side.slice(1)}`]}
-              />
-            ))}
-            {narrative === 'teams' ? (
-              <Image
-                src={room.logo!}
-                alt={`${room.name} logo`}
-                width={120}
-                height={120}
-                style={{ height: '70%', width: 'auto' }}
-              />
-            ) : (
-              <div className={styles.text}>
-                <h3>{room.name}</h3>
-              </div>
-            )}
-          </Link>
-        ))}
-
-        <div className={styles.centerText}>
-          <h3>Entrance/Exit</h3>
-        </div>
-      </div>
-    </div>
-    <div className={styles.centeredButton}>
+      <div className={styles.centeredButton}>
         <StandardButton label="← Return Home" href="/" />
-    </div>
+      </div>
     </div>
   )
 }

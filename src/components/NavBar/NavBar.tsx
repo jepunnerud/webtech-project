@@ -5,7 +5,7 @@ import { useTheme } from '../../stores/theme-context'
 import { useRef, useState } from 'react'
 
 export default function NavBar() {
-  const { theme, changeTheme } = useTheme() // No need for undefined handling
+  const { theme, changeTheme } = useTheme()
   const [isOpen, setIsOpen] = useState(false)
 
   const handleThemeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {

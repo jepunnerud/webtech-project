@@ -1,8 +1,7 @@
-/* src/app/documentation/page.module.css */
 .container {
   height: fit-content;
   max-width: 70%;
-  margin: 0 1rem; 
+  margin: 0 1rem;
 }
 
 .header {
@@ -29,37 +28,36 @@
 .sectionTitle {
   font-size: 1.5rem;
   margin-bottom: 0.75rem;
-  border-bottom: 2px solid rgba(255 255 255 / 0.08); 
+  border-bottom: 2px solid rgba(255 255 255 / 0.08);
   padding-bottom: 0.25rem;
   width: 100%;
   color: var(--secondary);
 }
 
-/* ---------- Lists & code ---------- */
 .list {
   margin-top: 0.25rem;
   margin-bottom: 0.5rem;
 }
 
 .list li {
-  margin: 0.4rem 0; /* Vertical spacing for top-level list items */
+  margin: 0.4rem 0;
 }
 
 .list ul {
-  padding-left: 1.2rem;  
-                         
-  margin-top: 0.15rem;   
+  padding-left: 1.2rem;
+
+  margin-top: 0.15rem;
   margin-bottom: 0.15rem;
   list-style-type: circle;
 }
 
 .list ul li {
-  margin: 0.5rem 0; 
+  margin: 0.5rem 0;
 }
 
 .container code {
-  background: var(--code-bg, var(--code)); 
-  color: var(--code-text, var(--primary)); 
+  background: var(--code-bg, var(--code));
+  color: var(--code-text, var(--primary));
   padding: 0.15rem 0.4rem;
   border-radius: 4px;
   font-family: inherit;
@@ -97,7 +95,6 @@
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
-
 
 @media (max-width: 640px) {
   .page {
