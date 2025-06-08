@@ -1,5 +1,5 @@
 .navbar {
-  position: fixed; /* ← stays put, no scroll */
+  position: fixed;
   inset: 0 0 auto 0;
   height: 64px;
   z-index: 100;
@@ -138,11 +138,11 @@
   }
 
   .menu.show {
-    display: block; /* Hide links on small screens */
-    z-index: 1000; /* Ensure it appears above other content */
+    display: block;
+    z-index: 1000;
     flex-direction: column;
     position: absolute;
-    top: 64px; /* Below the navbar */
+    top: 64px;
     left: 0;
     width: 100%;
     background: var(--secondary);

@@ -46,7 +46,6 @@ export default function PlayerPage({ params }: { params: Promise<{ playerId: str
     <div className={styles.container}>
       <StandardButton label="&larr; Back to all players" href="/museum/all"></StandardButton>
 
-      {/* filter banner */}
       <p className={styles.filterBanner}>
         Current filter:&nbsp;
         {filterType
@@ -54,7 +53,6 @@ export default function PlayerPage({ params }: { params: Promise<{ playerId: str
           : 'None'}
       </p>
 
-      {/* header (image + bio) */}
       <div className={styles.playerHeader}>
         <div className={styles.playerImage}>
           <Image src={player.image_url} alt={player.name} width={300} height={300} priority />
@@ -65,7 +63,6 @@ export default function PlayerPage({ params }: { params: Promise<{ playerId: str
 
           <div className={styles.infoRow}>
             <div className={styles.infoColumn}>
-              {/* hyperlinks for position & country */}
               <Link
                 href={`/museum/all/${player.id}?filter=position&value=${player.position}`}
                 className={styles.linkChip}
@@ -97,22 +94,16 @@ export default function PlayerPage({ params }: { params: Promise<{ playerId: str
                 })}
               </p>
               {player.long_description_qr && (
-              <div className={styles.qrColumn}>
-                <Image
-                  src={player.long_description_qr}
-                  alt="QR Code"
-                  width={100}
-                  height={100}
-                />
-                <span className={styles.qrLabel}>Scan for more info</span>
-              </div>
-            )}
+                <div className={styles.qrColumn}>
+                  <Image src={player.long_description_qr} alt="QR Code" width={100} height={100} />
+                  <span className={styles.qrLabel}>Scan for more info</span>
+                </div>
+              )}
             </div>
           </div>
         </div>
       </div>
 
-      {/* text complexity & length buttons */}
       <div className={styles.descriptionControls}>
         <div className={styles.buttonGroup}>
           <span>Text Complexity:</span>
@@ -145,7 +136,6 @@ export default function PlayerPage({ params }: { params: Promise<{ playerId: str
         <p className={styles.descriptionText}>{description}</p>
       </div>
 
-      {/* stats table with club hyperlinks */}
       <div className={styles.statsSection}>
         <h2>Career Statistics</h2>
         <table className={styles.statsTable}>
@@ -175,7 +165,6 @@ export default function PlayerPage({ params }: { params: Promise<{ playerId: str
         </table>
       </div>
 
-      {/* pager */}
       <div className={styles.pager}>
         <Link href={`/museum/all/${prev.id}${qp}`} className={styles.prev}>
           ← {prev.name}

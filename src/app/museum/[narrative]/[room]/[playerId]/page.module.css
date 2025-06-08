@@ -250,7 +250,6 @@
     transform 0.15s;
 }
 
-/* ─── Hover/focus for pager links ───────────────────────────────────────────── */
 .pager .prev:hover,
 .pager .prev:focus-visible,
 .pager .next:hover,

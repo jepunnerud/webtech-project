@@ -112,7 +112,6 @@ export default function PlayerPage({
         </div>
       </div>
 
-      {/* ─── Text Complexity / Length + Pager (inline) ─────────────────────────────── */}
       <div className={styles.descriptionControls}>
         <div className={styles.buttonGroup}>
           <span>Text Complexity:</span>
@@ -169,7 +168,6 @@ export default function PlayerPage({
           </div>
         )}
       </div>
-      {/* ──────────────────────────────────────────────────────────────────────────────── */}
 
       <div className={styles.descriptionSection}>
         <p className={styles.descriptionText}>{getDescription()}</p>
