@@ -21,13 +21,11 @@ export default function Documentation() {
       <section>
         <h2 className={styles.sectionTitle}>Design Philosophy</h2>
         <p>
-          Our styling is not random. It follows clear rules. These rules come from the project
+          Our styling follows clear rules. These rules come from the project
           description. The rules make sure that everything you see has a purpose. This makes the
           website connected, easy to understand, and look good. Our main ideas are: &apos;deliberate
-          design&apos; (we choose things for a reason), &apos;multimedia narratives&apos; (we use
-          different media like text and pictures to tell stories), and using a clear system for
-          spacing and sizes to make things look balanced. A famous architect, Le Corbusier, once
-          said that good planning is the start of good design. We agree with this idea.
+          design&apos; (we choose things for a reason) and using a clear system for
+          spacing and sizes to make things look balanced.
         </p>
         <ul className={styles.list}>
           <li>
@@ -50,7 +48,7 @@ export default function Documentation() {
           </li>
           <li>
             <strong>Multimedia & Narratives:</strong> The website shows different kinds of
-            information, like text, pictures, and maybe videos. The design should change to fit what
+            information, like text and pictures. The design should change to fit what
             the user wants. We have different &apos;themes&apos; (these are different looks for the
             site). We also have ways to see information called &apos;metadata views&apos; (metadata
             is data about data, like information about a picture). And we have different styles of
@@ -68,8 +66,8 @@ export default function Documentation() {
             rule for our project.
           </li>
           <li>
-            <strong>Theming:</strong> We have six different looks, or &apos;themes&apos;, for the
-            website: dark, light, forest, sunset, cyberpunk, and pastel. Users can switch between
+            <strong>Theming:</strong> We have ten different looks, or &apos;themes&apos;, for the
+            website: dark, light, forest, sunset, cyberpunk, pastel, ManUTD, Liverpool, Chelsea and Arsenal. Users can switch between
             them. These themes are made using CSS Variables. CSS Variables are like placeholders for
             style values, for example, a color. When you change a theme, these placeholders get new
             values. Each theme changes colors and maybe some fonts, but they all should be easy to
@@ -92,11 +90,10 @@ export default function Documentation() {
               <code>:root</code> Theme Palettes & Font Families:
             </strong>{' '}
             In CSS, <code>:root</code> is the main part of the HTML document. We define our theme
-            colors and basic fonts here using CSS variables. We have six themes, like light and
+            colors and basic fonts here using CSS variables. We have ten themes, like light and
             dark. For each theme, we pick colors so that text is easy to read on the background.
-            This is called contrast. We follow rules called WCAG AA to make sure it is good for
-            people with vision problems. Our main colors for accents, <code>--secondary</code> and{' '}
-            <code>--tertiary</code>, are about 20 degrees different in hue (hue is a property of
+            This is called contrast. Our main colors for accents, <code>--secondary</code> and{' '}
+            <code>--tertiary</code>, are at least 20 degrees different in hue (hue is a property of
             color). This makes them look different but related. This is good for showing when you
             move your mouse over a button, for example.
           </li>
@@ -109,13 +106,6 @@ export default function Documentation() {
             defaults can make sites look different in different browsers. By setting margin to 0, we
             get a clean start. The <code>height: 100%;</code> helps if we want a background to cover
             the whole screen. It also stops some scrollbars that we do not want.
-          </li>
-          <li>
-            <strong>Default Link Styling:</strong> Links (<code>&lt;a&gt;</code> tags) are styled to
-            use the <code>var(--background)</code> color for their text. This means if the page
-            background is light, the link text will be light. This makes links stand out. When you
-            move your mouse over a link, the color changes in 0.25 seconds. This is a{' '}
-            <code>transition</code> effect.
           </li>
           <li>
             <strong>
@@ -292,7 +282,12 @@ export default function Documentation() {
         <p>
           When we picked the actual colors for each theme, we thought about how they work together.
           We used tools that help with color choices and type scales (like{' '}
-          <a href="https://typescale.com/" target="_blank" rel="noopener noreferrer">
+          <span className={styles.externalLink}>
+          <a 
+            href="https://typescale.com/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
             Type Scale
           </a>{' '}
           or the{' '}
@@ -304,9 +299,9 @@ export default function Documentation() {
             Material Design color tool
           </a>
           ). This was to make sure that text is always easy to read. This is important for people
-          who have difficulty seeing some colors (this is called WCAG AA accessibility). The fonts
-          we picked are easy to read on many different screens. All these choices were made
-          carefully.
+          who have difficulty seeing some colors. The fonts
+          we picked are easy to read on many different screens.
+        </span>
         </p>
       </section>
 
@@ -373,7 +368,7 @@ export default function Documentation() {
             <strong>
               <code>.container</code> Width:
             </strong>{' '}
-            The main content area has a <code>max-width: 1000px;</code>. We picked this width
+            The main content area has a <code>max-width: 70%;</code>. We picked this width
             because it makes lines of text not too long. If lines are too long, it is hard to read.
             Good line length is usually 60 to 75 characters.
           </li>
@@ -406,7 +401,7 @@ export default function Documentation() {
           </li>
           <li>
             <strong>Mobile Responsiveness:</strong> On small screens (like phones, around{' '}
-            <code>600px</code> wide), the section titles might get a bit smaller (e.g., to{' '}
+            <code>640px</code> wide), the section titles might get a bit smaller (e.g., to{' '}
             <code>1.35rem</code>). This size is chosen from our typographic scale to keep
             readability on smaller screens. The page might also get extra padding on the sides (
             <code>1rem</code>). This is so the text is not right against the edge of the screen.
@@ -415,47 +410,56 @@ export default function Documentation() {
         </ul>
       </section>
 
-      {/* ---------- Museum: Team Listing Page ---------- */}
+            {/* ---------- Museum: Team Viewer Page ---------- */}
       <section>
-        <h2 className={styles.sectionTitle}>Museum: Team Page Styling</h2>
+        <h2 className={styles.sectionTitle}>Museum: Room Page Layout & Styling</h2>
         <p>
-          The &apos;Museum: Team Page&apos; shows a list of players from a team, or different items
-          in a category. It usually uses a grid of cards. The style needs to be flexible for
-          different numbers of items and give clear signs for interaction.
+          The &apos;Museum: Room Page&apos; presents a curated exhibit of players based 
+          on a specific narrative (e.g., a team, a position, or a debut decade). 
+          Instead of a simple wrapping grid, it uses a fixed <strong>3x4 grid</strong> to simulate a 
+          virtual room with a deliberate layout. This structure includes an entrance, an exit, and 
+          empty spaces to guide the user through the exhibit in a structured way.
         </p>
         <ul className={styles.list}>
           <li>
             <strong>
-              <code>.playersGrid</code> Layout:
+              <code>.room</code> & <code>.cell</code> Grid Layout:
             </strong>{' '}
-            This grid uses <code>display: flex; flex-wrap: wrap;</code>. This means if there is not
-            enough space for all cards in one row, they will wrap to the next line. The space
-            between cards is <code>gap: 2rem;</code> (32px). This 32px is a larger value from our
-            spacing scale, which gives the cards good room. Because it wraps, the cards will not
-            overlap on small or very wide screens.
+            The core layout uses <code>display: grid;</code> with <code>grid-template-columns: 
+              repeat(4, 1fr);</code> to create a strict 4-column structure. Each item occupies 
+              a <code>.cell</code>, which ensures a consistent spatial arrangement. This is fundamentally 
+              different from a flexbox layout, as the grid&apos;s structure is rigid, with some cells 
+              intentionally left empty or designated as entrances/exits. This creates a more immersive, 
+              room-like experience.
           </li>
           <li>
             <strong>
-              <code>.playerCard</code> Dimensions & Accents:
+              Player Placement & The Distance Function:
             </strong>{' '}
-            Each card could be <code>300px</code> wide. This size is good for showing a standard
-            picture (maybe 250px wide) and some text next to or below it. Sometimes, we might add a
-            special border, like <code>border-left: 4px solid var(--brand-blue);</code> (or a theme
-            color like <code>var(--accent-feature)</code>). This border can show that a card belongs
-            to a special group or is the main item.
+            Player placement within the room is not random. To create a logical flow, players are sorted 
+            into the available cells using a specific algorithm. This algorithm calculates a &quot;distance&quot; 
+            for each cell, defined as the sum of its distance to the entrance and its distance to the exit. 
+            Cells with a shorter combined distance are populated first, creating a primary &quot;path&quot; of players 
+            between the entrance and exit, ensuring a natural and guided viewing order for visitors.
           </li>
           <li>
-            <strong>Card Hover Effects (Museum):</strong> When you move your mouse over these cards,
-            they might lift up by <code>5px</code> and get a stronger shadow, like{' '}
-            <code>box-shadow: 0 10px 20px rgba(0,0,0,0.2);</code>. This 5px lift and darker shadow
-            are more noticeable than on smaller elements because these cards are larger. This effect
-            uses a clear step from our spacing scale and makes the card feel more interactive.
+            <strong>
+              <code>SmallPlayerCard</code> Component & Design Choices:
+            </strong>{' '}
+            Each player is rendered using a dedicated <code>SmallPlayerCard</code> component. This component is 
+            designed to be responsive within its grid cell by using <code>max-width: 100%</code> and a modern CSS 
+            property, <code>aspect-ratio: 4 / 5;</code>. This maintains a consistent card shape regardless of screen size. 
+            Internally, the card uses flexbox to divide its space, allocating 65% for the player image and 35% for the 
+            name, ensuring a balanced and clean look.
           </li>
           <li>
-            <strong>Image Zoom on Hover:</strong> Pictures inside the cards might zoom in a little
-            bit (e.g., <code>transform: scale(1.05);</code>) when you move your mouse over them.
-            This happens over <code>0.3s</code>. This small zoom makes the picture stand out and
-            adds a dynamic feeling. It goes back to normal smoothly when you move the mouse away.
+            <strong>
+              Card Hover Effects & Interactivity:
+            </strong>{' '}
+            To provide clear interactive feedback, the <code>SmallPlayerCard</code> lifts up slightly when hovered 
+            over (<code>transform: translateY(-5px);</code>) and gains a subtle shadow. Simultaneously, the 
+            player&apos;s image zooms in smoothly (<code>transform: scale(1.05);</code>). These effects make the 
+            exhibit feel dynamic and clearly indicate which player the user is about to select for more details.
           </li>
         </ul>
       </section>
@@ -464,43 +468,51 @@ export default function Documentation() {
       <section>
         <h2 className={styles.sectionTitle}>Museum: Player Detail Page Styling</h2>
         <p>
-          The &apos;Player Detail Page&apos; shows all information about one player or item. On big
-          screens, it often has two columns (like picture on one side, text on the other). On small
-          screens, these columns stack on top of each other. Buttons and stats tables have their own
-          special styles.
+          The &apos;Player Detail Page&apos; shows all information about one player. Its 
+          layout is a primary example of responsive design, using a two-column flexbox container 
+          for larger screens that gracefully stacks into a single column for mobile devices. 
+          Interactive elements like buttons and navigation controls share a consistent &quot;pill&quot; 
+          shape, and data tables are styled for clarity without being visually heavy.
         </p>
         <ul className={styles.list}>
           <li>
-            <strong>Responsive Layout:</strong> It uses a two-column layout until the screen is{' '}
-            <code>720px</code> wide. This 720px width (called a breakpoint) is chosen to ensure both
-            image and text blocks are easy to read and have good proportions before stacking for
-            smaller screens. Below 720px, the layout changes to one column. This is better for
-            reading on phones.
+            <strong>
+              Responsive <code>.playerHeader</code> Layout:
+            </strong>{' '}
+            The main header uses <code>display: flex;</code> to place the <code>.playerImage</code> 
+            and <code>.playerBasicInfo</code> side-by-side. The image has a fixed basis (<code>flex: 0 0 280px</code>) 
+            while the info block is flexible (<code>flex: 1 1 280px</code>). At the <code>720px</code> breakpoint, 
+            a media query changes the header to <code>flex-direction: column;</code>, stacking the elements vertically 
+            for a mobile-friendly view.
           </li>
           <li>
             <strong>
-              Pill Buttons in <code>.buttonGroup</code>:
+              Pill Buttons in <code>.buttonGroup</code> & <code>.pager</code>:
             </strong>{' '}
-            Buttons that are grouped together (in a <code>.buttonGroup</code>) might have very
-            rounded ends. This makes them look like pills. We do this with{' '}
-            <code>border-radius: 100vmax;</code> (or a big number like <code>9999px</code>). This
-            makes them look different from square cards or input fields. It clearly shows they are
-            buttons for actions.
+            Buttons for user controls, such as those in the <code>.buttonGroup</code> for text complexity and the 
+            next/previous <code>.pager</code> links, share a consistent &quot;pill&quot; shape. This is achieved with 
+            <code>border-radius: 100vmax;</code>, a robust value that ensures perfectly rounded ends regardless of the 
+            button&apos;s size. This distinct shape separates them from content blocks and clearly signals them as 
+            interactive elements.
           </li>
           <li>
-            <strong>Stats Table Styling:</strong> If there is a table with statistics, the lines
-            between rows are very light. For example,{' '}
-            <code>1px solid rgba(var(--primary-rgb-components), 0.06);</code>. This is the main text
-            color but only 6% visible. This separates the data clearly but does not make the table
-            look too heavy.
+            <strong>
+              <code>.statsTable</code> Styling:
+            </strong>{' '}
+            The career statistics table is designed for readability. Table headers (<code>&lt;th&gt;</code>) have a 
+            solid background color (<code>background: var(--secondary);</code>) to stand out. The lines separating 
+            each data row (<code>&lt;td&gt;</code>) are subtle, using <code>border-bottom: 1px solid 
+              rgba(255 255 255 / 0.06);</code>. This very low-opacity border (6% visible white, assuming a dark theme) 
+              cleanly separates data without adding visual clutter.
           </li>
           <li>
             <strong>
               <code>.externalLink</code> Styling:
             </strong>{' '}
-            Links to other websites might be centered on the page. When you move your mouse over
-            them, an underline might fade in over <code>0.25s</code>. This small animation makes it
-            clear it is a link and encourages people to click.
+            The final link to an external resource like Wikipedia is centered using <code>text-align: center;</code>. 
+            The link itself has no default underline, but on hover, the text color changes and an underline appears 
+            (<code>text-decoration: underline;</code>). The <code>transition: color 0.25s;</code> provides a smooth 
+            feedback mechanism, making it clear the element is a clickable link.
           </li>
         </ul>
       </section>
@@ -509,48 +521,49 @@ export default function Documentation() {
       <section>
         <h2 className={styles.sectionTitle}>Museum: Index Page Styling</h2>
         <p>
-          The &apos;Museum: Index Page&apos; is like the main entrance or map to the museum. It
-          might have big clickable boxes or &apos;doors&apos; that lead to different parts of the
-          museum. The style here should have a lot of space and make it very clear what you can
-          click on.
+          The &apos;Museum: Index Page&apos; serves as the main entrance, presenting a dynamic map of 
+          the museum&apos;s exhibits. The content of the map changes based on the selected &quot;narrative&quot; 
+          (Teams, Position, or Debut Decade). The layout uses a spacious 2x2 grid where each panel acts as a gateway 
+          to a different room, complete with visual &quot;doors&quot; to guide the user.
         </p>
         <ul className={styles.list}>
           <li>
             <strong>
               Grid Layout (<code>.grid</code>):
             </strong>{' '}
-            It might use a 2x2 grid (a grid with two rows and two columns). For this, we can use CSS
-            Grid (
-            <code>display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;</code>
-            ) or Flexbox. The space between the grid items (the &apos;doors&apos;) could be very
-            big, like <code>80px</code>. This large gap, a big value from our spacing scale, gives
-            each &apos;door&apos; its own space and makes the page feel open.
+            The page is built on a 2x2 grid using <code>display: grid;</code> with <code>grid-template-columns: 
+              1fr 1fr;</code>. This creates four distinct quadrants for the room panels. A large gap between items 
+              (<code>gap: 5vw;</code>) gives each panel significant breathing room, reinforcing the feeling of a grand, 
+              open map.
           </li>
           <li>
             <strong>
-              Box/Panel Styling (<code>.box</code>):
+              Room Panel Styling (<code>.box</code>):
             </strong>{' '}
-            Each clickable box or panel could have a set height, for example <code>250px</code>, so
-            they all look the same size. They might have a <code>3px</code> border. To make them
-            look like a museum frame or a door, we might add small <code>4px</code> gaps or indents
-            using padding or other CSS tricks.
-          </li>
-          <li>
-            <strong>Image Hover Effect (Index):</strong> Pictures inside these boxes might zoom in a
-            bit when you move your mouse over them (like <code>transform: scale(1.1);</code>). This
-            would happen over <code>0.3s</code>. This makes it clear you can click on it and draws
-            you into that part of the museum.
+            Each clickable room panel is a <code>&lt;Link&gt;</code> styled with the <code>.box</code> class. They 
+            have a fixed height of <code>250px</code> and a distinct <code>3px</code> border, giving them a solid, 
+            architectural feel. On hover, the background color changes, and if the panel contains an image, the image 
+            zooms in (<code>transform: scale(1.1);</code>) to provide clear, interactive feedback.
           </li>
           <li>
             <strong>
-              Floating Labels (<code>.text</code>, <code>.centerText</code>):
+              The Doorways (<code>.doorTop</code>, etc.):
             </strong>{' '}
-            The names or labels for these boxes might look like they are floating. We do this by
-            positioning them with CSS (<code>position: absolute;</code>). For example, text could be
-            at <code>bottom: 15%; left: 10%;</code> inside the box. Or, if we want text in the exact
-            center, we can use <code>top: 50%; left: 50%; transform: translate(-50%, -50%);</code>.
-            The <code>transform</code> property here helps to perfectly center the element. This
-            helps make the page look more like a map with labels.
+            A unique feature of this page is the visual &quot;doors&quot; on each room panel. These are not images but 
+            <code>&lt;span&gt;</code> elements dynamically added to the sides of a <code>.box</code> based on data. 
+            Using <code>position: absolute;</code>, classes like <code>.doorTop</code> and <code>.doorLeft</code> place 
+            these small elements precisely on the border, creating the illusion of openings that connect the rooms on 
+            the map.
+          </li>
+          <li>
+            <strong>
+              Dynamic Content & Central Hub (<code>.text</code>, <code>.centerText</code>):
+            </strong>{' '}
+            The content inside each panel is dynamic. For the &quot;teams&quot; narrative, it displays a team logo image. 
+            For other narratives, it uses a <code>.text</code> block to show the category name (e.g., &quot;Midfielder&quot;). 
+            Separately, a single &quot;Entrance/Exit&quot; label with the <code>.centerText</code> class is placed in the 
+            absolute middle of the entire grid using the <code>position: absolute;</code> and <code>transform: 
+              translate(-50%, -50%);</code> technique, serving as a central point of reference on the map.
           </li>
         </ul>
       </section>
@@ -559,47 +572,44 @@ export default function Documentation() {
       <section>
         <h2 className={styles.sectionTitle}>Home Hero Styling</h2>
         <p>
-          The Home Hero is the big section you see first on the main page. It should get your
-          attention. It often takes up the whole screen height. The background might be a radial
-          gradient. This is a type of gradient where colors fade out from a center point. This
-          gradient can change with the theme. The text is big, and the sizes are based on our
-          typographic scale. Buttons here are usually styled as &apos;pills&apos; (very rounded).
+          The Home Hero is the full-viewport introduction to the website, designed to be visually striking. 
+          By default, its background is a subtle <code>radial-gradient</code>, but it dynamically switches to a 
+          theme-specific background image when a club theme is active. The layout uses a responsive two-column 
+          grid that elegantly stacks on mobile devices. Typography is fluid, and interactive elements are clearly defined.
         </p>
         <ul className={styles.list}>
           <li>
-            <strong>Headline Typography:</strong> The main title here uses a flexible font size. We
-            use <code>clamp()</code> in CSS for this. For example,{' '}
-            <code>font-size: clamp(2rem, 5vw, 3.5rem);</code>. This means the font size will be at
-            least <code>2rem</code>. It will be at most <code>3.5rem</code>. In between, it will be{' '}
-            <code>5vw</code> (5% of the viewport width; viewport is the visible area of the web
-            page). This way, the title looks good on small phone screens and big desktop screens. It
-            does not get too small or too big.
+            <strong>Headline Typography:</strong> The main title uses the CSS <code>clamp()</code> function to ensure 
+            it scales gracefully across devices. The rule <code>font-size: clamp(2rem, 5vw, 3rem);</code> sets a minimum 
+            size of <code>2rem</code>, a maximum of <code>3rem</code>, and a flexible size of <code>5vw</code> in between, 
+            preventing the text from ever being too large or too small for the screen.
           </li>
           <li>
-            <strong>Subhead Typography:</strong> Smaller text under the main title (subheads) are
-            also sized based on our typographic scale. For example, <code>1.125rem</code> (which is
-            18px). This size is chosen from our typographic scale to create a clear visual step down
-            from the main headline. This ensures a clear hierarchy (order of importance). This makes
-            a clear difference between the main title and the subhead. This helps people quickly
-            understand the information.
+            <strong>Subhead Typography:</strong> The descriptive paragraph below the headline is set to a fixed 
+            <code>1.125rem</code> (18px). This creates a clear visual hierarchy and ensures the supporting text is 
+            perfectly readable, complementing the larger headline without competing with it.
           </li>
           <li>
             <strong>
               CTA Button Styling (<code>.primary</code> & <code>.secondary</code>):
             </strong>{' '}
-            The main buttons (Call To Action buttons, or CTAs) are styled like pills (fully rounded
-            ends). They have consistent padding, for example, <code>padding: 0.75rem 1.25rem;</code>
-            . The padding values are selected from our spacing scale to ensure they are easy to
-            click and look balanced. When you move your mouse over them, they lift up by{' '}
-            <code>2px</code> (<code>transform: translateY(-2px);</code>). This shows they are
-            clickable.
+            The Call to Action buttons use a consistent design language. They have generous padding 
+            (<code>0.75rem 1.25rem</code>) and a moderate <code>border-radius: 8px;</code>, making them distinct 
+            from other elements but not fully &quot;pill-shaped&quot;. On hover, they lift slightly with <code>transform: 
+              translateY(-2px);</code> to provide clear interactive feedback.
           </li>
           <li>
-            <strong>Decorative &quot;Ball&quot; Element:</strong> Sometimes we add a small
-            decorative circle or &quot;ball&quot;. This might have a shadow like{' '}
-            <code>box-shadow: 0 6px 10px rgba(0,0,0,0.15);</code>. This makes it look like it is
-            floating a bit off the page. This just adds some visual interest. Its size and placement
-            would also follow our spacing and sizing rules for visual harmony.
+            <strong>Decorative &quot;Ball&quot; Element:</strong> The football image uses the <code>.ball</code> class, 
+            which applies a realistic shadow with <code>filter: drop-shadow(...)</code>. Unlike <code>box-shadow</code>, 
+            this applies the shadow to the actual shape of the PNG image, ignoring its transparent background and creating 
+            a more lifelike floating effect.
+          </li>
+          <li>
+            <strong>Theming & Responsive Layout:</strong> The hero section is theme-aware. When a theme class like 
+            <code>.arsenal</code> is active, the gradient background is replaced by a full-screen image with a 
+            semi-transparent overlay. On screens smaller than <code>640px</code>, the two-column grid stacks vertically, 
+            and the ball image uses <code>order: -1;</code> to cleverly re-position itself above the text for a 
+            mobile-first presentation.
           </li>
         </ul>
       </section>
@@ -608,113 +618,102 @@ export default function Documentation() {
       <section>
         <h2 className={styles.sectionTitle}>Content Organization and Narratives</h2>
         <p>
-          How we organize content and use stories (&apos;narratives&apos;) is very important for
-          this MMMM project. The idea is not just to let people look around randomly. We want to
-          guide them with a clear story. This is based on the project guidelines.
+          The content architecture is a cornerstone of this project, designed to guide visitors through a curated 
+          experience rather than allowing unstructured browsing. This is achieved by presenting a finite set of items 
+          (football players) through the lens of selectable &quot;narratives&quot;, a core requirement of the project 
+          specifications.
         </p>
         <ul className={styles.list}>
           <li>
-            <strong>Item Presentation (15-20 Items):</strong>
-            The project is about showing 15-20 real things (in our case, football players). These
-            items have a common theme (football legends). Each item is shown with:
+            <strong>Item Presentation (20 Football Legends):</strong>
+            The project showcases 20 distinct football players, with each player entity treated as a museum item. 
+            The presentation of each item consistently includes:
             <ul>
               <li>
-                <strong>Images:</strong> There is a main picture for each player on their card (this
-                is the <code>PlayerCard</code> component) and on their detail page (this is the{' '}
-                <code>PlayerDetailPage</code> component). This is a project requirement.
+                <strong>Images:</strong> Each player has a primary image, utilized in the <code>SmallPlayerCard</code> 
+                component (on the Room Page) and displayed more prominently in the <code>PlayerPage</code> (the player 
+                detail view).
               </li>
               <li>
-                <strong>QR Codes:</strong> On the <code>PlayerDetailPage</code>, there is a QR code.
-                A QR code is a type of barcode you can scan with your phone. If you scan this, it
-                can take you to more information. This is also a project requirement.
+                <strong>QR Codes:</strong> The <code>PlayerPage</code> features a scannable QR code that links to the 
+                player&apos;s external Wikipedia page, fulfilling a specific project requirement for interactive, 
+                external content linking.
               </li>
               <li>
-                <strong>Metadata:</strong> This is data about the player. For example, their
-                position, country, birthday, and statistics for their teams. You see this on the{' '}
-                <code>PlayerCard</code> and more detailed on the <code>PlayerDetailPage</code>. This
-                information comes from a file called <code>players.json</code>. This is the
-                &quot;appropriate metadata&quot; the project asked for.
+                <strong>Metadata:</strong> Structured data for each player—such as nation, position, born/debut dates, 
+                and club statistics—is stored centrally in the <code>players.json</code> file. This file acts as the 
+                single source of truth, providing the &quot;appropriate metadata&quot; that populates all components.
               </li>
             </ul>
-            These items are arranged in a virtual museum. You can explore this museum using the
-            Museum Index Page (this is like a &apos;map&apos;). Then you can go into specific
-            &quot;Room Pages.&quot;
+            This content is explored via the <code>MuseumIndexPage</code> (the &apos;map&apos;) which leads into 
+            dynamically generated <code>RoomPage</code> instances.
           </li>
           <li>
             <strong>Narrative Implementation and Purpose:</strong>
-            The website uses different narratives. Narratives are like different ways to tell a
-            story or organize information. They change how you see the museum. You can see this on
-            the Museum Index Page (file path <code>app/museum/page.tsx</code>) and the Museum Room
-            Page (file path <code>app/museum/[narrative]/[room]/page.tsx</code>).
+            A &apos;narrative&apos; is a state variable, managed via a dropdown on the <code>MuseumIndexPage</code> 
+            and passed through the URL structure (<code>/museum/[narrative]/[room]</code>). This state dictates the 
+            entire user journey through the museum.
             <ul>
               <li>
                 <strong>Available Narratives:</strong>
                 <ul>
                   <li>
-                    <strong>Teams:</strong> You can explore players based on the football club they
-                    played for (like Arsenal or Chelsea). Many fans like to see players this way.
+                    <strong>Teams:</strong> Groups players by the major club they are associated with, catering to 
+                    fan-based exploration.
                   </li>
                   <li>
-                    <strong>Position:</strong> This groups players by the position they played (like
-                    Midfielder or Forward). This gives a different view, maybe more about game
-                    tactics.
+                    <strong>Position:</strong> Organizes players by their on-field role (e.g., Midfielder), offering a 
+                    tactical perspective.
                   </li>
                   <li>
-                    <strong>Debut Decade:</strong> This groups players by the 10-year period when
-                    they started playing professionally (like 1990s or 2000s). This is like a
-                    historical timeline. This was a required narrative.
+                    <strong>Debut Decade:</strong> Presents a historical view by grouping players based on the 10-year 
+                    period of their professional debut, fulfilling a required narrative type.
                   </li>
                 </ul>
               </li>
               <li>
-                <strong>Guiding the Visitor Experience:</strong> The chosen narrative changes many
-                things:
+                <strong>Guiding the Visitor Experience:</strong> The selected narrative directly controls:
                 <ul>
                   <li>
-                    Which items are shown (this is the <code>filteredPlayers</code> variable on the
-                    RoomPage).
+                    The data displayed, determined by the <code>getFilteredPlayers()</code> function which selects a 
+                    subset of players from <code>players.json</code>.
                   </li>
-                  <li>Which &quot;rooms&quot; you can choose on the Museum Index Page.</li>
+                  <li>The selectable rooms rendered on the <code>MuseumIndexPage</code>.</li>
                   <li>
-                    How &quot;Next/Previous&quot; buttons work (they would take you to the next
-                    player in the current story or group).
+                    The scope of the next/previous pager on the <code>PlayerPage</code>, which cycles through the 
+                    context-aware list of filtered players.
                   </li>
                   <li>
-                    The titles and introduction texts (the titles on the RoomPage change with the
-                    narrative).
+                    The dynamic titles and subtitles on the <code>RoomPage</code>, which change to reflect the current 
+                    narrative.
                   </li>
                 </ul>
-                This makes sure the visit follows a clear story, not just random clicks.
               </li>
             </ul>
           </li>
           <li>
             <strong>Adaptive Descriptive Texts:</strong>
-            The <code>PlayerDetailPage</code> is a good example of content that changes for the
-            user. It has controls for:
+            The <code>PlayerPage</code> implements adaptive content as per the project specifications. It provides user 
+            controls to modify the displayed text along two independent axes:
             <ul>
               <li>
                 <strong>
                   Text Complexity (<code>textLevel</code>):
                 </strong>{' '}
-                You can choose &apos;easy&apos;, &apos;medium&apos;, or &apos;advanced&apos; text.
+                Users can select &apos;easy&apos;, &apos;medium&apos;, or &apos;advanced&apos; language.
               </li>
               <li>
                 <strong>
                   Text Length (<code>textLength</code>):
                 </strong>{' '}
-                You can choose &apos;short&apos; or &apos;extended&apos; text.
+                Users can select &apos;short&apos; or &apos;extended&apos; versions of the description.
               </li>
             </ul>
-            A function called <code>getDescription()</code> picks the right text from the{' '}
-            <code>players.json</code> file (for example, <code>player.short_easy_description</code>
-            ). This is what our project guidelines asked for: &quot;several descriptive texts
-            according to two separate and independent axes: age, competency... and level of
-            detail&quot;. It also meets the rule about having &quot;3-9 texts for each item&quot;.
-            This helps different kinds of users. For example, Alice (a teacher), Bruno (a
-            businessman), and Carla (a student), who all have different needs. The buttons for these
-            controls are the &quot;buttons as necessary to pass from one type of text to the
-            other&quot; from the project specifications.
+            The <code>getDescription()</code> function dynamically constructs a key (e.g., 
+            <code>short_easy_description</code>) based on the <code>textLevel</code> and <code>textLength</code> 
+            state variables to retrieve the correct text from <code>players.json</code>. This directly fulfills 
+            the requirement for &quot;3-9 texts for each item&quot; and caters to different user personas (e.g., Alice, 
+            Bruno, and Carla) by providing the &quot;buttons as necessary to pass from one type of text to the other.&quot;
           </li>
         </ul>
       </section>
@@ -723,142 +722,59 @@ export default function Documentation() {
       <section>
         <h2 className={styles.sectionTitle}>Addressing Qualitative Requirements</h2>
         <p>
-          The project was made to follow specific quality rules. These rules come from the project
-          description. They are called &quot;ABCD&quot; properties for how things look and work. And
-          &quot;RSTU&quot; properties for the information about the items (this is the metadata).
+          This project was built to follow specific quality rules from the project description. These are the 
+          &quot;ABCD&quot; properties for the website&apos;s look and feel, and the &quot;RSTU&quot; properties for 
+          the data about the players (the metadata).
         </p>
         <ul className={styles.list}>
           <li>
-            <strong>ABCD Properties of the Display:</strong> These are about how the website looks
-            and works.
+            <strong>ABCD Properties of the Display:</strong> These are about how the website looks and works.
             <ul>
               <li>
-                <strong>Automatic:</strong> This means things happen by themselves, without the user
-                doing much.
-                <ul>
-                  <li>
-                    <strong>Theme Switching:</strong> When you pick a theme from the dropdown in the
-                    navbar, the whole site changes its look (colors, fonts, etc.) right away. You do
-                    not need to do anything else. This happens because all parts use CSS variables
-                    that update automatically.
-                  </li>
-                  <li>
-                    <strong>Narrative Selection:</strong> When you choose a narrative on the Museum
-                    Index Page, the &quot;rooms&quot; (categories) change automatically. Also, on
-                    the Player Detail Page, when you pick a different text complexity or length, the
-                    description text updates by itself.
-                  </li>
-                </ul>
+                <strong>Automatic:</strong> This means things happen on their own when you interact with the page. For 
+                example, when you select a theme, the whole site&apos;s color scheme changes instantly. Likewise, 
+                choosing a different text complexity on the <code>PlayerPage</code> immediately updates the description 
+                without a page reload.
               </li>
               <li>
-                <strong>Believable:</strong> This means the website feels real and makes sense.
-                <ul>
-                  <li>
-                    <strong>Narrative Cohesion:</strong> The Museum Index Page looks like a map with
-                    &quot;doors.&quot; The titles and content in the rooms match the story you
-                    picked. This makes the experience feel like a real guided tour in a museum.
-                  </li>
-                  <li>
-                    <strong>Aesthetic Principles:</strong> We used known design principles. For
-                    example, a consistent modular scale for text sizes and a clear spacing system
-                    (e.g., based on a 4px grid). The themes (like &quot;Forest&quot; or
-                    &quot;Cyberpunk&quot;) are designed to look good and fit the content. All styles
-                    are chosen carefully to look professional.
-                  </li>
-                </ul>
+                <strong>Believable:</strong> This means the website feels like a real, thought-out place. The museum
+                 pages are designed to look like a map with rooms and doors. The titles and player groups always match 
+                 the story (or &apos;narrative&apos;) you choose, making it feel like a real guided tour. We also used 
+                 consistent design rules for spacing and text sizes to make everything look professional.
               </li>
               <li>
-                <strong>Complete:</strong> This means everything looks finished and works.
-                <ul>
-                  <li>
-                    <strong>Comprehensive Styling:</strong> Everything on the page is styled. This
-                    includes the main page structure, small buttons, and text. Nothing looks broken
-                    or unfinished.
-                  </li>
-                  <li>
-                    <strong>Content Handling:</strong> The themes and components are made to work
-                    with different kinds of content: short text, long text, pictures, and tables
-                    (like the stats table on the Player Detail Page). The design also works on
-                    different screen sizes (this is called responsive design).
-                  </li>
-                </ul>
+                <strong>Complete:</strong> This means the entire site is fully styled and works as expected. Every part of the 
+                page, from big layouts to small buttons and tables, has a finished look. The design also works well on different 
+                screen sizes (it&apos;s responsive) and handles all the player data correctly.
               </li>
               <li>
-                <strong>Deliberate:</strong> This means every choice has a clear reason.
-                <ul>
-                  <li>
-                    <strong>Justified Choices:</strong> Every style choice has a reason. For
-                    example, the navbar is 64px high for a reason. The space between player cards is
-                    2rem for a reason. The 1000px width for content is to make reading easy. These
-                    reasons are based on our design philosophy (our typographic scale, 4px grid
-                    spacing system, responsive needs, etc.) or the project rules.
-                  </li>
-                  <li>
-                    <strong>Conceptual Grounding:</strong> The whole site structure, like choosing
-                    narratives and changing text styles, is based on the MMMM ideas from the project
-                    guidelines. For example, the text controls on the Player Detail Page are there
-                    because the project requirements asked for different text presentations.
-                  </li>
-                </ul>
+                <strong>Deliberate:</strong> This means every design choice was made for a specific reason. The width of the 
+                text is set to make it easy to read. The `drop-shadow` filter is used on the football image because it creates 
+                a more realistic shadow than a normal box-shadow would. Core features like the narrative selector and adaptive 
+                text controls were built specifically to meet the project&apos;s requirements.
               </li>
             </ul>
           </li>
           <li>
-            <strong>RSTU Properties of the Metadata:</strong> This is about the data in{' '}
-            <code>players.json</code> and how we show it.
+            <strong>RSTU Properties of the Metadata:</strong> This is about the data in the <code>players.json</code> file.
             <ul>
               <li>
-                <strong>Rich:</strong> This means the data has a lot of detail.
-                <ul>
-                  <li>
-                    The <code>players.json</code> file has a lot of information for each player. For
-                    example: ID, name, picture, position, country, birthday, many different
-                    descriptions, QR code links, Wikipedia links, and detailed team information
-                    (club, games played, goals, debut date). This is rich information about the
-                    player and their history.
-                  </li>
-                </ul>
+                <strong>Rich:</strong> The data for each player has a lot of detail, including their stats, nationality, pictures, 
+                multiple descriptive texts for different audiences, and links to external info.
               </li>
               <li>
-                <strong>Systematic:</strong> This means the data is organized in a consistent way.
-                <ul>
-                  <li>
-                    All players in <code>players.json</code> have mostly the same kind of
-                    information. Important facts like name, position, picture, and team stats are
-                    there for everyone. This makes it easy to show the information in a consistent
-                    way, like on the <code>PlayerCard</code> or in the stats table. The different
-                    description texts also have systematic names (like{' '}
-                    <code>length_complexity_description</code>).
-                  </li>
-                </ul>
+                <strong>Systematic:</strong> The data is organized in a consistent way. Every player has the same type of 
+                information, and the different descriptions follow a clear naming pattern (like 
+                <code>short_easy_description</code>). This makes it easy for the code to use the data.
               </li>
               <li>
-                <strong>Tailored:</strong> This means the data can be specific to each item, even if
-                the structure is similar.
-                <ul>
-                  <li>
-                    Even though the structure is similar, some information can be different for
-                    different players. For example, the &quot;goals&quot; field for a team might not
-                    be there if the player is a defender and did not score goals. The different
-                    description texts are also tailored for different needs. The TypeScript `Player`
-                    type (a way to define data structure in code) helps define this tailored
-                    structure.
-                  </li>
-                </ul>
+                <strong>Tailored:</strong> While the overall structure is the same, the data is tailored to each player. 
+                For example, a player&apos;s `teams` list can have one club or many, and the site handles both.
               </li>
               <li>
-                <strong>Uniform:</strong> This means all items use the same basic data structure.
-                <ul>
-                  <li>
-                    All players use the same basic data model. This is the structure in{' '}
-                    <code>players.json</code> and the `Player` type in TypeScript. This uniformity
-                    makes it easy to process and show the data. For example, the{' '}
-                    <code>PlayerCard</code> can always find <code>player.name</code> and{' '}
-                    <code>player.image_url</code> for any player. When we filter players for a
-                    narrative, we use this uniform structure. It also means we can show lists of
-                    players (like all players of a certain position) easily.
-                  </li>
-                </ul>
+                <strong>Uniform:</strong> All 20 players use the same basic data structure. Because of this, our components 
+                can reliably show their information. For example, a <code>SmallPlayerCard</code> knows it will always find a 
+                <code>player.name</code> and <code>player.image_url</code>, which makes the code simpler and less likely to break.
               </li>
             </ul>
           </li>
@@ -894,7 +810,8 @@ export default function Documentation() {
             <strong>Theme and Color Scheme Generation:</strong> AI helped us create the six
             different looks (themes like Light, Dark, Forest) and their colors. We used AI tools to
             try different color sets. This helped us find colors that look good together and are
-            easy to see (this is part of accessibility). This made the design process faster.
+            easy to see (this is part of accessibility). The team-themes were hand-made. 
+            This made the design process faster.
           </li>
           <li>
             <strong>General Troubleshooting and Debugging:</strong> AI was a help when we had

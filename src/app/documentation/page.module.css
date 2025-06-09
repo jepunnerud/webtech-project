@@ -96,6 +96,18 @@
   margin-bottom: 2rem;
 }
 
+.externalLink a {
+  color: var(--secondary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.25s;
+}
+
+.externalLink a:hover {
+  color: var(--tertiary);
+  text-decoration: underline;
+}
+
 @media (max-width: 640px) {
   .page {
     padding-inline: 1rem;

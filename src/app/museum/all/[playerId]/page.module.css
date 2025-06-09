@@ -1,9 +1,7 @@
 .container {
-  max-width: 1000px;
-  margin: 0 auto;
+  max-width: 100vw;
   min-height: 100vh;
-  max-width: 1000px;
-  min-width: 1000px;
+  margin: 0 auto;
 }
 
 .notFound {
@@ -241,10 +239,10 @@
 }
 
 .pager {
-  margin: 3rem 0;
   display: flex;
   justify-content: space-between;
   font-weight: 600;
+  padding-bottom: 3rem;
 }
 
 .prev,
