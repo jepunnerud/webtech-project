@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Football Museum',
+  title: 'Digital football Museum',
   description: 'A museum of football history',
 }
 
