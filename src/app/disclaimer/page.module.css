@@ -85,6 +85,17 @@
   margin-bottom: 2rem;
 }
 
+.creditsSection {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.creditsList {
+  list-style-type: none; 
+  padding: 0;            
+  margin: 0;             
+}
+
 .externalLink a {
   
   color: var(--secondary);
